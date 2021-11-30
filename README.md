@@ -2,7 +2,7 @@
 
 This is a repository used by Service Canada to prototype and test ideas.
 
-##How to use the templates
+## How to use the templates
 
 1) Select one of the templates in the template folder:
 - basic: basic layout
