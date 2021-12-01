@@ -51,7 +51,7 @@ Ceci est un dépôt tilisé par Service Canada pour réaliser des prototypes et 
 ## Comment utiliser les modèles
 
 1) Sélectionnez l'un des modèles dans le dossier des modèles :
-- [basic](./templates/template-basic-fr.html) : mise en page de base
+- basic : mise en page de base
 - subway-landing : page d'index pour la navigation de style métro
 - subway-section : page de section avec la navigation de style métro sur la droite.
 - topic: page avec la mise en page Bêta pour les pages de thème et de sujet
