@@ -1,4 +1,4 @@
-# service-canada
+# Service Canada - Opimization prototyping space 
 
 This is a repository used by Service Canada to prototype and test ideas.
 
@@ -44,6 +44,8 @@ Relative links in GitHub are odd.
 
 
 --------------------
+
+# Service Canada - Espace de prototypage de l'équipe d'optimisation
 
 
 Ceci est un dépôt tilisé par Service Canada pour réaliser des prototypes et tester des idées.
