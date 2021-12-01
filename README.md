@@ -8,6 +8,7 @@ This is a repository used by Service Canada to prototype and test ideas.
 - basic: basic layout
 - subway-landing: index page for the subway pattern
 - subway-section: page with the subway navigation on the right
+- topic: page with the beta theme-topic layout
 
 
 2) Duplicate the template in the right folder - or copy the code from the template in a new file in the right folder
@@ -50,9 +51,10 @@ Ceci est un dépôt tilisé par Service Canada pour réaliser des prototypes et 
 ## Comment utiliser les modèles
 
 1) Sélectionnez l'un des modèles dans le dossier des modèles :
-- basic : mise en page de base
+- [basic](./templates/template-basic-fr.html) : mise en page de base
 - subway-landing : page d'index pour la navigation de style métro
 - subway-section : page de section avec la navigation de style métro sur la droite.
+- topic: page avec la mise en page Bêta pour les pages de thème et de sujet
 
 
 2) Dupliquez le modèle dans le bon dossier - ou copiez le code du modèle dans un nouveau fichier dans le bon dossier.
