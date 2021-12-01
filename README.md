@@ -5,7 +5,7 @@ This is a repository used by Service Canada to prototype and test ideas.
 ## How to use the templates
 
 1) Select one of the templates in the template folder:
-- basic: basic layout
+- basic: basic layout (https://test.canada.ca/service-canada/templates/template-topic-en.html)
 - subway-landing: index page for the subway pattern
 - subway-section: page with the subway navigation on the right
 - topic: page with the beta theme-topic layout
