@@ -36,10 +36,10 @@ If you want to bring a Canada.ca page in GitHub to test ideas:
 ## Links in GitHub
 
 Relative links in GitHub are odd.
-./ looks for the file the folder you're on
-../ looks for the file one folder up
-../../ looks for the 2 folders up
-etc.
+- ./ looks for the path in the folder you're on
+- ../ looks for the path one folder up
+- ../../ looks for the path 2 folders up
+- etc.
 
 
 --------------------
@@ -81,7 +81,7 @@ Si vous voulez importer une page de Canada.ca dans GitHub pour tester des idées
 ### Liens dans GitHub
 
 Les liens relatifs dans GitHub sont étranges.
-./ recherche le fichier dans lequel vous vous trouvez.
-../ recherche le fichier un dossier plus haut
-../../ cherche le fichier 2 dossiers plus haut
-etc.
+- ./ recherche le chemin du fichier dans le dossier dans lequel vous vous trouvez.
+- ../ recherche le chemin du fichier un dossier plus haut
+- ../../ cherche le chemin du fichier 2 dossiers plus haut
+- etc.
