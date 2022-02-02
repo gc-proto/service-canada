@@ -157,21 +157,27 @@
 
             <!-- IF YOU PORT THIS TO AEM, START COPYING FROM HERE-->
 
-            <input type="button" id='script' name="scriptbutton" value=" Run Script " onclick="goPython()">
+            <a href="/"> <button class="button" style="background: url(/static/images/stack.jpg)" onclick="button();" action="/button"></a>
+  </button>
+  <script>
 
-     <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  $(function() {
+      $('button').click(function() {
+          $.ajax({
+              url: 'app.py',
+              data: $('form').serialize(),
+              type: 'POST',
+              success: function(response) {
+                  console.log(response);
+              },
+              error: function(error) {
+                  console.log(error);
+              }
+          });
+      });
+  });
 
-     <script>
-         function goPython(){
-             $.ajax({
-               url: "MYSCRIPT.py",
-              context: document.body
-             }).done(function() {
-              alert('finished python script');;
-             });
-         }
-     </script>
-   </body>
+  </script>
 
             <!-- CONTENT ENDS HERE -->
 
