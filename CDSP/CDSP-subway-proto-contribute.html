@@ -226,17 +226,22 @@
                 			<input type="checkbox" id="cond5">
                 			<label for="cond5">that parent or grandparent passes away</label>
                 		</li>
-                		<li class="checkbox">
-                			<input type="checkbox" id="cond6">
-                			<label for="cond6">that parent or grandparent had money in any of these plans:
-                      <ul>
-                         <li>Registered Retirement Savings Plan (RRSP)</li>
-                         <li>Registered Retirement Savings Income Fund (RRIF)</li>
-                         <li>Registered Pension Plan (RPP)</li>
-                         <li>Pooled Registered Pension Plan (PRPP)</li>
-                         <li>Specified Pension Plan (SPP)</li>
-                      </ul></label>
-                		</li>
+                    <li class="checkbox">
+               <input type="checkbox" id="cond6">
+               <label for="cond6" aria-describedby="eligble-plans">that parent or grandparent had money in an eligible plan</label>
+
+               <div id="eligble-plans">
+               <p class="mrgn-lft-xl" >Eligible plans include:</p>
+               <ul class="mrgn-lft-xl">
+                              <li>Registered Retirement Savings Plan (RRSP)</li>
+                              <li>Registered Retirement Savings Income Fund (RRIF)</li>
+                              <li>Registered Pension Plan (RPP)</li>
+                              <li>Pooled Registered Pension Plan (PRPP)</li>
+                              <li>Specified Pension Plan (SPP)</li>
+               </ul>
+              </div>
+                  </li>
+
                 	</ul>
                 </fieldset>
 
@@ -265,13 +270,18 @@
                 		</li>
                     <li class="checkbox">
                 			<input type="checkbox" id="cond10">
-                			<label for="cond10">One of the following conditions must be met:
-                      <ul>
-                         <li>the beneficiary has a severe and prolonged mental impairment that can reasonably be expected to prevent them from pursuing post-secondary education</li>
-                         <li>the RESP account has existed for at least 10 years and all the beneficiaries are at least 21 years of age and are not pursuing post-secondary education</li>
-                         <li>the RESP has been in existence for more than 35 years</li>
-                      </ul></label>
-                		</li>
+
+                    <label for="cond10" aria-describedby="eligible-situations">You are in one of the eligible situations</label>
+
+                    <div id="eligble-plans">
+                    <p class="mrgn-lft-xl" >Eligibile situations are:</p>
+                    <ul class="mrgn-lft-xl">
+                      <li>the beneficiary has a severe and prolonged mental impairment that can reasonably be expected to prevent them from pursuing post-secondary education</li>
+                      <li>the RESP account has existed for at least 10 years and all the beneficiaries are at least 21 years of age and are not pursuing post-secondary education</li>
+                      <li>the RESP has been in existence for more than 35 years</li>
+                    </ul>
+                   </div>
+                       </li>
                 	</ul>
                 </fieldset>
 
