@@ -184,24 +184,24 @@
 
             <h3>Estimate your bond and grant payment</h3>
 
-            <div class="form-group">
-            <label for="income">What is your family income?</label>
-            <input class="form-control" type="number" name="income" id="income">
-
-            <label for="contribution">How much are you contributing?</label>
-            <input class="form-control" type="number" name="contribution" id="contribution">
+            <div data-role="content">
+        <div data-role="fieldcontain">
+          <label for="income">Income:</label>
+          <input type="number" name="income" id="income" value=""  />
           <br>
-            <label for="bond_amount">Bond</label>
-            <input type="number" readonly value="0" id="bond_amount"/>
-            <br>
-            <label for="grant">Grant</label>
-            <input type="number" readonly value="0" id="grant"/>
-            <br>
-            <label for="total">Total</label>
-            <input type="number" readonly value="0" id="total"/>
-            </div>
+          <label for="contribution">Contribution:</label>
+          <input type="number" name="contribution" id="contribution" value=""  />
+          <br>
+          <label for="bond">Bond:</label>
+          <input type="text" name="bond" id="bond" value=""  />
+          <br>
+          <label for="grant">Grant:</label>
+          <input type="text" name="grant" id="grant" value=""  />
+          <br>
+          <label for="total">Result:</label>
+          <input type="text" name="total" id="total" value=""  />
+        </div>
 
-            <button type="button btn btn-primary" class="calculate">Calculate</button>
 
             <details>
                <summary>See the math behind grants and bonds payments</summary>
@@ -297,15 +297,7 @@
             <h2 id="transfers">Transfers and rollovers from other plans are not matched by the government</h2>
             <p>The government will not pay a matching grant on the money transferred from another retirement or education savings plan.</p>
             <p>For more information on transferring retirement or education savings to an <abbr title="Registered Disability Savings Plan">RDSP</abbr>, go to <a href="CDSP-subway-proto-contribute.html#_Money_transferred_from">Money transferred from retirement and education plans</a>.</p>
-            <div data-role="content">
-        <div data-role="fieldcontain">
-          <label for="a">Diameter:</label>
-          <input type="number" name="a" id="a" value=""  />
-          <label for="b">Diver:</label>
-          <input type="number" name="b" id="b" value=""  />
-          <label for="total">Result:</label>
-          <input type="text" name="total" id="total" value=""  />
-        </div>
+
             <!--
                <h2>See how your savings could grow with the calculator</h2>
                <p>The <a href="http://www.esdc.gc.ca/cgi-bin/RdspCalculator-CalculatriceReei/calc.aspx?lang=en">RDSP Savings Calculator</a> can help you anticipate how your <abbr title="Registered Disability Savings Plan">RDSP</abbr> could grow over time. You can calculate the estimated amount of Grant and Bond you could receive, based on your annual family income and contributions, as well as the amount of interest collected.</p>
@@ -483,13 +475,13 @@
          <script>
 	  $(document).ready(function() {
 	    function compute() {
-          var a = $('#a').val();
-          var b = $('#b').val();
-          var total = a * b;
+          var income = $('#income').val();
+          var contribution = $('#contribution').val();
+          var total = income - contribution;
           $('#total').val(total);
         }
 
-        $('#a, #b').change(compute);
+        $('#income, #contribution').change(compute);
 
 	  });
 	</script>
