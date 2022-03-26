@@ -477,13 +477,25 @@
 	    function compute() {
           var income = $('#income').val();
           var contribution = $('#contribution').val();
-          var total = income - contribution;
+          var bond = if(income <= 32797){
+                      1000
+                      }
+                      else if(income > 50197){
+                      0
+                      }
+                      else{
+                        (50197-B1)/(50197-32797)*1000)
+                    };
+
+          var total = bond + grant;
+          $('#bond').val(bond)
           $('#total').val(total);
         }
 
         $('#income, #contribution').change(compute);
 
 	  });
+
 	</script>
          <script src="https://www.canada.ca/etc/designs/canada/wet-boew/js/wet-boew.min.js"></script>
          <!--<![endif]-->
