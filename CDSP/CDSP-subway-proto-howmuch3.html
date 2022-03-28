@@ -511,10 +511,12 @@
           else if((income <= 100392) && (contribution > 1500)) {
             var grant = 3500
                   };
+
           var total = bond + grant;
+
           $('#bond').val(bond.toFixed(2))
           $('#grant').val(grant.toFixed(2))
-          $('#total').val(totalétoFixed(2));
+          $('#total').val(total.toFixed(2));
         }
 
         $('#income, #contribution').change(compute);
