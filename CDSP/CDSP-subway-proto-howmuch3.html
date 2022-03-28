@@ -159,27 +159,14 @@
             <h2 id="_You_could_get">Grants and bonds from the government</h2>
             <p>If you have a plan, you can apply for a Canada Disability Savings Grant and Bond:</p>
             <ul class="fa-ul">
-            <li><span class="fas fa-check text-success fa-li"></span>The Canada Disability Savings <strong>Grant</strong> is a matching grant for beneficiaries up until December 31 of the year they turn 49. That means that, <strong>if you contribute</strong> to your plan, the government will also put money into your plan. </li>
-            <li><span class="fas fa-check text-success fa-li"></span>The Canada Disability Savings <strong>Bond</strong> is money the government contributes to the plans of <strong>low- and modest-income</strong> beneficiaries.</li>
+            <li><span class="fas fa-check text-success fa-li"></span>The Canada Disability Savings <strong>Grant</strong> is a matching grant for beneficiaries up until December 31 of the year they turn 49. That means that, <strong>if you contribute</strong> to your plan, the government will also put money into your plan. The maximum yearly grant amount is $3,500.</li>
+            <li><span class="fas fa-check text-success fa-li"></span>The Canada Disability Savings <strong>Bond</strong> is money the government contributes to the plans of <strong>low- and modest-income</strong> beneficiaries. You do not need to make any contributions to your plan to receive the bond. The maximum yearly bond amount is $1,000.</li>
           </ul>
 
 
             <h2 id="_Your_income_and">How much you get depends on family income and contributions</h2>
             <p>The amount of grants and bonds you can receive is based on <strong>family income</strong>.
             <p>We use the family income reported on your tax returns two years before. For example, the amount of grants and bonds for 2022 is based on family income from 2020.</p>
-            <h3 id="_How_we_determine">How we determine family income</h3>
-            <p>Family income depends on the beneficiary's age:</p>
-            <details>
-               <summary>Age 18 and under</summary>
-               <p>Until December 31 of the year the beneficiary turns 18, their family income is their parents' or guardians' income that is reported to The Canada Revenue Agency.</p>
-               <p>To continue receiving the right amount of grants and bonds after turning 18, the beneficiary has to provide their consent for the government to use their income for amount calculations. They can do this by signing the grant and bond application form with their financial institution.</p>
-               <p>Beneficiaries must have filed personal income tax returns for the calendar years they were 17 and 18 and must do so for all future taxation years.</p>
-            </details>
-            <details>
-               <summary>Age 19 and over</summary>
-               <p>Beginning the year the beneficiary turns 19, the beneficiary's family income is based on their income <strong>plus</strong> their spouse's income (if applicable).</p>
-               <p>Beneficiaries <strong>over 18 years of age</strong> must have filed personal income tax returns for the calendar years they were 17 and 18 and must do so for all future taxation years. The beneficiary has to provide their consent for the government to use their income for amount calculations when they turn 19. They can do this by signing the grant and bond application form with their financial institution.</p>
-            </details>
 
 
             <h3>Estimate your bond and grant payment</h3>
@@ -275,6 +262,22 @@
                    </div>
                 </section>
             </details>
+
+
+            <h3 id="_How_we_determine">How we determine family income</h3>
+            <p>Family income depends on the beneficiary's age:</p>
+            <details>
+               <summary>Age 18 and under</summary>
+               <p>Until December 31 of the year the beneficiary turns 18, their family income is their parents' or guardians' income that is reported to The Canada Revenue Agency.</p>
+               <p>To continue receiving the right amount of grants and bonds after turning 18, the beneficiary has to provide their consent for the government to use their income for amount calculations. They can do this by signing the grant and bond application form with their financial institution.</p>
+               <p>Beneficiaries must have filed personal income tax returns for the calendar years they were 17 and 18 and must do so for all future taxation years.</p>
+            </details>
+            <details>
+               <summary>Age 19 and over</summary>
+               <p>Beginning the year the beneficiary turns 19, the beneficiary's family income is based on their income <strong>plus</strong> their spouse's income (if applicable).</p>
+               <p>Beneficiaries <strong>over 18 years of age</strong> must have filed personal income tax returns for the calendar years they were 17 and 18 and must do so for all future taxation years. The beneficiary has to provide their consent for the government to use their income for amount calculations when they turn 19. They can do this by signing the grant and bond application form with their financial institution.</p>
+            </details>
+
 
             <h2 id="_You_could_carry">Unused grant and bond amounts from previous years</h2>
             <p>You might not have gotten all the grants and bonds you were <strong>eligible</strong> to receive in previous <abbr title="Disability Tax Credit">DTC</abbr>-approved years. This could have happened, for example, if:</p>
@@ -489,23 +492,23 @@
                     };
 
 
-          if(income > 100392 && contribution > 1000) {
+          if((income > 100392) && (contribution > 1000)) {
             var grant = 1000
                   }
 
-          else if(income > 100392 && contribution <= 1000) {
+          else if((income > 100392) && (contribution <= 1000)) {
             var grant = contribution
                   }
 
-          else if(income <= 100392 && contribution <= 500) {
+          else if((income <= 100392) && (contribution <= 500)) {
             var grant = contribution * 3
                   }
 
-          else if(income <= 100392 && contribution > 500) && contribution <=1500) {
+          else if((income <= 100392) && (contribution > 500) && (contribution <=1500)) {
             var grant = 1500 + (contribution - 500)*2
                   }
 
-          else if(income <= 100392 && contribution > 1500) {
+          else if((income <= 100392) && (contribution > 1500)) {
             var grant = 3500
                   };
           var total = bond + grant;
