@@ -479,6 +479,7 @@
           var contribution = $('#contribution').val();
           if(income <= 32797){
             var bond = 1000
+
                       }
           else if(income > 50197){
             var bond = 0
@@ -487,17 +488,37 @@
             var bond = (50197-income)/(50197-32797)*1000
                     };
 
-          var grant = contribution * 3
+          if(income >100392) && (contribution > 1000) {
+            var grant = 1000
+                  }
+
+          else if(income >100392) && (contribution <= 1000) {
+            var grant = contribution
+                  }
+
+          else if(income <=100392) && (contribution <= 500) {
+            var grant = contribution * 3
+                  }
+
+          else if(income <=100392) && (contribution >500) && (contribution <=1500) {
+            var grant = 1500 + (contribution - 500)*2
+                  }
+
+          else if(income <=100392) && (contribution > 1500) {
+            var grant = 3500
+                  };
 
           var total = bond + grant;
           $('#bond').val(bond.toFixed(2))
-          $('#grant').val(grant)
-          $('#total').val(total);
+          $('#grant').val(grant.toFixed(2))
+          $('#total').val(totalétoFixed(2));
         }
 
         $('#income, #contribution').change(compute);
 
 	  });
+
+=IFS(AND(B1>100392,B2>1000),1000,AND(B1>100392,B2<=1000),B2, AND(B1<=100392,B2<=500), B2*3, AND(B1<=100392,B2>500,B2<=1500), (1500+(B2-500)*2), AND(B1<=100392,B2>1500), 3500)
 
 	</script>
          <script src="https://www.canada.ca/etc/designs/canada/wet-boew/js/wet-boew.min.js"></script>
