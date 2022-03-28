@@ -477,18 +477,21 @@
 	    function compute() {
           var income = $('#income').val();
           var contribution = $('#contribution').val();
-          var bond = if(income <= 32797){
-                      bond = 1000
+          if(income <= 32797){
+            var bond = 1000
                       }
-                      else if(income > 50197){
-                      bond = 0
+          else if(income > 50197){
+            var bond = 0
                       }
-                      else{
-                        bond = (50197-B1)/(50197-32797)*1000
+          else{
+            var bond = (50197-B1)/(50197-32797)*1000
                     };
+
+          var grant = contribution * 3
 
           var total = bond + grant;
           $('#bond').val(bond)
+          $('#grant').val(grant)
           $('#total').val(total);
         }
 
