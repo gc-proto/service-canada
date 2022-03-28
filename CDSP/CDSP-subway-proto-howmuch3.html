@@ -478,13 +478,13 @@
           var income = $('#income').val();
           var contribution = $('#contribution').val();
           var bond = if(income <= 32797){
-                      1000
+                      bond = 1000
                       }
                       else if(income > 50197){
-                      0
+                      bond = 0
                       }
                       else{
-                        (50197-B1)/(50197-32797)*1000)
+                        bond = (50197-B1)/(50197-32797)*1000
                     };
 
           var total = bond + grant;
