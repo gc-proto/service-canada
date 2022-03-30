@@ -138,7 +138,6 @@
                   <li><a href="/en/employment-social-development/programs/ei/ei-list/ei-roe/notice-covid-19.html">Consult the changes for employers – Record of employment (ROE)</a></li>
                </ul>
             </section>
-            <section>
                <p>Record of employment on the web (ROE Web) is a secure application that enables you to create and submit records of employment (ROEs) online for your business, rather than completing paper forms. It is secure, flexible and improves the quality and accuracy of your ROEs.</p>
             </section>
             <!--<div class="provisional alert alert-danger">
@@ -198,26 +197,61 @@
                </details>
             </div>
             <div class="header-bg">
-               <h2>New user</h2>
-               <div class="brdr-bttm-fade"></div>
-            </div>
+            <h2>New user</h2>
             <div class="panel">
                <div class="panel-body">
-                  <p>If you do not have an account, choose an option to register:</p>
-                  <ul class="list-unstyled row">
-                     <li class="col-md-4 mrgn-bttm-md">
-                        <a href="/en/employment-social-development/services/my-account/gckey.html" class="btn btn-blue large-btn" data-gc-analytics-customclick="ESDC|EDSC:MSCA Registration:Register with GCkey">
-                           <div class="icon-btn"><img src="/content/dam/esdc-edsc/images/services/msca-mdsc/key-white.png" alt=""></div>
-                           <div class="label-btn"><b>Register with GCKey</b></div>
-                        </a>
-                     </li>
-                     <li class="col-md-4 mrgn-bttm-md">
-                        <a href="/en/employment-social-development/services/my-account/partners.html" class="btn btn-red large-btn" data-gc-analytics-customclick="ESDC|EDSC:MSCA Registration:Register with your bank Click">
-                           <div class="icon-btn"><img src="/content/dam/esdc-edsc/images/services/msca-mdsc/bank-white.png" alt=""></div>
-                           <div class="label-btn"><b>Register with your bank</b></div>
-                        </a>
-                     </li>
-                  </ul>
+                  <div class="wb-fieldflow" data-wb-fieldflow='{"renderas":"radio", "hideelm": ".field-hidden", "reset": { "action": "addClass", "source":".field-hidden", "class": "hidden"}}'>
+                     <p><span class="lead">If you do not have an account, choose an option to register:</span></p>
+                     <ul>
+                        <li data-wb-fieldflow='{ "action": "removeClass", "source":"#gckey", "class": "hidden" }'>Register with GCKey</li>
+                        <li data-wb-fieldflow='{ "action": "removeClass", "source":"#bank", "class": "hidden" }'>Register with your bank</li>
+                     </ul>
+                  </div>
+                  <div id="exit" aria-live="polite">
+                     <div id="gckey" class="field-hidden">
+                        <ol class="lst-stps">
+                           <li>
+                              <h3>Sign in or sign up with GCKey</h3>
+                              <ul>
+                                 <li><strong>If you already have a  GCKey</strong>, select &ldquo;Start with  GCKey&rdquo; below then select &ldquo;Sign In&rdquo; on the left side of the Welcome to GCKey  page and follow the instructions&nbsp;&nbsp;</li>
+                                 <li><strong>If you don&rsquo;t have a  GCKey</strong>, select &ldquo;Start with  GCKey&rdquo; below then select &ldquo;Sign Up&rdquo; on the right side of the Welcome to GCKey  page and follow the instructions</li>
+                                 <li><strong>If you have a GCKey but forgot your username or  password</strong>, you will need to  create a new GCKey. Select &ldquo;Start with GCKey&rdquo; below then select &ldquo;Sign Up&rdquo; on the left side of the Welcome to GCKey  page and follow the instructions</li>
+                              </ul>
+                           </li>
+                           <li>
+                              <h3>Create your ROE Web account</h3>
+                              <p>Once you have signed in with GCKey, you will automatically be directed to create your ROE Web account.</p>
+                           </li>
+                        </ol>
+                     </div>
+                     <div id="bank" class="field-hidden">
+                        <ol class="lst-stps">
+                           <li>
+                              <h3>Verify that your bank is a Sign-in Partner</h3>
+                              <ul>
+                                 <li>Verify the <a href="bookmark://_List_of_Sign-in" target="_blank">list of  sign-in partners</a>&nbsp;</li>
+                                 <li>
+                                    If your bank<strong> is listed</strong> as a Sign-in Partner, select &quot;Start with my bank&quot; below&nbsp;
+                                    <ul>
+                                       <li>You will temporarily leave the government of Canada website to access  the Government Sign-in by Verified.me page</li>
+                                       <li>On the Government Sign-in by Verified.me page select your bank (Sign-in  Partner) and enter your online banking sign-in information&nbsp;</li>
+                                    </ul>
+                                 </li>
+                                 <li>If your bank<strong> is not listed</strong> as a Sign-in Partner, you must <a href="bookmark://_Sign_in_or" target="_blank">register to ROE Web using GCKey</a>.&nbsp;</li>
+                              </ul>
+                           </li>
+                           <li>
+                              <h3>Create your ROE Web  account</h3>
+                              <ul>
+                                 <li>Once you sign in with your bank, you will automatically be directed to  create your ROE Web account&nbsp;&nbsp;</li>
+                              </ul>
+                              <div class="alert alert-info">
+                                 <p><strong>Please  note:</strong> None of your financial or banking information will be shared with  Employment and Social Development Canada and Service Canada. Your bank or credit  union will not know which government service you are using.</p>
+                              </div>
+                           </li>
+                        </ol>
+                     </div>
+                  </div>
                </div>
             </div>
             <section>
