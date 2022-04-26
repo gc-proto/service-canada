@@ -1,0 +1,77 @@
+<script id="wb-script" type="application/ld+json">
+     {
+      "@context":"http://schema.org",
+      "@id": "#wb-main",
+      "@type": "FAQPage",
+      "publisher":{
+       "@type":"GovernmentOrganization",
+       "@id":"#wb-publisher",
+       "name":"Government of Canada",
+       "url":"https://www.canada.ca/en.html"
+       },
+      "headline": "Registered Disability Savings Plan",
+      "description":"The Registered Disability Savings Plan (RDSP) is a long-term savings plan to help people who are approved for the Disability Tax Credit and their families save for the future.",
+      "mainEntity": [{
+       "@type": "Question",
+       "name": "How much you could get in grants and bonds",
+       "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "<p>Family income and amount of contributions determine how much matching grants and bonds you could get.</p>
+         <p><a href='http://test.canada.ca/service-canada/CDSP/CDSP-subway-proto-howmuch.html'>How much you could get</a></p> "
+         }
+          },
+     {
+       "@type": "Question",
+       "name": "Who can open a plan and apply",
+       "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "
+         <p>A plan can be opened at financial organizations for beneficiaries with severe and prolonged disabilities. You apply for grants and bonds when you open a plan.</p>
+         <p><a href='http://test.canada.ca/service-canada/CDSP/CDSP-subway-proto-whocanapply.html'>Who can open a plan and apply</a></p>"
+        }
+      },
+ {
+     "@type": "Question",
+     "name": "Make contributions and watch savings grow",
+     "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "
+         <p>Make contributions to your plan to ensure growth. </p>
+          <p><a href='http://test.canada.ca/service-canada/CDSP/CDSP-subway-proto-whocanapply.html'>Who can open a plan and apply</a></p>"
+        }
+    },
+
+    {
+        "@type": "Question",
+        "name": "If you lose Disability Tax Credit approval",
+        "acceptedAnswer": {
+           "@type": "Answer",
+           "text": "
+            <p>What you can and can't do in an RDSP when the beneficiary has lost DTC approval.</p>
+             <p><a href='http://test.canada.ca/service-canada/CDSP/CDSP-subway-proto-DTC-approval.html'>If you lose Disability Tax Credit approval</a></p>"
+           }
+       },
+
+       {
+           "@type": "Question",
+           "name": "Withdraw money from your plan",
+           "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "
+               <p>Withdraw amounts from the plan at least 10 years after the last time you received a grant or a bond.</p>
+                <p><a href='http://test.canada.ca/service-canada/CDSP/CDSP-subway-proto-withdraw.html'>Withdraw money from your plan</a></p>"
+              }
+          },
+
+          {
+              "@type": "Question",
+              "name": "Transfer or close a plan ",
+              "acceptedAnswer": {
+                 "@type": "Answer",
+                 "text": "
+                  <p>Plans can be transferred from one financial organization to another.</p>
+                   <p><a href='http://test.canada.ca/service-canada/CDSP/CDSP-subway-proto-transferclose.html'>Transfer or close a plan</a></p>"
+                 }
+             }]
+     }
+</script>
