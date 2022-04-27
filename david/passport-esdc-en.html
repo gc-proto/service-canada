@@ -196,39 +196,26 @@
       <li class="col-sm-4">
 				<a href="#urgent" class="btn btn-default btn-block well hght-inhrt">
 					<div class="row">
-						<div class="col-sm-12 col-xs-3">
-							<img src="./images/under2.png" class="img-responsive center-block" alt="" />
-						</div>
-						<div class="col-sm-12 col-xs-9">
-							<p class="mrgn-bttm-0 mrgn-tp-md"><strong class="h3"> Urgent request</strong></p>
+										<p class="mrgn-bttm-0 mrgn-tp-md"><strong class="h2">Less than 2 days</strong></p>
 							<p class="sctn-desc">If you need a passport within the next 2&nbsp;business days.</p>
-						</div>
 					</div>
 				</a>
 			</li>
 			<li class="col-sm-4">
 				<a href="#25_days" class="btn btn-default btn-block well hght-inhrt">
 					<div class="row">
-  						<div class="col-sm-12 col-xs-3">
-  							<img src="./images/under25.png" class="img-responsive center-block" alt="" />
-  						</div>
-  						<div class="col-sm-12 col-xs-9">
-							<p class="mrgn-bttm-0 mrgn-tp-md"><strong class="h3">Within 25 business days</strong></p>
+
+							<p class="mrgn-bttm-0 mrgn-tp-md"><strong class="h2">Less than 25 days</strong></p>
 							<p class="sctn-desc">If you need a passport within the next 25&nbsp;business days</p>
-					</div>
           </div>
 				</a>
 			</li>
 			<li class="col-sm-4">
 				<a href="#more_than_25" class="btn btn-default btn-block well hght-inhrt">
 					<div class="row">
-  						<div class="col-sm-12 col-xs-3">
-  							<img src="./images/over25.png" class="img-responsive center-block" alt="" />
-  						</div>
-  						<div class="col-sm-12 col-xs-9">
-						<p class="mrgn-bttm-0 mrgn-tp-md"><strong class="h3">Beyond 25 business days</strong></p>
+
+						<p class="mrgn-bttm-0 mrgn-tp-md"><strong class="h2">25 days or more</strong></p>
 							<p class="sctn-desc">If you need a passport beyond the next 25&nbsp;business days</p>
-					</div>
           </div>
 				</a>
 			</li>
@@ -238,21 +225,43 @@
 </div>
 
    <h3 id="urgent">Urgent passport requests</h3>
-   <p>If you need a passport within the <strong>next 2 business days</strong>, go to a <a href="#offices">specialized passport site</a> that offers <strong>urgent pick-up</strong> service.
 
-   <p>A proof of travel or need is required.</p>
+	<p>If you need a passport within the <strong>next 2 business days</strong>:</p>
+   <fieldset class="gc-chckbxrdio">
 
+   	<ul class="list-unstyled lst-spcd-2">
+   		<li class="checkbox">
+   			<input type="checkbox" id="cond1">
+   			<label for="cond1">Go to a <a href="#offices">specialized passport site</a> that offers <strong>urgent pick-up</strong> service.</label>
+   		</li>
+   		<li class="checkbox">
+   			<input type="checkbox" id="cond2">
+   			<label for="cond2">A proof of travel or need is required.</label>
+   		</li>
+   	</ul>
+   </fieldset>
  </section>
  <section>
    <h3 id="25_days">Travelling within the next 25 business days</h3>
-   <p>If you need a passport within the <strong>next 25 business days</strong>, You must apply in person at a <strong>one of the 35 specialized passport sites</strong>.</p>
+   <p>If you need a passport within the <strong>next 25 business days</strong>:</p>
 
-   <p>A proof of travel or need is required.</p>
+     <fieldset class="gc-chckbxrdio">
 
-   <p><strong>Appointments are recommended</strong> as walk-in service is offered only if capacity allows.</p>
-
-   <a href="#offices">Book an appointment or go to a specialized passport site</a>
-
+      <ul class="list-unstyled lst-spcd-2">
+        <li class="checkbox">
+          <input type="checkbox" id="cond3">
+          <label for="cond3">You must apply in person at a <strong>one of the 35 specialized passport sites</strong>.</label>
+        </li>
+        <li class="checkbox">
+          <input type="checkbox" id="cond4">
+          <label for="cond4">A proof of travel or need is required.</label>
+        </li>
+        <li class="checkbox">
+          <input type="checkbox" id="cond5">
+          <label for="cond5"><a href="#offices">Book an appointment or go to a specialized passport site</a> - <strong>Appointments are recommended</strong> as walk-in service is offered only if capacity allows.</label>
+        </li>
+      </ul>
+     </fields>
 
    <div class="well mrgn-tp-md">
      <p>Processing requires up to 10 business days, plus mailing time. Some offices offer urgent and/or express and pick-up service. </p>
@@ -261,17 +270,28 @@
  </section>
  <section>
    <h3 id="more_than_25">Travelling beyond the next 25 business days</h3>
-   <p>If you need a passport beyond the next 25 business days, you can apply:</p>
-   <ul>
-     <li>by mail, or</li>
-     <li>in person at your local <a href="http://www.servicecanada.gc.ca/tbsc-fsco/sc-hme.jsp?lang=eng">Service Canada Centre</a>. Please book your appointment online at <a href="https://eservices.canada.ca/en/reservation/">eServiceCanada</a>. No proof of travel or need required </li>
-   </ul>
+   <p>If you need a passport beyond the next 25 business days:</p>
+   
+   <fieldset class="gc-chckbxrdio">
 
-   <p><strong>Appointments are recommended</strong> as walk-in service is offered only if capacity allows.</p>
+    <ul class="list-unstyled lst-spcd-2">
+      <li class="checkbox">
+        <input type="checkbox" id="cond3">
+        <label for="cond3">You an apply by mail or in person at your local <a href="http://www.servicecanada.gc.ca/tbsc-fsco/sc-hme.jsp?lang=eng">Service Canada Centre</a>.</label>
+      </li>
+      <li class="checkbox">
+        <input type="checkbox" id="cond4">
+        <label for="cond4">No proof of travel or need is required.</label>
+      </li>
+      <li class="checkbox">
+        <input type="checkbox" id="cond5">
+        <label for="cond5">Please book your appointment online at <a href="https://eservices.canada.ca/en/reservation/">eServiceCanada</a>.  - <strong>Appointments are recommended</strong> as walk-in service is offered only if capacity allows.</label>
+      </li>
+    </ul>
+   </fields>
 
 
-
-   <p>You must apply in person at one of the <a href="#offices">specialized passport site</a> if only 1 parent of a child signs the application form, <strong>unless</strong>:</p>
+   <p>If only 1 parent of a child signs the application form, you must apply in person at one of the <a href="#offices">specialized passport site</a>, <strong>unless</strong>:</p>
        <ul>
          <li>there is only 1 parent listed on the child’s birth certificate or proof of parentage document</li>
          <li>you submit a death certificate for the other parent</li>
