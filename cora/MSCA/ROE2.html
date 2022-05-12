@@ -21,7 +21,7 @@
          <link crossorigin="anonymous" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" rel="stylesheet"/>
          <link rel="stylesheet" href="https://www.canada.ca/etc/designs/canada/wet-boew/méli-mélo/2022-06-banff.min.css" />
          <link rel="stylesheet" href="https://cra-arc.gc.ca/wet-boew/css/custom/steps.css">
-         <link rel="stylesheet" href="../../css/cra-fieldflow.css">
+         <link rel="stylesheet" href="cra-fieldflow.css">
          <style>
             .header-bg {
             line-height: normal;
@@ -225,87 +225,81 @@
                   <h2>Register</h2>
                   <div class="brdr-bttm-fade"></div>
                </div>
-               <section>
-                 <section>
-                   <div class="wb-frmvld fieldflow-lg">
-                   																	<form>
-                   																			<div class="wb-fieldflow" data-wb-fieldflow="{&quot;noForm&quot;: true, &quot;isoptional&quot;: true, &quot;renderas&quot;: &quot;radio&quot;, &quot;reset&quot;: {&quot;action&quot;: &quot;addClass&quot;, &quot;source&quot;: &quot;.alert1&quot;, &quot;class&quot;: &quot;hidden&quot;}}" id="have-acct">
-                   																					<p>If you are a new user and don't have an ROE Web account, choose an option to register:</p>
-                   																					<ul>
-                   																							<li> Register for GCKey <div class="wb-fieldflow-sub" data-wb-fieldflow="{&quot;renderas&quot;: &quot;radio&quot;, &quot;isoptional&quot;: true, &quot;reset&quot;: {&quot;action&quot;: &quot;addClass&quot;, &quot;source&quot;: &quot;.alert1&quot;, &quot;class&quot;: &quot;hidden&quot;}}">
-                   																											<div class="wb-fieldflow-header">
-                   																													<p class="wb-fieldflow-label">Do you have a GCKey already?</p>
-                   																											</div>
-
-                   																											<ul>
-                   																													<li data-wb-fieldflow="{&quot;action&quot;: &quot;removeClass&quot;, &quot;source&quot;: &quot;#answer1-1&quot;, &quot;class&quot;: &quot;hidden&quot;, &quot;live&quot;: true}">Yes, I need to sign in</li>
-                   																													<li data-wb-fieldflow="{&quot;action&quot;: &quot;removeClass&quot;, &quot;source&quot;: &quot;#answer1-2&quot;, &quot;class&quot;: &quot;hidden&quot;, &quot;live&quot;: true}">No, I need to create an account</li>
-
-                   																											</ul>
-                   																									</div>
-                   																							</li>
-                   																						<li data-wb-fieldflow="{&quot;action&quot;: &quot;removeClass&quot;, &quot;source&quot;: &quot;#answer1-3&quot;, &quot;class&quot;: &quot;hidden&quot;, &quot;live&quot;: true}">Register with your bank</li>
-                   																					</ul>
-                   																			</div>
-                   																	</form>
-                   															</div>
-
-                   																	<div id="answer1-1" class="hidden alert alert-success alert1 provisional">
-                                                      <h3>Sign in to GCKey to access ROE Web</h3>
-                               <p>Once you have successfully signed in or signed up to GCKey, you will automatically be redirected to create your ROE Web account.</p>
-                      <a type="button" class="btn btn-call-to-action" href="https://www.canada.ca/en/employment-social-development/programs/ei/ei-list/ei-roe/access-roe.html#inline_content_modal">Start with GCKey</a>
-                   																</div>
-                   																	<div id="answer1-2" class="hidden alert alert-info alert1 provisional">
-                                                      <h3>Sign up for GCKey to access ROE Web</h3>
-                                                      <p>You must sign up for one before you can register to ROE Web. Select “Start with GCKey” below and follow the instructions on the Welcome to GCKey page.</p>
-                                                      <p>Once you have successfully signed up to GCKey, you will automatically be redirected to create your ROE Web account.</p>
-                          <a type="button" class="btn btn-call-to-action" href="https://www.canada.ca/en/employment-social-development/programs/ei/ei-list/ei-roe/access-roe.html#inline_content_modal">Start with GCKey</a>
-                   																	</div>
-
-                   																	<div id="answer1-3" class="hidden alert alert1 provisional">
-                                                        <ol class="lst-stps">
-                                                        <li>
-                                                        <h3>Verify that your bank is a Sign-in Partner</h3>
-                                                        <p>To register to ROE Web with your bank, you must have an online bank account with one of our Sign-In Partners.</p>
-                                                        <p>If your bank is not listed as a Sign-in Partner you must register to ROE Web using GCKey.</p>
-
-                                                        <p>Full list of Sign-in Partners</p>
-                                                        <div class="col-md-6">
-                                                        <ul>
-                                                              <li>Affinity Credit Union</li>
-                                                              <li>Alberta Treasury Branches</li>
-                                                              <li>BMO  Financial Group</li>
-                                                              <li>CIBC Canadian Imperial Bank of Commerce</li>
-                                                              <li>Coast Capital Savings</li>
-                                                              <li>Conexus Credit Union</li>
-                                                              <li>Desjardins Group (Caisse Alliance, Caisses Populaires, UNI)</li>
-                                                              <li>Libro Credit Union</li>
-                                                              <li>National Bank of Canada</li>
-                                                              <li>RBC Royal Bank</li>
-                                                              <li>Scotiabank</li>
-                                                              <li>Servus Credit Union</li>
-                                                              <li>Simplii Financial</li>
-                                                              <li>Tangerine</li>
-                                                              <li>TD Bank Group</li>
-                                                              <li>Vancity</li>
-                                                        </ul>
-                                                        </div>
-                                                        <div class="col-md-6"> <img src="https://www.canada.ca/content/dam/canada/employment-social-development/migration/images/assets/portfolio/docs/en/ei/roe/access_roe/partners-logoEN.png" alt=""> </div>
-                                                        <div class="clearfix"></div>
-                                                        </li>
-                                                        <li>
-                                                        <h3>Create your ROE Web  account</h3>
-                                                        <p>Once you have successfully signed in with your bank, you will automatically be redirected to  create your ROE Web account&nbsp;&nbsp;</p>
-                                                        <a type="button" class="btn btn-call-to-action" href="https://services.securekeyconcierge.com/cbs/saml/login?l=1&amp;lang=eng">Start with bank</a>
-                                                        <div class="alert alert-info">
-                                                        <p><strong>Note:</strong> You will temporarily leave the government of Canada website to use your Sign-in Partner. This is a secure site. Your financial or banking information will not be shared with  Employment and Social Development Canada and Service Canada. Your bank or credit  union will not know which government service you are using.</p>
-                                                        </div>
-                                                        </li>
-                                                        </ol>
-                                                        </div>
-                   															</div>
-                   								</section>
-								</section>
+               <div class="wb-frmvld fieldflow-lg">
+                     <div class="wb-fieldflow" data-wb-fieldflow='{"renderas":"radio", "hideelm": ".field-hidden", "reset": { "action": "addClass", "source":".field-hidden", "class": "hidden"}}'>
+                        <p><span class="lead">If you are a new user and do not have an ROE Web account, choose an option to register:</span></p>
+                        <ul>
+                           <li data-wb-fieldflow='{ "action": "removeClass", "source":"#gckey", "class": "hidden" }'>Register with GCKey</li>
+                           <p>GCKey is a unique electronic credential issued by the Government of Canada. It lets you securely access multiple Government online services.</p>
+                           <li data-wb-fieldflow='{ "action": "removeClass", "source":"#bank", "class": "hidden" }'>Register with your bank</li>
+                           <p>Use your online Canadian banking information to register for an account.</p>
+                        </ul>
+                     </div>
+                     <div id="exit" aria-live="polite">
+                        <div id="gckey" class="field-hidden">
+                           <ol class="lst-stps">
+                              <li>
+                                 <h3>Sign in or sign up with GCKey</h3>
+                                 <details>
+                                    <summary>If you already have a  GCKey</summary>
+                                    <p>Select &ldquo;Start with  GCKey&rdquo; below then select &ldquo;Sign In&rdquo; on the left side of the Welcome to GCKey  page and follow the instructions&nbsp;&nbsp;</p>
+                                 </details>
+                                 <details>
+                                    <summary>If you don't have a  GCKey</summary>
+                                    <p>You must sign up for one before you can register to ROE Web. Select &ldquo;Start with  GCKey&rdquo; below and follow the instructions on the Welcome to GCKey  page.</p>
+                                 </details>
+                              </li>
+                              <li>
+                                 <h3>Create your ROE Web account</h3>
+                                 <p>Once you have successfully signed in or signed up to GCKey, you will automatically be redirected to create your ROE Web account.</p>
+                        <a type="button" class="btn btn-call-to-action" href="https://www.canada.ca/en/employment-social-development/programs/ei/ei-list/ei-roe/access-roe.html#inline_content_modal">Start with GCKey</a>
+                              </li>
+                           </ol>
+                        </div>
+                        <div id="bank" class="field-hidden">
+                        <ol class="lst-stps">
+                        <li>
+                        <h3>Verify that your bank is a Sign-in Partner</h3>
+                        <p>To register to ROE Web with your bank, you must have an online bank account with one of our Sign-In Partners.</p>
+                        <p>If your bank is not listed as a Sign-in Partner you must register to ROE Web using GCKey.</p>
+                        </ul>
+                        <p>Full list of Sign-in Partners</p>
+                        <div class="col-md-6">
+                        <ul>
+                              <li>Affinity Credit Union</li>
+                              <li>Alberta Treasury Branches</li>
+                              <li>BMO  Financial Group</li>
+                              <li>CIBC Canadian Imperial Bank of Commerce</li>
+                              <li>Coast Capital Savings</li>
+                              <li>Conexus Credit Union</li>
+                              <li>Desjardins Group (Caisse Alliance, Caisses Populaires, UNI)</li>
+                              <li>Libro Credit Union</li>
+                              <li>National Bank of Canada</li>
+                              <li>RBC Royal Bank</li>
+                              <li>Scotiabank</li>
+                              <li>Servus Credit Union</li>
+                              <li>Simplii Financial</li>
+                              <li>Tangerine</li>
+                              <li>TD Bank Group</li>
+                              <li>Vancity</li>
+                        </ul>
+                        </div>
+                        <div class="col-md-6"> <img src="https://www.canada.ca/content/dam/canada/employment-social-development/migration/images/assets/portfolio/docs/en/ei/roe/access_roe/partners-logoEN.png" alt=""> </div>
+                        <div class="clearfix"></div>
+                        </li>
+                        <li>
+                        <h3>Create your ROE Web  account</h3>
+                        <p>Once you have successfully signed in with your bank, you will automatically be redirected to  create your ROE Web account&nbsp;&nbsp;</p>
+                        <a type="button" class="btn btn-call-to-action" href="https://services.securekeyconcierge.com/cbs/saml/login?l=1&lang=eng">Start with bank</a>
+                        <div class="alert alert-info">
+                        <p><strong>Note:</strong> You will temporarily leave the government of Canada website to use your Sign-in Partner. This is a secure site. Your financial or banking information will not be shared with  Employment and Social Development Canada and Service Canada. Your bank or credit  union will not know which government service you are using.</p>
+                        </div>
+                        </li>
+                        </ol>
+                        </div>
+                     </div>
+                  </div>
+               </div>
                <section>
                <h2>Contact us</h2>
                <ul>
