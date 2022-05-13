@@ -21,7 +21,6 @@
          <link crossorigin="anonymous" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" rel="stylesheet"/>
          <link rel="stylesheet" href="https://www.canada.ca/etc/designs/canada/wet-boew/méli-mélo/2022-06-banff.min.css" />
          <link rel="stylesheet" href="https://cra-arc.gc.ca/wet-boew/css/custom/steps.css">
-         <link rel="stylesheet" href="../../css/cra-fieldflow.css">
          <style>
             .header-bg {
             line-height: normal;
@@ -78,6 +77,49 @@
             a.btn-lblue:hover, a.btn-lblue:active, a.btn-lblue:focus {
             background: #00749C;
             color: white;
+            }
+
+            /*Checkbox/Fieldflow radio input sizing,positioning*/
+            .checkbox-lg > li.checkbox {
+            margin-top: 0px;
+            }
+            .checkbox-lg > li {
+            margin-left: -40px;
+            padding-left: 40px;
+            padding-top: 5px;
+            padding-bottom: 10px;
+            margin-bottom: 5px;
+            padding-right: 15px;
+            }
+            .checkbox-zebra > li:nth-child(2n+1) {
+            background-color: #f5f5f5;
+            padding-top: 10px;
+            padding-bottom: 15px;
+            }
+            .checkbox-lg > li.checkbox input[type=checkbox], .fieldflow-lg .radio input[type=radio] {
+            margin-top: 12px;
+            transform: scale(2);
+            }
+            .checkbox-lg label, .fieldflow-lg, .fieldflow-lg label, .fieldflow-lg div, .fieldflow-lg select, .std-blt {
+            font-size: 20px;
+            line-height: 1.65em;
+            }
+            .std-blt {
+            list-style-type: disc;
+            }
+            .std-blt li label {
+            display: block;
+            padding-left: 0px;
+            }
+            .fieldflow-lg .radio label {
+            margin-left: 40px;
+            }
+            .fieldflow-lg .radio input[type=radio] {
+            margin-left: -40px;
+            }
+            .fieldflow-lg fieldset legend {
+            font-size: 22px;
+            margin-top: 0px;
             }
          </style>
       </head>
