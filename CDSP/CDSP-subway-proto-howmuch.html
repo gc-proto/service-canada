@@ -176,7 +176,6 @@
                <p>You may receive more in a year if you have <a href="http://test.canada.ca/service-canada/CDSP/CDSP-subway-proto-howmuch.html#_You_could_carry">unused grants and bonds from previous years.</a></p>
             </section>
             <h3>Estimate your grants and bonds payments for the year</h3>
-            <div class="wb-frmvld">
             <form action="#" id="estimator" onsubmit="return false">
                <div class="form-group">
                   <label for="income">What is your annual family income?<br></label>
@@ -184,11 +183,10 @@
                </div>
                <div class="form-group">
                   <label for="contribution">How much are you contributing to the plan this year?<br></label>
-                  <input class="form-control" type="number" data-rule-digits="true" name="contribution" id="contribution">
+                  <input class="form-control" type="number" name="contribution" id="contribution">
                </div>
                <input type="submit" class="btn btn-lg btn-primary " value="Estimate grants and bonds">
             </form>
-            </div>
             <div class="mrgn-tp-lg" id="results">
                <p>With a family income of <strong>$<span data-fill="income"></span></strong> and contributions of <strong>$<span data-fill="contribution"></span></strong>, you would get:</p>
                <ul class="list-group">
@@ -296,7 +294,7 @@
                <p>To receive unused amounts of grants, you need to make contributions to your plan. </p>
                <p>The amount of unused grants you can get depends on <a href="#_How_we_determine">family income</a>  and how much you contribute for those years. </p>
                <p>If you have a plan, you will receive a Statement of Entitlement in the mail every February up to and including the year your turn 49. This statement details how much grant you could receive in that year and how much to contribute to get that grant. </p>
-               <p>When catching up on grants, the <strong>maximum amount of grants</strong> you can receive in a year is $10,500, including carry-forward amounts from prior years.</p>
+               <p>When catching up on grants, the <strong>maximum amount of grants</strong> you can receive in a year is $10,500, including carry-forward amounts from prior years.</p> 
                <p>The matching rate will be the same as in the year the Grant entitlement was earned. Matching rates will be paid on RDSP contributions using entitlements at the highest rate first. Any unused amount will be carried forward to future years. Once you have contributed all of your unused amounts from prior years, the maximum amount of grant in a year is $3,500.</p>
             </details>
             <details>
@@ -486,12 +484,12 @@
          <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
          <script>
             $("#estimator").submit(function(event) {
-
+            
                     var income = $('#income').val();
                     var contribution = $('#contribution').val();
                     if(income <= 32797){
                       var bond = 1000
-
+            
                                 }
                     else if(income > 50197){
                       var bond = 0
@@ -499,31 +497,31 @@
                     else{
                       var bond = (50197-income)/(50197-32797)*1000
                               };
-
-
+            
+            
                     if((income > 100392) && (contribution > 1000)) {
                       var grant = 1000
                             }
-
+            
                     else if((income > 100392) && (contribution <= 1000)) {
                       var grant = contribution
                             }
-
+            
                     else if((income <= 100392) && (contribution <= 500)) {
                       var grant = contribution * 3
                             }
-
+            
                     else if((income <= 100392) && (contribution > 500) && (contribution <=1500)) {
                       var grant = 1500 + (contribution - 500)*2
                             }
-
+            
                     else if((income <= 100392) && (contribution > 1500)) {
                       var grant = 3500
                             };
-
+            
                     var total = bond + grant;
-
-
+            
+            
                     //	Populate Text
                   $('span[data-fill="income"]').text(formatDollars(income));
                   $('span[data-fill="contribution"]').text(formatDollars(contribution));
@@ -531,17 +529,17 @@
                     $('span[data-fill="grant"]').text(formatDollars(grant));
                     $('span[data-fill="total"]').text(formatDollars(total));
                     $('#results').show();
-
-
+            
+            
              });
-
-
+            
+            
                 //	Utility functions
-
+            
                 var formatDollars = function(num) {
                 	return parseFloat(num).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, "$&,").replace(/\.00/g, '')
                 }
-
+            
               //	Initialize
               $('#results').hide();
          </script>
