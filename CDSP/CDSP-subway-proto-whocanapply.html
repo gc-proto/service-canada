@@ -186,31 +186,42 @@
                <fieldset class="provisional gc-chckbxrdio">
                   <ul class="list-unstyled lst-spcd-2">
                      <li class="checkbox">
-                        <input type="checkbox" id="elig1">
+                        <input type="checkbox" id="elig1" class="action-checkbox">
                         <label for="elig1">
                         be approved for the <a href="https://www.canada.ca/en/revenue-agency/services/tax/individuals/segments/tax-credits-deductions-persons-disabilities/information-medical-practitioners/eligibility-criteria-disability-tax-credit.html">Disability Tax Credit</a>
                         </label>
                      </li>
                      <li class="checkbox">
-                        <input type="checkbox" id="elig2">
+                        <input type="checkbox" id="elig2" class="action-checkbox">
                         <label for="elig2">
                         apply before December 31 of the year they turn 59
                         </label>
                      </li>
                      <li class="checkbox">
-                        <input type="checkbox" id="elig3">
+                        <input type="checkbox" id="elig3" class="action-checkbox">
                         <label for="elig3">
                         be a <a href="https://www.canada.ca/en/revenue-agency/services/tax/international-non-residents/information-been-moved/determining-your-residency-status.html">resident of Canada</a>
                         </label>
                      </li>
                      <li class="checkbox">
-                        <input type="checkbox" id="elig4">
+                        <input type="checkbox" id="elig4" class="action-checkbox">
                         <label for="elig4">
                         have a <a href="http://www.servicecanada.gc.ca/eng/sc/sin/index.shtml">SIN</a>
                         </label>
                      </li>
                   </ul>
                </fieldset>
+               <div class="alert alert-warning" id="action-no-msg">
+            <p>You need to meet all of the above to be eligible to open a plan.</p>
+
+        </div>
+        <div class="alert alert-success hidden" id="action-msg1">
+            <h3>You meet the criteria </h3>
+            <div>
+                <p>If you meet these criteria, you may be eligible to open a plan.</p>
+                <p>Apply with a financial organization to find out.</p>
+            </div>
+        </div>
             </section>
             <section>
                <h2 id="_Open_a_plan">Open a plan and apply for grants and bonds</h2>
@@ -456,5 +467,18 @@
          <script src="https://www.canada.ca/etc/designs/canada/wet-boew/js/ie8-wet-boew2.min.js"></script>
          <![endif]-->
          <script src="https://www.canada.ca/etc/designs/canada/wet-boew/js/theme.min.js"></script>
+         <script>
+        $(".action-checkbox").change(function(){
+        if ($('.action-checkbox:checked').length == $('.action-checkbox').length) {
+        $("#action-msg1").removeClass("hidden").addClass("visible");
+        $("#action-no-msg").addClass("hidden").removeClass("visible");
+        }
+        if ($('.action-checkbox:checked').length !== $('.action-checkbox').length) {
+        $("#action-msg1").addClass("hidden").removeClass("visible");
+        $("#action-no-msg").removeClass("hidden").addClass("visible");
+        }
+        })
+
+     </script>
       </body>
    </html>
