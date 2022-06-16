@@ -139,8 +139,6 @@
                <p>This form is to request general information only. To receive personal information on your RDSP, please <a href="http://test.canada.ca/service-canada/CDSP/CDSP-subway-proto-contact.html">call us.</a></p>
                <p>
             </div>
-            <h3>Service standard</h3>
-            <p>We will get back to you in <strong>approximately 5 business days.</strong> Some inquiries require more time to respond than others.</p>
                            <details>
                   <summary>
                      <h2 class="h4">Personal Information Collection Statement</h2></summary>
@@ -151,8 +149,7 @@
                         for statistical, evaluation and reporting purposes. 
                      </p>
                      <p>The transmission of this information is not secure so sensitive personal information, such as your 
-                        Social Insurance Number, should not be included in your message. If after reading this statement, you prefer not to submit 
-                        your inquiry via the Internet you may contact us by phone, teletypewriter, facsimile, or by mail.
+                        Social Insurance Number, should not be included in your message.
                      </p>
                </details>
             <form id="form1" autocomplete="off" method="post" action="index.aspx?GoCTemplateCulture=en-CA&amp;section=cdsp" novalidate="novalidate">
@@ -160,44 +157,16 @@
                <input value="MNWBESD5720" name="requestor" type="hidden">
                <input value="220323161110" name="timeload" type="hidden">
                <div class="form-group">
+                  <label for="p23" class="required"><span class="field-name">First name</span><strong class="required">(required)</strong>: </label>
+                  <input class="form-control" id="p23" required="required" type="text" name="First">
+               </div>
+               <div class="form-group">
+                  <label for="p11"><span class="field-name">Last name</span><strong class="required">(required)</strong>:  </label>
+                  <input class="form-control" id="p11" name="Last" value="" type="text" data-rule-phoneus="true">
+               </div>
+                <div class="form-group">
                   <label for="p10" class="required"><span class="field-name">Email address </span><strong class="required">(required)</strong>: </label>
                   <input class="form-control" id="p10" type="email" name="Email" required="required" value="">
-               </div>
-               <div class="form-group">
-                  <label for="p22" class="required"><span class="field-name">Province or Territory </span><strong class="required">(required)</strong>: </label>
-                  <select class="form-control" id="p22" name="Province" required="required">
-                     <option value=""></option>
-                     <option value="Alberta">Alberta</option>
-                     <option value="British Columbia">British Columbia</option>
-                     <option value="Manitoba">Manitoba</option>
-                     <option value="New Brunswick">New Brunswick</option>
-                     <option value="Newfoundland and Labrador">Newfoundland and Labrador</option>
-                     <option value="Northwest Territories">Northwest Territories</option>
-                     <option value="Nova Scotia">Nova Scotia</option>
-                     <option value="Nunavut">Nunavut</option>
-                     <option value="Ontario">Ontario</option>
-                     <option value="Prince Edward Island">Prince Edward Island</option>
-                     <option value="Quebec">Québec</option>
-                     <option value="Saskatchewan">Saskatchewan</option>
-                     <option value="Yukon Territory">Yukon</option>
-                     <option value="Outside Canada">Outside Canada</option>
-                  </select>
-               </div>
-               <div class="form-group">
-                  <label for="p23" class="required"><span class="field-name">City </span><strong class="required">(required)</strong>: </label>
-                  <input class="form-control" id="p23" required="required" type="text" name="City">
-               </div>
-               <div class="form-group">
-                  <label for="p11"><span class="field-name">Telephone number</span> (999-999-9999): </label>
-                  <input class="form-control" id="p11" name="Telephone" value="" type="tel" data-rule-phoneus="true">
-               </div>
-               <div class="form-group">
-                  <label for="p22" class="required"><span class="field-name">Select your preferred contact method </span><strong class="required">(required)</strong>: </label>
-                  <select class="form-control" id="p22" name="Method" required="required">
-                     <option value=""></option>
-                     <option value="Phone">By phone</option>
-                     <option value="Email">By email</option>
-                  </select>
                </div>
                <div class="form-group">
                   <label for="p12" class="required"><span class="field-name">Subject </span><strong class="required">(required)</strong>: </label>
