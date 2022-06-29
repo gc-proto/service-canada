@@ -128,13 +128,12 @@
                <h1 id="gc-document-nav">Service Canada Centre and Passport Services</h1>
             </nav>
             <h1>St. John’s</h1>
-            <section class="alert alert-warning">
+            <section class="alert alert-info">
+            <h2>Public Announcement</h2>
                <h3>Urgent passport services</h3>
                <p>This location offers urgent-pick up passport services for people travelling in 2 business days or less.</p>
                  <p>You must bring proof of urgent need and a complete application. </p>
-
                  <p><a href='https://www.canada.ca/en/immigration-refugees-citizenship/services/canadian-passports.html'>Get the right form and see what documents you need to bring</a></p>
-
 
                <h3>Non-urgent passport services</h3>
                 <p>For non-urgent passport service requests, we recommend that you schedule an appointment before visiting.  To book your appointment online, please go to <a href='https://eservices.canada.ca/en/reservation/" \\o "eservicecanada'>eServiceCanada.</a></p>
@@ -144,27 +143,7 @@
 
                 </details>
             </section>
-            <section class="alert alert-info">
-            <h3>Before you visit a Service Canada office</h3>
-            <details>
-                <summary>Health measures to know before you visit</summary>
-            <p>We ask that you <strong>do not visit</strong> a Service Canada Centre if you:</p>
-                  <ul>
-                      <li>are experiencing any symptoms associated with COVID-19 (even if mild);</li>
-                      <li>have tested positive on a PCR or rapid test, been presumed positive for COVID-19 in the past 7 days; or</li>
-                      <li>have been instructed by public health authorities or a health care provider to quarantine or isolate for any reason.</li>
-                  </ul>
-    <p>When visiting in-person, it is <strong>required</strong> that you:</p>
-    <details>
-        <summary>Wear a face mask</summary>
-            <p>Service Canada is a federal service provider. As such, we continue to ask all clients and visitors to wear a face mask. This applies even in areas where provincial or territorial requirements differ.</p>
-            </details>
-        <details>
-            <summary>Limit the use of scented products</summary>
-    <p>Service Canada promotes a scent reduced work environment and encourages the limited use of scented products in our offices.</p>
-        </details>
-        </details>
-          </section>
+            
           <details>
             <h2>About the St. John’s office</h2>
                       <section>
