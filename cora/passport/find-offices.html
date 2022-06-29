@@ -9,7 +9,7 @@
          <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
          <meta charset="utf-8"/>
          <!--CHANGE THE TITLE-->
-         <title>Proto - Find offices - Canada.ca</title>
+         <title>Title of the page - Canada.ca</title>
          <meta content="width=device-width, initial-scale=1" name="viewport"/>
          <meta content=" " name="description"/>
          <link href="https://wet-boew.github.io/themes-dist/GCWeb/GCWeb/assets/favicon.ico" rel="icon" type="image/x-icon"/>
@@ -118,201 +118,198 @@
             <nav id="wb-bc" property="breadcrumb">
                <h2 class="wb-inv">You are here:</h2>
                <div class="container">
-                  <ol class="breadcrumb">
-                     <li><abbr title="Canada.ca"><a href="https://www.canada.ca/en.html">Canada.ca</a></abbr></li>
-                     <li><a href="http://www.canada.ca/en/">Home</a></li>
-                     <li><a href="sc-hme.jsp">Service Canada</a></li>
-                  </ol>
+                  <ol class="breadcrumb"><li><abbr title="Canada.ca"><a href="https://www.canada.ca/en.html">Canada.ca</a></abbr></li>
+                    <li><a href="http://www.canada.ca/en/">Home</a></li><li><a href="sc-hme.jsp">Service Canada</a></li></ol>
                </div>
             </nav>
          </header>
          <!-- the main content -->
          <main class="container" property="mainContentOfPage" resource="#wb-main" typeof="WebPageElement">
-            <!-- h1 property="name" id="wb-cont">Find a Service Canada Office</h1 -->
-            <h1 property="name" id="wb-cont">Find a Service Canada Office</h1>
-            <section class="alert alert-info">
-               <h3>Before you visit a Service Canada office</h3>
-               <p>We ask that you <strong>do not visit</strong> a Service Canada Centre if you:</p>
-               <ul>
-                  <li>are experiencing any symptoms associated with COVID-19 (even if mild);</li>
-                  <li>have tested positive on a PCR or rapid test, been presumed positive for COVID-19 in the past 7 days; or</li>
-                  <li>have been instructed by public health authorities or a health care provider to quarantine or isolate for any reason.</li>
-               </ul>
-               <p>When visiting in-person, it is <strong>required</strong> that you:</p>
-               <details>
-                  <summary>Wear a face mask</summary>
-                  <p>Service Canada is a federal service provider. As such, we continue to ask all clients and visitors to wear a face mask. This applies even in areas where provincial or territorial requirements differ.</p>
-               </details>
-               <details>
-                  <summary>Limit the use of scented products</summary>
-                  <p>Service Canada promotes a scent reduced work environment and encourages the limited use of scented products in our offices.</p>
-               </details>
+<!-- h1 property="name" id="wb-cont">Find a Service Canada Office</h1 -->
+		<h1 property="name" id="wb-cont">Find a Service Canada Office</h1>
+        <section class="alert alert-info">
+          <h3>Notice for Montreal, the GTA, and Vancouver locations</h3>
+          <p>Client demand for passport services is currently high in this area.</p>
+              <p>Service Canada has:</p>
+              <ul>
+                <li> added staff</li>
+                <li>streamlined procedures, and</li>
+                <li>increased processing capacity to help deal with this situation</li>
+              </ul>
+              <p>In these areas, Service Canada has implemented new triage measures to provide a more intensive, client-specific approach for Canadians waiting in line for passport services.</p>
+              <details>
+                <summary>New triage measures</summary>
+                <p>Staff are focused on clear communication to clients, prioritizing service to those with urgent travel needs within the following 24 to 48 hours.</p>
+                <p> They will also be directing clients with longer term travel plans to the most appropriate service channels.</p>
+              </details>
             </section>
-            <p>Find a Service Canada Office will help you find services close to your home.</p>
-            <!-- include address search -->
-            <!-- Search by Address Code start -->
-            <div class="wb-frmvld wb-init wb-frmvld-inited" id="wb-auto-4">
-               <form action="/tbsc-fsco/sc-srchadrs.jsp?lang=eng" method="post" novalidate="novalidate">
-                  <div class="form-group">
-                     <h2 class="homepageHeading">Search by Address</h2>
-                     <h3>Type your address or postal code in the form below and select a search radius from the menu, then select "Find".</h3>
-                     <div class="content-block mrgn-bttm-md">
-                        <label for="address" class="required"><span class="field-name">Address:</span>
-                        <strong class="required">(required)</strong> </label>
-                        <input id="address" class="form-control pac-target-input" type="text" maxlength="128" size="60" name="address" required="" placeholder="Enter a location" autocomplete="off">
-                        <input type="hidden" id="postalCode" name="postalCode">
-                        <input type="hidden" id="province" name="province">
-                        <input type="hidden" id="originCity" name="originCity">
-                        <input type="hidden" id="originLat" name="originLat">
-                        <input type="hidden" id="originLong" name="originLong">
-                     </div>
-                     <div class="content-block">
-                        <label for="radius"><span class="field-name">Range:</span> </label>
-                        <!-- call java code to display Range drop down -->
-                        <select name="radius" id="radius" class="form-control">
-                           <option value="15" selected="selected"> 15 km</option>
-                           <option value="25"> 25 km</option>
-                           <option value="50"> 50 km</option>
-                           <option value="100"> 100 km</option>
-                        </select>
-                        <br>
-                     </div>
-                     <div class="content-block">
-                        <input class="btn btn-primary" type="submit" value="Find">
-                     </div>
-                  </div>
-               </form>
-               <!-- Auto-complete script -->
-               <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDyMVxwxTJryfw4SiQ2OJvCoTLJmY0jHRc&amp;v=3.exp&amp;libraries=places&amp;language=en"></script>
-               <script type="text/javascript">
-                  //Initalizes the Google Places Autocomplete input functionality
-                  function initialize() {
-                  	var input1 = document.getElementById('address');
-                  	//Limit searches to Canada
-                      var options = {componentRestrictions: {country: 'ca' }};
-                      var autocomplete = new google.maps.places.Autocomplete(input1, options);
-                      //Set the data fields to return when user selects a place
-                      autocomplete.setFields(["address_components","geometry","name"]);
-                  
-                      google.maps.event.addListener(autocomplete, 'place_changed', function () {
-                      	var place = autocomplete.getPlace();
-                          document.getElementById('originLat').value = place.geometry.location.lat();
-                          document.getElementById('originLong').value = place.geometry.location.lng();
-                          document.getElementById("province").value = getAddressComponent(place.address_components, "administrative_area_level_1");
-                        	document.getElementById('originCity').value = place.name;
-                   			});
-                      google.maps.event.addDomListener(input1, 'keydown', function(event) {
-                          if (event.keyCode === 13) { //Enter key
-                              event.preventDefault();
-                          }
-                        });
-                  }
-                  google.maps.event.addDomListener(window, 'load', initialize);
-                  
-                  function getAddressComponent(address_components, key) {
-                  	  var form = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : "short";
-                  	  var value = '';
-                  	  var addressType = address_components.filter(function (aComp) {
-                  	    return aComp.types.some(function (typesItem) {
-                  	      return typesItem === key;
-                  	    });
-                  	  });
-                  
-                  	  if (addressType != null && addressType.length > 0) {
-                  	    value = form == "long" ? addressType[0].long_name : addressType[0].short_name;
-                  	  }
-                  
-                  	  return value;
-                  }
-                  
-               </script>
-               <div class="arialive wb-inv" aria-live="polite" aria-relevant="all"></div>
+		<p>Find a Service Canada Office will help you find services close to your home.</p>
+
+
+
+
+
+			<!-- include address search -->
+
+
+
+
+
+<!-- Search by Address Code start -->
+<div class="wb-frmvld wb-init wb-frmvld-inited" id="wb-auto-4">
+
+		<form action="/tbsc-fsco/sc-srchadrs.jsp?lang=eng" method="post" novalidate="novalidate">
+
+
+		<div class="form-group">
+			<h2 class="homepageHeading">Search by Address</h2>
+			<h3>Type your address or postal code in the form below and select a search radius from the menu, then select "Find".</h3>
+			<div class="content-block mrgn-bttm-md">
+				<label for="address" class="required"><span class="field-name">Address:</span>
+				<strong class="required">(required)</strong> </label>
+				<input id="address" class="form-control pac-target-input" type="text" maxlength="128" size="60" name="address" required="" placeholder="Enter a location" autocomplete="off">
+				<input type="hidden" id="postalCode" name="postalCode">
+				<input type="hidden" id="province" name="province">
+				<input type="hidden" id="originCity" name="originCity">
+				<input type="hidden" id="originLat" name="originLat">
+				<input type="hidden" id="originLong" name="originLong">
+			</div>
+			<div class="content-block">
+				<label for="radius"><span class="field-name">Range:</span> </label>
+		  		<!-- call java code to display Range drop down -->
+		  		<select name="radius" id="radius" class="form-control">
+<option value="15" selected="selected"> 15 km</option>
+<option value="25"> 25 km</option>
+<option value="50"> 50 km</option>
+<option value="100"> 100 km</option>
+</select>
+
+		  		<br>
+			</div>
+			<div class="content-block">
+		  		<input class="btn btn-primary" type="submit" value="Find">
+			</div>
+		</div>
+	</form>
+
+	<!-- Auto-complete script -->
+
+		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDyMVxwxTJryfw4SiQ2OJvCoTLJmY0jHRc&amp;v=3.exp&amp;libraries=places&amp;language=en"></script>
+
+
+	<script type="text/javascript">
+		//Initalizes the Google Places Autocomplete input functionality
+		function initialize() {
+			var input1 = document.getElementById('address');
+			//Limit searches to Canada
+		    var options = {componentRestrictions: {country: 'ca' }};
+		    var autocomplete = new google.maps.places.Autocomplete(input1, options);
+		    //Set the data fields to return when user selects a place
+		    autocomplete.setFields(["address_components","geometry","name"]);
+
+		    google.maps.event.addListener(autocomplete, 'place_changed', function () {
+		    	var place = autocomplete.getPlace();
+		        document.getElementById('originLat').value = place.geometry.location.lat();
+		        document.getElementById('originLong').value = place.geometry.location.lng();
+		        document.getElementById("province").value = getAddressComponent(place.address_components, "administrative_area_level_1");
+		      	document.getElementById('originCity').value = place.name;
+   			});
+		    google.maps.event.addDomListener(input1, 'keydown', function(event) {
+		        if (event.keyCode === 13) { //Enter key
+		            event.preventDefault();
+		        }
+		      });
+		}
+		google.maps.event.addDomListener(window, 'load', initialize);
+
+		function getAddressComponent(address_components, key) {
+			  var form = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : "short";
+			  var value = '';
+			  var addressType = address_components.filter(function (aComp) {
+			    return aComp.types.some(function (typesItem) {
+			      return typesItem === key;
+			    });
+			  });
+
+			  if (addressType != null && addressType.length > 0) {
+			    value = form == "long" ? addressType[0].long_name : addressType[0].short_name;
+			  }
+
+			  return value;
+		}
+
+	</script>
+<div class="arialive wb-inv" aria-live="polite" aria-relevant="all"></div></div>
+<!-- Search by Address Code end -->
+
+
+
+
+
+
+		<!-- Include province search -->
+
+
+
+
+
+<div class="wb-frmvld wb-init wb-frmvld-inited" id="wb-auto-5">
+<form novalidate="novalidate">
+
+<div class="form-group">
+
+<h2 class="homepageHeading" id="provTerrHd">Browse by Province or Territory</h2>
+
+<h3>To view the offices located in your area, select your province or territory from the list below.</h3><br>
+
+
+<ul>
+		<li><a href="/tbsc-fsco/sc-lst.jsp?prov=AB&amp;lang=eng">Alberta</a></li>
+		<li><a href="/tbsc-fsco/sc-lst.jsp?prov=BC&amp;lang=eng">British Columbia</a></li>
+		<li><a href="/tbsc-fsco/sc-lst.jsp?prov=MB&amp;lang=eng">Manitoba</a></li>
+		<li><a href="/tbsc-fsco/sc-lst.jsp?prov=NB&amp;lang=eng">New Brunswick</a></li>
+		<li><a href="/tbsc-fsco/sc-lst.jsp?prov=NL&amp;lang=eng">Newfoundland and Labrador</a></li>
+		<li><a href="/tbsc-fsco/sc-lst.jsp?prov=NT&amp;lang=eng">Northwest Territories</a></li>
+		<li><a href="/tbsc-fsco/sc-lst.jsp?prov=NS&amp;lang=eng">Nova Scotia</a></li>
+		<li><a href="/tbsc-fsco/sc-lst.jsp?prov=NU&amp;lang=eng">Nunavut</a></li>
+		<li><a href="/tbsc-fsco/sc-lst.jsp?prov=ON&amp;lang=eng">Ontario</a></li>
+		<li><a href="/tbsc-fsco/sc-lst.jsp?prov=PE&amp;lang=eng">Prince Edward Island</a></li>
+		<li><a href="/tbsc-fsco/sc-lst.jsp?prov=QC&amp;lang=eng">Quebec</a></li>
+		<li><a href="/tbsc-fsco/sc-lst.jsp?prov=SK&amp;lang=eng">Saskatchewan</a></li>
+		<li><a href="/tbsc-fsco/sc-lst.jsp?prov=YT&amp;lang=eng">Yukon</a></li>
+</ul>
+
+
+</div>
+</form>
+
+<div class="arialive wb-inv" aria-live="polite" aria-relevant="all"></div></div>
+<!-- Search by Province end -->
+
+
+
+
+        <!-- end main content -->
+        		<div class="pagedetails"><div class="row"><div class="col-sm-6 col-md-5 col-lg-4"><a href="https://www.canada.ca/en/report-problem.html" class="btn btn-default btn-center">Report a problem on this page</a></div><div class="wb-share col-sm-4 col-md-3 col-sm-offset-2 col-md-offset-4 col-lg-offset-5 wb-init wb-share-inited" data-wb-share="{&quot;lnkClass&quot;: &quot;btn btn-default btn-block&quot;}" id="wb-auto-6"><section id="shr-pg0" class="shr-pg mfp-hide modal-dialog modal-content overlay-def"><header class="modal-header"><h2 class="modal-title">Share this page</h2></header><div class="modal-body"><ul class="list-unstyled colcount-xs-2"><li><a href="https://www.blogger.com/blog_this.pyra?t=&amp;u=https%3A%2F%2Fwww.servicecanada.gc.ca%2Ftbsc-fsco%2Fsc-hme.jsp&amp;n=Find%20a%20Service%20Canada%20Office" class="shr-lnk blogger btn btn-default" target="_blank" rel="noreferrer noopener">Blogger</a></li><li><a href="https://www.diigo.com/post?url=https%3A%2F%2Fwww.servicecanada.gc.ca%2Ftbsc-fsco%2Fsc-hme.jsp&amp;title=Find%20a%20Service%20Canada%20Office" class="shr-lnk diigo btn btn-default" target="_blank" rel="noreferrer noopener">Diigo</a></li><li><a href="mailto:?to=&amp;subject=Find%20a%20Service%20Canada%20Office&amp;body=https%3A%2F%2Fwww.servicecanada.gc.ca%2Ftbsc-fsco%2Fsc-hme.jsp%0A" class="shr-lnk email btn btn-default" target="_blank" rel="noreferrer noopener">Email</a></li><li><a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fwww.servicecanada.gc.ca%2Ftbsc-fsco%2Fsc-hme.jsp&amp;t=Find%20a%20Service%20Canada%20Office" class="shr-lnk facebook btn btn-default" target="_blank" rel="noreferrer noopener">Facebook</a></li><li><a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;tf=1&amp;to=&amp;su=Find%20a%20Service%20Canada%20Office&amp;body=https%3A%2F%2Fwww.servicecanada.gc.ca%2Ftbsc-fsco%2Fsc-hme.jsp%0A" class="shr-lnk gmail btn btn-default" target="_blank" rel="noreferrer noopener">Gmail</a></li><li><a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fwww.servicecanada.gc.ca%2Ftbsc-fsco%2Fsc-hme.jsp&amp;title=Find%20a%20Service%20Canada%20Office&amp;ro=false&amp;summary=&amp;source=" class="shr-lnk linkedin btn btn-default" target="_blank" rel="noreferrer noopener">LinkedIn®</a></li><li><a href="https://www.myspace.com/Modules/PostTo/Pages/?u=https%3A%2F%2Fwww.servicecanada.gc.ca%2Ftbsc-fsco%2Fsc-hme.jsp&amp;t=Find%20a%20Service%20Canada%20Office" class="shr-lnk myspace btn btn-default" target="_blank" rel="noreferrer noopener">MySpace</a></li><li><a href="https://www.pinterest.com/pin/create/button/?url=https%3A%2F%2Fwww.servicecanada.gc.ca%2Ftbsc-fsco%2Fsc-hme.jsp&amp;media=&amp;description=Find%20a%20Service%20Canada%20Office" class="shr-lnk pinterest btn btn-default" target="_blank" rel="noreferrer noopener">Pinterest</a></li><li><a href="https://reddit.com/submit?url=https%3A%2F%2Fwww.servicecanada.gc.ca%2Ftbsc-fsco%2Fsc-hme.jsp&amp;title=Find%20a%20Service%20Canada%20Office" class="shr-lnk reddit btn btn-default" target="_blank" rel="noreferrer noopener">reddit</a></li><li><a href="https://tinyurl.com/create.php?url=https%3A%2F%2Fwww.servicecanada.gc.ca%2Ftbsc-fsco%2Fsc-hme.jsp" class="shr-lnk tinyurl btn btn-default" target="_blank" rel="noreferrer noopener">TinyURL</a></li><li><a href="https://www.tumblr.com/share/link?url=https%3A%2F%2Fwww.servicecanada.gc.ca%2Ftbsc-fsco%2Fsc-hme.jsp&amp;name=Find%20a%20Service%20Canada%20Office&amp;description=" class="shr-lnk tumblr btn btn-default" target="_blank" rel="noreferrer noopener">tumblr</a></li><li><a href="https://twitter.com/intent/tweet?text=Find%20a%20Service%20Canada%20Office&amp;url=https%3A%2F%2Fwww.servicecanada.gc.ca%2Ftbsc-fsco%2Fsc-hme.jsp" class="shr-lnk twitter btn btn-default" target="_blank" rel="noreferrer noopener">Twitter</a></li><li><a href="https://api.whatsapp.com/send?text=Find%20a%20Service%20Canada%20Office%0A%0Ahttps%3A%2F%2Fwww.servicecanada.gc.ca%2Ftbsc-fsco%2Fsc-hme.jsp" class="shr-lnk whatsapp btn btn-default" target="_blank" rel="noreferrer noopener">Whatsapp</a></li><li><a href="https://compose.mail.yahoo.com/?to=&amp;subject=Find%20a%20Service%20Canada%20Office&amp;body=https%3A%2F%2Fwww.servicecanada.gc.ca%2Ftbsc-fsco%2Fsc-hme.jsp%0A" class="shr-lnk yahoomail btn btn-default" target="_blank" rel="noreferrer noopener">Yahoo! Mail</a></li></ul><p class="col-sm-12 shr-dscl">No endorsement of any products or services is expressed or implied.</p><div class="clearfix"></div></div></section><a href="#shr-pg0" aria-controls="shr-pg0" class="shr-opn wb-lbx btn btn-default btn-block wb-lbx-inited wb-init" id="wb-auto-7"><span class="glyphicon glyphicon-share"></span>Share this page</a></div></div><dl id="wb-dtmd"><dt>Date modified: </dt><dd><time property="dateModified">2022-06-23</time></dd></dl></div>
+		<!-- Write closure template -->
+        <script type="text/javascript">
+            var defPreFooter = document.getElementById("def-preFooter");
+            defPreFooter.outerHTML = wet.builder.preFooter({
+                cdnEnv: "prod",
+                dateModified: "2022-06-23",
+                showPostContent: false
+            });
+        </script>
+    </main>
+       <!-- CONTENT ENDS HERE -->
+               <!--update references-->
             </div>
-            <!-- Search by Address Code end -->
-            <!-- Include province search -->
-            <div class="wb-frmvld wb-init wb-frmvld-inited" id="wb-auto-5">
-               <form novalidate="novalidate">
-                  <div class="form-group">
-                     <h2 class="homepageHeading" id="provTerrHd">Browse by Province or Territory</h2>
-                     <h3>To view the offices located in your area, select your province or territory from the list below.</h3>
-                     <br>
-                     <ul>
-                        <li><a href="/tbsc-fsco/sc-lst.jsp?prov=AB&amp;lang=eng">Alberta</a></li>
-                        <li><a href="/tbsc-fsco/sc-lst.jsp?prov=BC&amp;lang=eng">British Columbia</a></li>
-                        <li><a href="/tbsc-fsco/sc-lst.jsp?prov=MB&amp;lang=eng">Manitoba</a></li>
-                        <li><a href="/tbsc-fsco/sc-lst.jsp?prov=NB&amp;lang=eng">New Brunswick</a></li>
-                        <li><a href="/tbsc-fsco/sc-lst.jsp?prov=NL&amp;lang=eng">Newfoundland and Labrador</a></li>
-                        <li><a href="/tbsc-fsco/sc-lst.jsp?prov=NT&amp;lang=eng">Northwest Territories</a></li>
-                        <li><a href="/tbsc-fsco/sc-lst.jsp?prov=NS&amp;lang=eng">Nova Scotia</a></li>
-                        <li><a href="/tbsc-fsco/sc-lst.jsp?prov=NU&amp;lang=eng">Nunavut</a></li>
-                        <li><a href="/tbsc-fsco/sc-lst.jsp?prov=ON&amp;lang=eng">Ontario</a></li>
-                        <li><a href="/tbsc-fsco/sc-lst.jsp?prov=PE&amp;lang=eng">Prince Edward Island</a></li>
-                        <li><a href="/tbsc-fsco/sc-lst.jsp?prov=QC&amp;lang=eng">Quebec</a></li>
-                        <li><a href="/tbsc-fsco/sc-lst.jsp?prov=SK&amp;lang=eng">Saskatchewan</a></li>
-                        <li><a href="/tbsc-fsco/sc-lst.jsp?prov=YT&amp;lang=eng">Yukon</a></li>
-                     </ul>
-                  </div>
-               </form>
-               <div class="arialive wb-inv" aria-live="polite" aria-relevant="all"></div>
-            </div>
-            <!-- Search by Province end -->
-            <!-- end main content -->
             <div class="pagedetails">
-               <div class="row">
-                  <div class="col-sm-6 col-md-5 col-lg-4"><a href="https://www.canada.ca/en/report-problem.html" class="btn btn-default btn-center">Report a problem on this page</a></div>
-                  <div class="wb-share col-sm-4 col-md-3 col-sm-offset-2 col-md-offset-4 col-lg-offset-5 wb-init wb-share-inited" data-wb-share="{&quot;lnkClass&quot;: &quot;btn btn-default btn-block&quot;}" id="wb-auto-6">
-                     <section id="shr-pg0" class="shr-pg mfp-hide modal-dialog modal-content overlay-def">
-                        <header class="modal-header">
-                           <h2 class="modal-title">Share this page</h2>
-                        </header>
-                        <div class="modal-body">
-                           <ul class="list-unstyled colcount-xs-2">
-                              <li><a href="https://www.blogger.com/blog_this.pyra?t=&amp;u=https%3A%2F%2Fwww.servicecanada.gc.ca%2Ftbsc-fsco%2Fsc-hme.jsp&amp;n=Find%20a%20Service%20Canada%20Office" class="shr-lnk blogger btn btn-default" target="_blank" rel="noreferrer noopener">Blogger</a></li>
-                              <li><a href="https://www.diigo.com/post?url=https%3A%2F%2Fwww.servicecanada.gc.ca%2Ftbsc-fsco%2Fsc-hme.jsp&amp;title=Find%20a%20Service%20Canada%20Office" class="shr-lnk diigo btn btn-default" target="_blank" rel="noreferrer noopener">Diigo</a></li>
-                              <li><a href="mailto:?to=&amp;subject=Find%20a%20Service%20Canada%20Office&amp;body=https%3A%2F%2Fwww.servicecanada.gc.ca%2Ftbsc-fsco%2Fsc-hme.jsp%0A" class="shr-lnk email btn btn-default" target="_blank" rel="noreferrer noopener">Email</a></li>
-                              <li><a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fwww.servicecanada.gc.ca%2Ftbsc-fsco%2Fsc-hme.jsp&amp;t=Find%20a%20Service%20Canada%20Office" class="shr-lnk facebook btn btn-default" target="_blank" rel="noreferrer noopener">Facebook</a></li>
-                              <li><a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;tf=1&amp;to=&amp;su=Find%20a%20Service%20Canada%20Office&amp;body=https%3A%2F%2Fwww.servicecanada.gc.ca%2Ftbsc-fsco%2Fsc-hme.jsp%0A" class="shr-lnk gmail btn btn-default" target="_blank" rel="noreferrer noopener">Gmail</a></li>
-                              <li><a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fwww.servicecanada.gc.ca%2Ftbsc-fsco%2Fsc-hme.jsp&amp;title=Find%20a%20Service%20Canada%20Office&amp;ro=false&amp;summary=&amp;source=" class="shr-lnk linkedin btn btn-default" target="_blank" rel="noreferrer noopener">LinkedIn®</a></li>
-                              <li><a href="https://www.myspace.com/Modules/PostTo/Pages/?u=https%3A%2F%2Fwww.servicecanada.gc.ca%2Ftbsc-fsco%2Fsc-hme.jsp&amp;t=Find%20a%20Service%20Canada%20Office" class="shr-lnk myspace btn btn-default" target="_blank" rel="noreferrer noopener">MySpace</a></li>
-                              <li><a href="https://www.pinterest.com/pin/create/button/?url=https%3A%2F%2Fwww.servicecanada.gc.ca%2Ftbsc-fsco%2Fsc-hme.jsp&amp;media=&amp;description=Find%20a%20Service%20Canada%20Office" class="shr-lnk pinterest btn btn-default" target="_blank" rel="noreferrer noopener">Pinterest</a></li>
-                              <li><a href="https://reddit.com/submit?url=https%3A%2F%2Fwww.servicecanada.gc.ca%2Ftbsc-fsco%2Fsc-hme.jsp&amp;title=Find%20a%20Service%20Canada%20Office" class="shr-lnk reddit btn btn-default" target="_blank" rel="noreferrer noopener">reddit</a></li>
-                              <li><a href="https://tinyurl.com/create.php?url=https%3A%2F%2Fwww.servicecanada.gc.ca%2Ftbsc-fsco%2Fsc-hme.jsp" class="shr-lnk tinyurl btn btn-default" target="_blank" rel="noreferrer noopener">TinyURL</a></li>
-                              <li><a href="https://www.tumblr.com/share/link?url=https%3A%2F%2Fwww.servicecanada.gc.ca%2Ftbsc-fsco%2Fsc-hme.jsp&amp;name=Find%20a%20Service%20Canada%20Office&amp;description=" class="shr-lnk tumblr btn btn-default" target="_blank" rel="noreferrer noopener">tumblr</a></li>
-                              <li><a href="https://twitter.com/intent/tweet?text=Find%20a%20Service%20Canada%20Office&amp;url=https%3A%2F%2Fwww.servicecanada.gc.ca%2Ftbsc-fsco%2Fsc-hme.jsp" class="shr-lnk twitter btn btn-default" target="_blank" rel="noreferrer noopener">Twitter</a></li>
-                              <li><a href="https://api.whatsapp.com/send?text=Find%20a%20Service%20Canada%20Office%0A%0Ahttps%3A%2F%2Fwww.servicecanada.gc.ca%2Ftbsc-fsco%2Fsc-hme.jsp" class="shr-lnk whatsapp btn btn-default" target="_blank" rel="noreferrer noopener">Whatsapp</a></li>
-                              <li><a href="https://compose.mail.yahoo.com/?to=&amp;subject=Find%20a%20Service%20Canada%20Office&amp;body=https%3A%2F%2Fwww.servicecanada.gc.ca%2Ftbsc-fsco%2Fsc-hme.jsp%0A" class="shr-lnk yahoomail btn btn-default" target="_blank" rel="noreferrer noopener">Yahoo! Mail</a></li>
-                           </ul>
-                           <p class="col-sm-12 shr-dscl">No endorsement of any products or services is expressed or implied.</p>
-                           <div class="clearfix"></div>
-                        </div>
-                     </section>
-                     <a href="#shr-pg0" aria-controls="shr-pg0" class="shr-opn wb-lbx btn btn-default btn-block wb-lbx-inited wb-init" id="wb-auto-7"><span class="glyphicon glyphicon-share"></span>Share this page</a>
-                  </div>
-               </div>
                <dl id="wb-dtmd">
-                  <dt>Date modified: </dt>
-                  <dd><time property="dateModified">2022-06-23</time></dd>
+                  <dt>Date modified:</dt>
+                  <dd><time property="dateModified">2022-01-01</time></dd>
                </dl>
             </div>
-            <!-- Write closure template -->
-            <script type="text/javascript">
-               var defPreFooter = document.getElementById("def-preFooter");
-               defPreFooter.outerHTML = wet.builder.preFooter({
-                   cdnEnv: "prod",
-                   dateModified: "2022-06-23",
-                   showPostContent: false
-               });
-            </script>
-         </main>
-         <!-- CONTENT ENDS HERE -->
-         <!--update references-->
-         </div>
-         <div class="pagedetails">
-            <dl id="wb-dtmd">
-               <dt>Date modified:</dt>
-               <dd><time property="dateModified">2022-01-01</time></dd>
-            </dl>
-         </div>
          </main>
          <div class="par iparys_inherited">
             <div class="global-footer">
