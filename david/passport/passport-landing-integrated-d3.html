@@ -185,7 +185,7 @@ const svg = d3.select("#my_dataviz")
 d3.csv("./data.csv").then( function(data) {
 
     // List of groups (here I have one group per column)
-    const allGroup = ["Received", "Processed", "Calls"]
+    const allGroup = ["received", "processed", "calls"]
 
     // add the options to the button
     d3.select("#selectButton")
