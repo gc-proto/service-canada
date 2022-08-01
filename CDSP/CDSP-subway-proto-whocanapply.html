@@ -120,7 +120,8 @@
                <div class="container">
                   <ol class="breadcrumb">
                      <li><a href='/en.html'>Canada.ca</a></li>
-                     <li><a href='/en/employment-social-development.html'>Employment and Social Development Canada</a></li>
+                     <li><a href='https://www.canada.ca/en/services/benefits.html'>Benefits</a></li>
+                     <li><a href='https://www.canada.ca/en/services/benefits/disability.html'>Disability benefits</a></li>
                      <li><a href='./CDSP-subway-proto-landing.html'>Registered Disability Savings Plan</a></li>
                   </ol>
                </div>
@@ -150,8 +151,8 @@
             </ul>
             <section>
                <h2 id="_Who_is_the">Beneficiary and holder of the plan</h2>
-               <p>The plan <strong>beneficiary</strong> is the person with <a href="https://www.canada.ca/en/revenue-agency/services/tax/individuals/segments/tax-credits-deductions-persons-disabilities/disability-tax-credit.html">an approved Disability Tax Credit</a> who will receive the money in the future.</p>
-               <p>The plan <strong>holder</strong> is the one who opens and manages the plan. </p>
+               <p>The plan <strong>beneficiary</strong> is the person who has <a href="https://www.canada.ca/en/revenue-agency/services/tax/individuals/segments/tax-credits-deductions-persons-disabilities/disability-tax-credit.html">an approved Disability Tax Credit</a> that will receive the money in the future.</p>
+               <p>The plan <strong>holder</strong> is the person who opens and manages the plan. </p>
                <p>The beneficiary and holder can be the same or different people.</p>
                <p>Both the plan holder and the beneficiary must have a <a href="http://www.servicecanada.gc.ca/eng/sc/sin/index.shtml">Social Insurance Number (SIN)</a>.</p>
                <details>
@@ -185,31 +186,42 @@
                <fieldset class="provisional gc-chckbxrdio">
                   <ul class="list-unstyled lst-spcd-2">
                      <li class="checkbox">
-                        <input type="checkbox" id="elig1">
+                        <input type="checkbox" id="elig1" class="action-checkbox">
                         <label for="elig1">
                         be approved for the <a href="https://www.canada.ca/en/revenue-agency/services/tax/individuals/segments/tax-credits-deductions-persons-disabilities/information-medical-practitioners/eligibility-criteria-disability-tax-credit.html">Disability Tax Credit</a>
                         </label>
                      </li>
                      <li class="checkbox">
-                        <input type="checkbox" id="elig2">
+                        <input type="checkbox" id="elig2" class="action-checkbox">
                         <label for="elig2">
                         apply before December 31 of the year they turn 59
                         </label>
                      </li>
                      <li class="checkbox">
-                        <input type="checkbox" id="elig3">
+                        <input type="checkbox" id="elig3" class="action-checkbox">
                         <label for="elig3">
-                        be a <a href="https://www.canada.ca/en/revenue-agency/services/tax/international-non-residents/information-been-moved/determining-your-residency-status.html">resident in Canada</a>
+                        be a <a href="https://www.canada.ca/en/revenue-agency/services/tax/international-non-residents/information-been-moved/determining-your-residency-status.html">resident of Canada</a>
                         </label>
                      </li>
                      <li class="checkbox">
-                        <input type="checkbox" id="elig4">
+                        <input type="checkbox" id="elig4" class="action-checkbox">
                         <label for="elig4">
                         have a <a href="http://www.servicecanada.gc.ca/eng/sc/sin/index.shtml">SIN</a>
                         </label>
                      </li>
                   </ul>
                </fieldset>
+               <div class="alert alert-warning" id="action-no-msg">
+            <p>You need to meet all of the above to be eligible to open a plan.</p>
+
+        </div>
+        <div class="alert alert-success hidden" id="action-msg1">
+            <h3>You meet the criteria </h3>
+            <div>
+                <p>If you meet these criteria, you may be eligible to open a plan.</p>
+                <p>Apply with a financial organization to find out.</p>
+            </div>
+        </div>
             </section>
             <section>
                <h2 id="_Open_a_plan">Open a plan and apply for grants and bonds</h2>
@@ -217,7 +229,7 @@
                <p>You can receive grants and bonds <strong>until</strong> December 31 of the year <strong>you turn 49</strong>.</p>
                <details>
                   <summary>If you are between the ages of 49 and 59</summary>
-                  <p>After December 31 of the year you turn 49, you will not receive the grant or bond from the government.</p>
+                  <p>After December 31 of the year you turn 49, you are no longer eligible to receive the grant or bond from the government.</p>
                   <p>You can still open a plan until December 31 of the year you turn 59 and still benefit from contributions being <a href="http://test.canada.ca/service-canada/CDSP/CDSP-subway-proto-withdraw.html#_Taxable_portion"><strong>tax-sheltered</strong></a>. In addition, contributions and money held in your plan do not impact <a href="http://test.canada.ca/service-canada/CDSP/CDSP-subway-proto-withdraw.html#_Withdrawing_from_RDSP">your eligibility for provincial or territorial benefits</a>.</p>
                </details>
                <h3>Open a plan with a financial organization</h3>
@@ -239,9 +251,12 @@
                   <li><a href="http://www.rbcroyalbank.com/products/rdsp/index.html">RBC Royal Bank</a></li>
                   <li><a href="https://www.tdcanadatrust.com/products-services/investing/registered-disability-savings-plan/index.jsp">TD Waterhouse Canada Inc.</a></li>
                   <li><a href="http://nbfwm.ca/">Natcan Trust Company</a></li>
+                  <li><a href="http://www.leedejonesgable.com/">Leede Jones Gable Inc.</a></li>
                </ul>
+               <section class="alert alert-info">
                <p>You do not need an existing account with one of these financial organizations to open an RDSP with them.</p>
                <p>Once you've selected the financial organization of your choice, call to book an appointment to discuss opening a plan.</p>
+               </section>
             </section>
             <section>
                <h2 id="_Alternative_–_Watch">Alternative – Watch videos on this topic</h2>
@@ -453,5 +468,18 @@
          <script src="https://www.canada.ca/etc/designs/canada/wet-boew/js/ie8-wet-boew2.min.js"></script>
          <![endif]-->
          <script src="https://www.canada.ca/etc/designs/canada/wet-boew/js/theme.min.js"></script>
+         <script>
+        $(".action-checkbox").change(function(){
+        if ($('.action-checkbox:checked').length == $('.action-checkbox').length) {
+        $("#action-msg1").removeClass("hidden").addClass("visible");
+        $("#action-no-msg").addClass("hidden").removeClass("visible");
+        }
+        if ($('.action-checkbox:checked').length !== $('.action-checkbox').length) {
+        $("#action-msg1").addClass("hidden").removeClass("visible");
+        $("#action-no-msg").removeClass("hidden").addClass("visible");
+        }
+        })
+
+     </script>
       </body>
    </html>
