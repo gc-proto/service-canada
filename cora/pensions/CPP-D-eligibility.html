@@ -272,7 +272,7 @@ Canada Pension Plan disability benefits: Do you qualify</h1>
                         <div class="wb-frmvld fieldflow-lg">
                            <form>
                               <div class="wb-fieldflow" data-wb-fieldflow="{&quot;noForm&quot;: true, &quot;isoptional&quot;: true, &quot;renderas&quot;: &quot;radio&quot;, &quot;reset&quot;: {&quot;action&quot;: &quot;addClass&quot;, &quot;source&quot;: &quot;.alert1&quot;, &quot;class&quot;: &quot;hidden&quot;}}" id="have-acct">
-                                 <p>Are you under the age of 65?</p>
+                                 <p>Are you between the age of 18 and 64?</p>
                                  <ul>
                                     <li>
                                        Yes
@@ -289,28 +289,34 @@ Canada Pension Plan disability benefits: Do you qualify</h1>
                                                       Yes
                                                       <div class="wb-fieldflow-sub" data-wb-fieldflow="{&quot;renderas&quot;: &quot;radio&quot;, &quot;isoptional&quot;: true, &quot;reset&quot;: {&quot;action&quot;: &quot;addClass&quot;, &quot;source&quot;: &quot;.alert1&quot;, &quot;class&quot;: &quot;hidden&quot;}}">
                                                               <div class="wb-fieldflow-header">
-                                                                  <p class="wb-fieldflow-label">Have you contributed to the CPP for 25 years or more?</p>
+                                                                  <p class="wb-fieldflow-label">Are you currently receiving a Canada Pension Plan benefit?</p>
                                                                 </div>
                                                                  <ul>
+                                                                   <li data-wb-fieldflow="{&quot;action&quot;: &quot;removeClass&quot;, &quot;source&quot;: &quot;#answer1-3&quot;, &quot;class&quot;: &quot;hidden&quot;, &quot;live&quot;: true}">Yes</li>
                                                                     <li>
-                                                                      Yes
+                                                                      No
                                                                       <div class="wb-fieldflow-sub" data-wb-fieldflow="{&quot;renderas&quot;: &quot;radio&quot;, &quot;isoptional&quot;: true, &quot;reset&quot;: {&quot;action&quot;: &quot;addClass&quot;, &quot;source&quot;: &quot;.alert1&quot;, &quot;class&quot;: &quot;hidden&quot;}}">
                                                                               <div class="wb-fieldflow-header">
-                                                                                  <p class="wb-fieldflow-label">In the 6 years before you became disabled, did you contribute to the CPP for at least 3 years?</p>
+                                                                                  <p class="wb-fieldflow-label">To be eligible for CPP-D, you have to have made a certain amount of contributions to CPP or QPP in previous years.</p>
+                                                                                  <p>Let's determine if you have made enough contributions. To be eligible, you must have made contributions in:</p>
+                                                                                  <ul>
+                                                                                    <li>you contributed for at least 4 years in the 6 years before you became disabled</li>
+                                                                                    <li>you contributed to CPP for 25 years and at least 3 of the 6 years before you became disabled</li>
+                                                                                  </ul>
+                                                                                  <p><strong>Do one of these situations apply to you?</strong></p>
                                                                                 </div>
                                                                                  <ul>
                                                                                    <li data-wb-fieldflow="{&quot;action&quot;: &quot;removeClass&quot;, &quot;source&quot;: &quot;#answer1-1&quot;, &quot;class&quot;: &quot;hidden&quot;, &quot;live&quot;: true}">Yes</li>
-                                                                                    <li data-wb-fieldflow="{&quot;action&quot;: &quot;removeClass&quot;, &quot;source&quot;: &quot;#answer1-2&quot;, &quot;class&quot;: &quot;hidden&quot;, &quot;live&quot;: true}">No</li>
+                                                                                    <li data-wb-fieldflow="{&quot;action&quot;: &quot;removeClass&quot;, &quot;source&quot;: &quot;#answer1-4&quot;, &quot;class&quot;: &quot;hidden&quot;, &quot;live&quot;: true}">No</li>
                                                                  </ul>
                                                       </div>
-                                                     <li data-wb-fieldflow="{&quot;action&quot;: &quot;removeClass&quot;, &quot;source&quot;: &quot;#answer1-2&quot;, &quot;class&quot;: &quot;hidden&quot;, &quot;live&quot;: true}">No</li>
                                                   </ul>
-                                       </div>
+                                                </div>
+                                          <li data-wb-fieldflow="{&quot;action&quot;: &quot;removeClass&quot;, &quot;source&quot;: &quot;#answer1-2&quot;, &quot;class&quot;: &quot;hidden&quot;, &quot;live&quot;: true}">
+                                                No
+                                        </li>
                                     </li>
-                                    <li data-wb-fieldflow="{&quot;action&quot;: &quot;removeClass&quot;, &quot;source&quot;: &quot;#answer1-2&quot;, &quot;class&quot;: &quot;hidden&quot;, &quot;live&quot;: true}">
-                                      No
-                                    </li>
-                                 </ul>
+                                                                     </ul>
                                </li>
                           <li data-wb-fieldflow="{&quot;action&quot;: &quot;removeClass&quot;, &quot;source&quot;: &quot;#answer1-2&quot;, &quot;class&quot;: &quot;hidden&quot;, &quot;live&quot;: true}">
                           No
@@ -321,32 +327,27 @@ Canada Pension Plan disability benefits: Do you qualify</h1>
                         <div id="answer1-1" class="hidden alert alert-success alert1 provisional">
                            <h3>You may qualify for a CPP disability benefit or post-retirement disability benefit</h3>
                            <p>Apply online through My Service Canada Account or apply by mail.</p>
-                           <p>You may also be eligible for additional benefits</p>
-                         		<details>
-                              <summary>CPP post-retirement disability benefit</summary>
-                         		   <p><strong>If you currently get the monthly CPP retirement pension</strong>, you could receive the Canada Pension Plan post-retirement disability benefit if you:</p>
-                               		<ul>
-                               			<li>are 60 to 65</li>
-                               			<li>contributed enough to the CPP</li>
-                               			<li>have a mental or physical disability that regularly stops you from doing any type of substantially gainful work</li>
-                               			<li>have a disability that is long-term and of indefinite duration, or is likely to result in death</li>
-                               			<li>have been  receiving the CPP retirement pension for more than 15 months or become disabled after starting to receive the retirement pension</li>
-                               		</ul>
-                              </details>
-                         		<details>
-                              <summary>CPP Children’s benefit</summary>
-                             		<p>If you are getting a disability benefit, any of your dependent children can get a monthly payment if they are:</p>
-                             		<ul>
-                             			<li>under 18, or</li>
-                             			<li>between 18 and 25 and attending school full time</li>
-                             		</ul>
-                             		<p>Find out more about the <a href="/en/services/benefits/publicpensions/cpp/cpp-childrens-benefit.html">CPP Children’s benefit</a>.</p>
-                            </details>
                         </div>
                         <div id="answer1-2" class="hidden alert1 provisional">
                         <section class="alert alert-warning"><h3>It does not appear that you meet the requirements to receive CPP disability benefits. </h3>
                           <p>If you are unsure about some of your answers, please apply online through My Service Canada Account or apply by mail.</p>
-                          <p> You can also use the Benefits Finder to learn more about other benefits.</p></section>
+                        </section>
+                        </div>
+                        <div id="answer1-3" class="hidden alert1 provisional">
+                        <section class="alert alert-info"><h3>You may be eligible to receive CPP Post-Retirement Disability Benefit</h3>
+                          <p>Visit <a href="https://www.canada.ca/en/services/benefits/publicpensions/cpp/cpp-post-retirement-disability-benefit.html">Canada Pension Plan Post-Retirement Disability Benefit for more information.</a> </p>
+                        </section>
+                        </div>
+                        <div id="answer1-4" class="hidden alert1 provisional">
+                        <section class="alert alert-info"><h3>You may not have contributed to CPP to be eligible for CPP-D</h3>
+                          <p>However, you may have contributed more than you think if:</p>
+                          <ul>
+                            <li>were a primary caregiver for a child under 7</li>
+                            <li>worked in and contributed to a social security program in another country</li>
+                            <li>have received CPP credits from a divorce or former common-law partner</li>
+                          </ul>
+                          <p>Apply online or by mail to determine if you are eligible for the benefit.</p>
+                        </section>
                         </div>
             </div>
             </section>
