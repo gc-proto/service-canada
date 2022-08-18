@@ -1621,7 +1621,7 @@
     <section>
        <div class="wb-frmvld fieldflow-lg">
           <form>
-             <div class="wb-fieldflow" data-wb-fieldflow="{&quot;noForm&quot;: true, &quot;isoptional&quot;: true, &quot;renderas&quot;: &quot;radio&quot;, &quot;reset&quot;: {&quot;action&quot;: &quot;addClass&quot;, &quot;source&quot;: &quot;.alert1&quot;, &quot;class&quot;: &quot;hidden&quot;}}" id="have-acct">
+             <div class="wb-fieldflow" data-wb-fieldflow="{&quot;noForm&quot;: true, &quot;isoptional&quot;: true, &quot;renderas&quot;: &quot;radio&quot;, &quot;reset&quot;: {&quot;action&quot;: &quot;addClass&quot;, &quot;source&quot;: &quot;.alert1&quot;, &quot;class&quot;: &quot;hidden&quot;}}" id="province">
                 <p>What is your province of residence?</p>
                 <ul>
                    <li>
@@ -1634,7 +1634,7 @@
                                 </div>
 
                                  <ul>
-                                   <li data-wb-fieldflow="{&quot;action&quot;: &quot;removeClass&quot;, &quot;source&quot;: &quot;#answer01&quot;, &quot;class&quot;: &quot;hidden&quot;, &quot;live&quot;: true}">
+                                   <li data-wb-fieldflow="{&quot;action&quot;: &quot;removeClass&quot;, &quot;source&quot;: &quot;#answer01&quot;, &quot;class&quot;: &quot;hidden&quot;,   &quot;live&quot;: true}">
                                          St. John's
                                  </li>
          <li data-wb-fieldflow="{&quot;action&quot;: &quot;removeClass&quot;, &quot;source&quot;: &quot;#answer01&quot;, &quot;class&quot;: &quot;hidden&quot;, &quot;live&quot;: true}">
@@ -1671,7 +1671,7 @@ Rest of Prince Edward Island
              </div>
 
               <ul>
-                <li data-wb-fieldflow="{&quot;action&quot;: &quot;removeClass&quot;, &quot;source&quot;: &quot;#answer04&quot;, &quot;class&quot;: &quot;hidden&quot;, &quot;live&quot;: true}">
+                <li data-wb-fieldflow="{&quot;action&quot;: &quot;removeClass&quot;, &quot;source&quot;: &quot;#answer01&quot;, &quot;class&quot;: &quot;hidden&quot;, &quot;live&quot;: true}">
                       Eastern Nova Scotia
               </li>
 <li data-wb-fieldflow="{&quot;action&quot;: &quot;removeClass&quot;, &quot;source&quot;: &quot;#answer01&quot;, &quot;class&quot;: &quot;hidden&quot;, &quot;live&quot;: true}">
@@ -1692,7 +1692,7 @@ Halifax
              </div>
 
               <ul>
-                <li data-wb-fieldflow="{&quot;action&quot;: &quot;removeClass&quot;, &quot;source&quot;: &quot;#answer07&quot;, &quot;class&quot;: &quot;hidden&quot;, &quot;live&quot;: true}">
+                <li data-wb-fieldflow="{&quot;action&quot;: &quot;removeClass&quot;, &quot;source&quot;: &quot;#answer01&quot;, &quot;class&quot;: &quot;hidden&quot;, &quot;live&quot;: true}">
                       Fredericton-Moncton-Saint John
               </li>
 <li data-wb-fieldflow="{&quot;action&quot;: &quot;removeClass&quot;, &quot;source&quot;: &quot;#answer01&quot;, &quot;class&quot;: &quot;hidden&quot;, &quot;live&quot;: true}">
@@ -1709,6 +1709,8 @@ Restigouche-Albert
  </div>
        <div id="answer01" class="hidden alert1 provisional">
          <h3>Name of EI Region</h3>
+
+         <span data-fill="region"></span>
 
          <div class="wb-frmvld">
          <form action="#" id="estimator" onsubmit="return false">
@@ -1731,7 +1733,7 @@ Restigouche-Albert
 
 
  <div class="mrgn-tp-lg" id="qualify">
-   <p>With <strong><span data-fill="hours"></span></strong>, insurable hours, you qualify for EI in your economic region.
+   <p>With <strong><span data-fill="hours"></span></strong>, insurable hours, you qualify for EI in your economic region.</p>
 
    <p>With <strong>$<span data-fill="earnings"></span></strong> of insurable earnigns in your best 22 weeks, you  could get <strong>$<span data-fill="ei_amount"></span></strong> for <strong>X weeks</strong></p>
    </div>
@@ -2068,9 +2070,9 @@ Restigouche-Albert
     <script>
        $("#estimator").submit(function(event) {
 
-
                var earnings = $('#earnings').val();
                var earnings = earnings || 0
+
 
                var hours = $('#hours').val();
                hours = hours || 0
@@ -2083,6 +2085,7 @@ Restigouche-Albert
 
 
                //	Populate Text
+
 
                $('span[data-fill="earnings"]').text(formatDollars(earnings));
                $('span[data-fill="hours"]').text(formatDollars(hours));
