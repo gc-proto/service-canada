@@ -19,6 +19,109 @@
          </noscript>
          <link rel="stylesheet" href="https://test.canada.ca/covid-19-guidance/proto/css/alpha-beta-banner.css" />
          <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
+
+
+             <style>
+                .header-bg {
+                line-height: normal;
+                background: linear-gradient(to right, #ddd 50%, #fff 75%, #fff);
+                }
+                .header-bg .brdr-bttm-fade	 {
+                width: 100%;
+                height: 4px;
+                background: linear-gradient(to right, #26374a 50%, #fff 75%, #fff);
+                }
+                .header-bg h2 {
+                background: linear-gradient(297.5deg, transparent, transparent 25px, white 26px, white 31px, #26374a 32px, #26374a);
+                color: white;
+                display: inline-block;
+                margin: 0px;
+                padding: 5px 30px 5px 15px;
+                min-width: 300px;
+                font-size: 1.3em;
+                }
+                .btn.large-btn {display:flex;flex-direction:row;padding:0;border:2px solid #000; background-color:#fff;width:85%;text-align:center;}
+                .btn.large-btn .icon-btn {flex:none;display:flex;flex-direction:row;align-items:center;}
+                .btn.large-btn .label-btn {flex:auto;display:flex;flex-direction:row;align-items:center;padding:0 5px;}
+                .btn.large-btn .label-btn b {display:block;margin-left:auto;margin-right:auto;}
+                .btn.large-btn .icon-btn img {width:30px;margin:10px 15px;}
+                a.btn-blue:link, a.btn-blue:visited {
+                border:2px solid #003264;
+                color:#222;
+                }
+                a.btn-blue:link .icon-btn, a.btn-blue:visited .icon-btn{
+                background-color:#003264;
+                }
+                a.btn-blue:hover, a.btn-blue:active, a.btn-blue:focus {
+                background: #003264;
+                color: white;
+                }
+                a.btn-red:link, a.btn-red:visited {
+                border:2px solid #990033;
+                color:#222;
+                }
+                a.btn-red:link .icon-btn, a.btn-red:visited .icon-btn{
+                background-color:#990033;
+                }
+                a.btn-red:hover, a.btn-red:active, a.btn-red:focus {
+                background: #990033;
+                color: white;
+                }
+                a.btn-lblue:link, a.btn-lblue:visited {
+                border:2px solid #00749C;
+                color:#222;
+                }
+                a.btn-lblue:link .icon-btn, a.btn-lblue:visited .icon-btn{
+                background: #00749C;
+                }
+                a.btn-lblue:hover, a.btn-lblue:active, a.btn-lblue:focus {
+                background: #00749C;
+                color: white;
+                }
+
+                /*Checkbox/Fieldflow radio input sizing,positioning*/
+                .checkbox-lg > li.checkbox {
+                margin-top: 0px;
+                }
+                .checkbox-lg > li {
+                margin-left: -40px;
+                padding-left: 40px;
+                padding-top: 5px;
+                padding-bottom: 10px;
+                margin-bottom: 5px;
+                padding-right: 15px;
+                }
+                .checkbox-zebra > li:nth-child(2n+1) {
+                background-color: #f5f5f5;
+                padding-top: 10px;
+                padding-bottom: 15px;
+                }
+                .checkbox-lg > li.checkbox input[type=checkbox], .fieldflow-lg .radio input[type=radio] {
+                margin-top: 12px;
+                transform: scale(2);
+                }
+                .checkbox-lg label, .fieldflow-lg, .fieldflow-lg label, .fieldflow-lg div, .fieldflow-lg select, .std-blt {
+                font-size: 20px;
+                line-height: 1.65em;
+                }
+                .std-blt {
+                list-style-type: disc;
+                }
+                .std-blt li label {
+                display: block;
+                padding-left: 0px;
+                }
+                .fieldflow-lg .radio label {
+                margin-left: 40px;
+                }
+                .fieldflow-lg .radio input[type=radio] {
+                margin-left: -40px;
+                }
+                .fieldflow-lg fieldset legend {
+                font-size: 22px;
+                margin-top: 0px;
+                }
+             </style>
       </head>
       <body class="cnt-wdth-lmtd" vocab="http://schema.org/" typeof="WebPage">
          <nav>
@@ -194,34 +297,370 @@
                         </ul>
                         </dd>
                       </dl>
-                      <h4>Determine how many insurable hours you need to qualify</h4>
-                      <p>
-                    <strong>Find out:</strong>
-                </p>
-                <ul>
-                    <li>The unemployment rate in your region;</li>
-                    <li>The number of hours to qualify for regular benefits;</li>
-                </ul>
 
                   </div>
 
+                  <div class="well">
+                    <h4>Determine how many insurable hours you need to qualify</h4>
 
-                <div class="form-group">
-                    <div class="row">
-                        <label id="lbl_postal_code" for="ctl00_ctl00_MainContent_ChildContent_txt_postal_code" class="required">
-                            <span class="field-name">Enter Postal code: </span><strong class="required" aria-hidden="true">(required)</strong>
-                            (example: K1A0J9)
-                         </label>
-                    </div>
+                      <section>
+                         <div class="wb-frmvld fieldflow-lg">
+                            <form>
+                               <div class="wb-fieldflow" data-wb-fieldflow="{&quot;noForm&quot;: true, &quot;isoptional&quot;: true, &quot;renderas&quot;: &quot;radio&quot;, &quot;reset&quot;: {&quot;action&quot;: &quot;addClass&quot;, &quot;source&quot;: &quot;.alert1&quot;, &quot;class&quot;: &quot;hidden&quot;}}" id="province">
+                                  <p>What is your province of residence?</p>
+                                  <ul>
+                                     <li>
+                                        Newfoundland and Labrador
+                                        <div class="wb-fieldflow-sub" data-wb-fieldflow="{&quot;renderas&quot;: &quot;radio&quot;, &quot;isoptional&quot;: true, &quot;reset&quot;: {&quot;action&quot;: &quot;addClass&quot;, &quot;source&quot;: &quot;.alert1&quot;, &quot;class&quot;: &quot;hidden&quot;}}">
+                                                <div class="wb-fieldflow-header">
+                                                  <div class="wb-fieldflow-label">
+                                                    <p>What is your EI Economic region?</p>
+                                                     </div>
+                                                  </div>
 
-                    <div class="row">
-                        <input name="ctl00$ctl00$MainContent$ChildContent$txt_postal_code" type="text" id="ctl00_ctl00_MainContent_ChildContent_txt_postal_code" class="form-control mrgn-bttm-md" required="required">
-                    </div>
-                    <div class="row">
-                        <input type="submit" name="ctl00$ctl00$MainContent$ChildContent$btnSearch" value="Search" id="ctl00_ctl00_MainContent_ChildContent_btnSearch" class="btn btn-primary btn-small mrgn-bttm-md">
-                    </div>
+                                                   <ul>
+                                                     <li data-wb-fieldflow="{&quot;action&quot;: &quot;removeClass&quot;, &quot;source&quot;: &quot;#answer01&quot;, &quot;class&quot;: &quot;hidden&quot;,   &quot;live&quot;: true}">
+                                                           St. John's
+                                                   </li>
+                           <li data-wb-fieldflow="{&quot;action&quot;: &quot;removeClass&quot;, &quot;source&quot;: &quot;#answer01&quot;, &quot;class&quot;: &quot;hidden&quot;, &quot;live&quot;: true}">
+                           Rest of Newfoundland and Labrador
+                           </li>
+                         </ul>
+                           </li>
+                           <li>
+                              Prince Edward Island
+                              <div class="wb-fieldflow-sub" data-wb-fieldflow="{&quot;renderas&quot;: &quot;radio&quot;, &quot;isoptional&quot;: true, &quot;reset&quot;: {&quot;action&quot;: &quot;addClass&quot;, &quot;source&quot;: &quot;.alert1&quot;, &quot;class&quot;: &quot;hidden&quot;}}">
+                                      <div class="wb-fieldflow-header">
+                                        <div class="wb-fieldflow-label">
+                                          <p>What is your EI Economic region?</p>
+                                           </div>
+                                        </div>
 
-                </div>
+                                         <ul>
+                                           <li data-wb-fieldflow="{&quot;action&quot;: &quot;removeClass&quot;, &quot;source&quot;: &quot;#answer01&quot;, &quot;class&quot;: &quot;hidden&quot;, &quot;live&quot;: true}">
+                                                 Charlottetown
+                                         </li>
+                  <li data-wb-fieldflow="{&quot;action&quot;: &quot;removeClass&quot;, &quot;source&quot;: &quot;#answer01&quot;, &quot;class&quot;: &quot;hidden&quot;, &quot;live&quot;: true}">
+                  Rest of Prince Edward Island
+                  </li>
+                  </ul>
+                  </li>
+
+                  <li>
+                     Nova Scotia
+                     <div class="wb-fieldflow-sub" data-wb-fieldflow="{&quot;renderas&quot;: &quot;radio&quot;, &quot;isoptional&quot;: true, &quot;reset&quot;: {&quot;action&quot;: &quot;addClass&quot;, &quot;source&quot;: &quot;.alert1&quot;, &quot;class&quot;: &quot;hidden&quot;}}">
+                             <div class="wb-fieldflow-header">
+                               <div class="wb-fieldflow-label">
+                                 <p>What is your EI Economic region?</p>
+                                  </div>
+                               </div>
+
+                                <ul>
+                                  <li data-wb-fieldflow="{&quot;action&quot;: &quot;removeClass&quot;, &quot;source&quot;: &quot;#answer01&quot;, &quot;class&quot;: &quot;hidden&quot;, &quot;live&quot;: true}">
+                                        Eastern Nova Scotia
+                                </li>
+                  <li data-wb-fieldflow="{&quot;action&quot;: &quot;removeClass&quot;, &quot;source&quot;: &quot;#answer01&quot;, &quot;class&quot;: &quot;hidden&quot;, &quot;live&quot;: true}">
+                  Western Nova Scotia
+                  </li>
+                  <li data-wb-fieldflow="{&quot;action&quot;: &quot;removeClass&quot;, &quot;source&quot;: &quot;#answer01&quot;, &quot;class&quot;: &quot;hidden&quot;, &quot;live&quot;: true}">
+                  Halifax
+                  </li>
+                  </ul>
+                  </li>
+                  <li>
+                     New Brunswick
+                     <div class="wb-fieldflow-sub" data-wb-fieldflow="{&quot;renderas&quot;: &quot;radio&quot;, &quot;isoptional&quot;: true, &quot;reset&quot;: {&quot;action&quot;: &quot;addClass&quot;, &quot;source&quot;: &quot;.alert1&quot;, &quot;class&quot;: &quot;hidden&quot;}}">
+                             <div class="wb-fieldflow-header">
+                               <div class="wb-fieldflow-label">
+                                 <p>What is your EI Economic region?</p>
+                                  </div>
+                               </div>
+
+                                <ul>
+                                  <li data-wb-fieldflow="{&quot;action&quot;: &quot;removeClass&quot;, &quot;source&quot;: &quot;#answer01&quot;, &quot;class&quot;: &quot;hidden&quot;, &quot;live&quot;: true}">
+                                        Fredericton-Moncton-Saint John
+                                </li>
+                  <li data-wb-fieldflow="{&quot;action&quot;: &quot;removeClass&quot;, &quot;source&quot;: &quot;#answer01&quot;, &quot;class&quot;: &quot;hidden&quot;, &quot;live&quot;: true}">
+                  Madawaska-Charlotte
+                  </li>
+                  <li data-wb-fieldflow="{&quot;action&quot;: &quot;removeClass&quot;, &quot;source&quot;: &quot;#answer01&quot;, &quot;class&quot;: &quot;hidden&quot;, &quot;live&quot;: true}">
+                  Restigouche-Albert
+                  </li>
+                  </ul>
+                  </li>
+
+                  <li>
+                     Quebec
+                     <div class="wb-fieldflow-sub" data-wb-fieldflow="{&quot;renderas&quot;: &quot;radio&quot;, &quot;isoptional&quot;: true, &quot;reset&quot;: {&quot;action&quot;: &quot;addClass&quot;, &quot;source&quot;: &quot;.alert1&quot;, &quot;class&quot;: &quot;hidden&quot;}}">
+                             <div class="wb-fieldflow-header">
+                               <div class="wb-fieldflow-label">
+                                 <p>What is your EI Economic region?</p>
+                                  </div>
+                               </div>
+
+                                <ul>
+                                  <li data-wb-fieldflow="{&quot;action&quot;: &quot;removeClass&quot;, &quot;source&quot;: &quot;#answer01&quot;, &quot;class&quot;: &quot;hidden&quot;, &quot;live&quot;: true}">
+                                        Gaspésie-Îles-de-la-Madeleine
+                                </li>
+                  <li data-wb-fieldflow="{&quot;action&quot;: &quot;removeClass&quot;, &quot;source&quot;: &quot;#answer01&quot;, &quot;class&quot;: &quot;hidden&quot;, &quot;live&quot;: true}">
+                  Quebec
+                  </li>
+                  <li data-wb-fieldflow="{&quot;action&quot;: &quot;removeClass&quot;, &quot;source&quot;: &quot;#answer01&quot;, &quot;class&quot;: &quot;hidden&quot;, &quot;live&quot;: true}">
+                    Trois-Rivières
+                  </li>
+                  <li data-wb-fieldflow="{&quot;action&quot;: &quot;removeClass&quot;, &quot;source&quot;: &quot;#answer01&quot;, &quot;class&quot;: &quot;hidden&quot;, &quot;live&quot;: true}">
+                    South Central Quebec
+                  </li>
+                  <li data-wb-fieldflow="{&quot;action&quot;: &quot;removeClass&quot;, &quot;source&quot;: &quot;#answer01&quot;, &quot;class&quot;: &quot;hidden&quot;, &quot;live&quot;: true}">
+                    Sherbrooke
+                  </li>
+                  <li data-wb-fieldflow="{&quot;action&quot;: &quot;removeClass&quot;, &quot;source&quot;: &quot;#answer01&quot;, &quot;class&quot;: &quot;hidden&quot;, &quot;live&quot;: true}">
+                    Montérégie
+                  </li>
+                  <li data-wb-fieldflow="{&quot;action&quot;: &quot;removeClass&quot;, &quot;source&quot;: &quot;#answer01&quot;, &quot;class&quot;: &quot;hidden&quot;, &quot;live&quot;: true}">
+                    Montreal
+                  </li>
+                  <li data-wb-fieldflow="{&quot;action&quot;: &quot;removeClass&quot;, &quot;source&quot;: &quot;#answer01&quot;, &quot;class&quot;: &quot;hidden&quot;, &quot;live&quot;: true}">
+                    Central Quebec
+                  </li>
+                  <li data-wb-fieldflow="{&quot;action&quot;: &quot;removeClass&quot;, &quot;source&quot;: &quot;#answer01&quot;, &quot;class&quot;: &quot;hidden&quot;, &quot;live&quot;: true}">
+                    North Western Quebec
+                  </li>
+                  <li data-wb-fieldflow="{&quot;action&quot;: &quot;removeClass&quot;, &quot;source&quot;: &quot;#answer01&quot;, &quot;class&quot;: &quot;hidden&quot;, &quot;live&quot;: true}">
+                    Lower Saint Lawrence and North Shore
+                  </li>
+                  <li data-wb-fieldflow="{&quot;action&quot;: &quot;removeClass&quot;, &quot;source&quot;: &quot;#answer01&quot;, &quot;class&quot;: &quot;hidden&quot;, &quot;live&quot;: true}">
+                      Hull
+                  </li>
+                  <li data-wb-fieldflow="{&quot;action&quot;: &quot;removeClass&quot;, &quot;source&quot;: &quot;#answer01&quot;, &quot;class&quot;: &quot;hidden&quot;, &quot;live&quot;: true}">
+                    Chicoutimi-Jonquière
+                  </li>
+                  </ul>
+                  </li>
+
+                  <li>
+                     Ontario
+                     <div class="wb-fieldflow-sub" data-wb-fieldflow="{&quot;renderas&quot;: &quot;radio&quot;, &quot;isoptional&quot;: true, &quot;reset&quot;: {&quot;action&quot;: &quot;addClass&quot;, &quot;source&quot;: &quot;.alert1&quot;, &quot;class&quot;: &quot;hidden&quot;}}">
+                             <div class="wb-fieldflow-header">
+                               <div class="wb-fieldflow-label">
+                                 <p>What is your EI Economic region?</p>
+                                  </div>
+                               </div>
+
+                                <ul>
+                                  <li data-wb-fieldflow="{&quot;action&quot;: &quot;removeClass&quot;, &quot;source&quot;: &quot;#answer01&quot;, &quot;class&quot;: &quot;hidden&quot;, &quot;live&quot;: true}">
+                                        Ottawa
+                                </li>
+                  <li data-wb-fieldflow="{&quot;action&quot;: &quot;removeClass&quot;, &quot;source&quot;: &quot;#answer01&quot;, &quot;class&quot;: &quot;hidden&quot;, &quot;live&quot;: true}">
+                  Eastern Ontario
+                  </li>
+                  <li data-wb-fieldflow="{&quot;action&quot;: &quot;removeClass&quot;, &quot;source&quot;: &quot;#answer01&quot;, &quot;class&quot;: &quot;hidden&quot;, &quot;live&quot;: true}">
+                    Kingston
+                  </li>
+                  <li data-wb-fieldflow="{&quot;action&quot;: &quot;removeClass&quot;, &quot;source&quot;: &quot;#answer01&quot;, &quot;class&quot;: &quot;hidden&quot;, &quot;live&quot;: true}">
+                    Central Ontario
+                  </li>
+                  <li data-wb-fieldflow="{&quot;action&quot;: &quot;removeClass&quot;, &quot;source&quot;: &quot;#answer01&quot;, &quot;class&quot;: &quot;hidden&quot;, &quot;live&quot;: true}">
+                    Oshawa
+                  </li>
+                  <li data-wb-fieldflow="{&quot;action&quot;: &quot;removeClass&quot;, &quot;source&quot;: &quot;#answer01&quot;, &quot;class&quot;: &quot;hidden&quot;, &quot;live&quot;: true}">
+                    Toronto
+                  </li>
+                  <li data-wb-fieldflow="{&quot;action&quot;: &quot;removeClass&quot;, &quot;source&quot;: &quot;#answer01&quot;, &quot;class&quot;: &quot;hidden&quot;, &quot;live&quot;: true}">
+                    Hamilton
+                  </li>
+                  <li data-wb-fieldflow="{&quot;action&quot;: &quot;removeClass&quot;, &quot;source&quot;: &quot;#answer01&quot;, &quot;class&quot;: &quot;hidden&quot;, &quot;live&quot;: true}">
+                    St. Catharines
+                  </li>
+                  <li data-wb-fieldflow="{&quot;action&quot;: &quot;removeClass&quot;, &quot;source&quot;: &quot;#answer01&quot;, &quot;class&quot;: &quot;hidden&quot;, &quot;live&quot;: true}">
+                    London
+                  </li>
+                  <li data-wb-fieldflow="{&quot;action&quot;: &quot;removeClass&quot;, &quot;source&quot;: &quot;#answer01&quot;, &quot;class&quot;: &quot;hidden&quot;, &quot;live&quot;: true}">
+                    Niagara
+                  </li>
+                  <li data-wb-fieldflow="{&quot;action&quot;: &quot;removeClass&quot;, &quot;source&quot;: &quot;#answer01&quot;, &quot;class&quot;: &quot;hidden&quot;, &quot;live&quot;: true}">
+                      Windsor
+                  </li>
+                  <li data-wb-fieldflow="{&quot;action&quot;: &quot;removeClass&quot;, &quot;source&quot;: &quot;#answer01&quot;, &quot;class&quot;: &quot;hidden&quot;, &quot;live&quot;: true}">
+                      Kitchener
+                  </li>
+                  <li data-wb-fieldflow="{&quot;action&quot;: &quot;removeClass&quot;, &quot;source&quot;: &quot;#answer01&quot;, &quot;class&quot;: &quot;hidden&quot;, &quot;live&quot;: true}">
+                      Huron
+                  </li>
+                  <li data-wb-fieldflow="{&quot;action&quot;: &quot;removeClass&quot;, &quot;source&quot;: &quot;#answer01&quot;, &quot;class&quot;: &quot;hidden&quot;, &quot;live&quot;: true}">
+                      South Central Ontario
+                  </li>
+                  <li data-wb-fieldflow="{&quot;action&quot;: &quot;removeClass&quot;, &quot;source&quot;: &quot;#answer01&quot;, &quot;class&quot;: &quot;hidden&quot;, &quot;live&quot;: true}">
+                        Sudbury
+                  </li>
+                  <li data-wb-fieldflow="{&quot;action&quot;: &quot;removeClass&quot;, &quot;source&quot;: &quot;#answer01&quot;, &quot;class&quot;: &quot;hidden&quot;, &quot;live&quot;: true}">
+                      Thunder Bay
+                  </li>
+                  <li data-wb-fieldflow="{&quot;action&quot;: &quot;removeClass&quot;, &quot;source&quot;: &quot;#answer01&quot;, &quot;class&quot;: &quot;hidden&quot;, &quot;live&quot;: true}">
+                        Northern Ontario
+                  </li>
+                  </ul>
+                  </li>
+
+                  <li>
+                     Manitoba
+                     <div class="wb-fieldflow-sub" data-wb-fieldflow="{&quot;renderas&quot;: &quot;radio&quot;, &quot;isoptional&quot;: true, &quot;reset&quot;: {&quot;action&quot;: &quot;addClass&quot;, &quot;source&quot;: &quot;.alert1&quot;, &quot;class&quot;: &quot;hidden&quot;}}">
+                             <div class="wb-fieldflow-header">
+                               <div class="wb-fieldflow-label">
+                                 <p>What is your EI Economic region?</p>
+                                  </div>
+                               </div>
+
+                                <ul>
+                                  <li data-wb-fieldflow="{&quot;action&quot;: &quot;removeClass&quot;, &quot;source&quot;: &quot;#answer01&quot;, &quot;class&quot;: &quot;hidden&quot;, &quot;live&quot;: true}">
+                                        Winnipeg
+                                </li>
+                  <li data-wb-fieldflow="{&quot;action&quot;: &quot;removeClass&quot;, &quot;source&quot;: &quot;#answer01&quot;, &quot;class&quot;: &quot;hidden&quot;, &quot;live&quot;: true}">
+                  Southern Manitoba
+                  </li>
+                  <li data-wb-fieldflow="{&quot;action&quot;: &quot;removeClass&quot;, &quot;source&quot;: &quot;#answer01&quot;, &quot;class&quot;: &quot;hidden&quot;, &quot;live&quot;: true}">
+                  Northern Manitoba
+                  </li>
+                  </ul>
+                  </li>
+
+                  <li>
+                     Saskatchewan
+                     <div class="wb-fieldflow-sub" data-wb-fieldflow="{&quot;renderas&quot;: &quot;radio&quot;, &quot;isoptional&quot;: true, &quot;reset&quot;: {&quot;action&quot;: &quot;addClass&quot;, &quot;source&quot;: &quot;.alert1&quot;, &quot;class&quot;: &quot;hidden&quot;}}">
+                             <div class="wb-fieldflow-header">
+                               <div class="wb-fieldflow-label">
+                                 <p>What is your EI Economic region?</p>
+                                  </div>
+                               </div>
+
+                                <ul>
+                                  <li data-wb-fieldflow="{&quot;action&quot;: &quot;removeClass&quot;, &quot;source&quot;: &quot;#answer01&quot;, &quot;class&quot;: &quot;hidden&quot;, &quot;live&quot;: true}">
+                                        Regina
+                                </li>
+                  <li data-wb-fieldflow="{&quot;action&quot;: &quot;removeClass&quot;, &quot;source&quot;: &quot;#answer01&quot;, &quot;class&quot;: &quot;hidden&quot;, &quot;live&quot;: true}">
+                    Saskatoon
+                  </li>
+                  <li data-wb-fieldflow="{&quot;action&quot;: &quot;removeClass&quot;, &quot;source&quot;: &quot;#answer01&quot;, &quot;class&quot;: &quot;hidden&quot;, &quot;live&quot;: true}">
+                  Southern Saskatchewan
+                  </li>
+                  <li data-wb-fieldflow="{&quot;action&quot;: &quot;removeClass&quot;, &quot;source&quot;: &quot;#answer01&quot;, &quot;class&quot;: &quot;hidden&quot;, &quot;live&quot;: true}">
+                  Northern Saskatchewan
+                  </li>
+                  </ul>
+                  </li>
+
+                  <li>
+                     Alberta
+                     <div class="wb-fieldflow-sub" data-wb-fieldflow="{&quot;renderas&quot;: &quot;radio&quot;, &quot;isoptional&quot;: true, &quot;reset&quot;: {&quot;action&quot;: &quot;addClass&quot;, &quot;source&quot;: &quot;.alert1&quot;, &quot;class&quot;: &quot;hidden&quot;}}">
+                             <div class="wb-fieldflow-header">
+                               <div class="wb-fieldflow-label">
+                                 <p>What is your EI Economic region?</p>
+                                  </div>
+                               </div>
+
+                                <ul>
+                                  <li data-wb-fieldflow="{&quot;action&quot;: &quot;removeClass&quot;, &quot;source&quot;: &quot;#answer01&quot;, &quot;class&quot;: &quot;hidden&quot;, &quot;live&quot;: true}">
+                                        Calgary
+                                </li>
+                  <li data-wb-fieldflow="{&quot;action&quot;: &quot;removeClass&quot;, &quot;source&quot;: &quot;#answer01&quot;, &quot;class&quot;: &quot;hidden&quot;, &quot;live&quot;: true}">
+                    Edmonton
+                  </li>
+                  <li data-wb-fieldflow="{&quot;action&quot;: &quot;removeClass&quot;, &quot;source&quot;: &quot;#answer01&quot;, &quot;class&quot;: &quot;hidden&quot;, &quot;live&quot;: true}">
+                  Northern Alberta
+                  </li>
+                  <li data-wb-fieldflow="{&quot;action&quot;: &quot;removeClass&quot;, &quot;source&quot;: &quot;#answer01&quot;, &quot;class&quot;: &quot;hidden&quot;, &quot;live&quot;: true}">
+                  Southern Alberta
+                  </li>
+                  </ul>
+                  </li>
+
+                  <li>
+                     British Columbia
+                     <div class="wb-fieldflow-sub" data-wb-fieldflow="{&quot;renderas&quot;: &quot;radio&quot;, &quot;isoptional&quot;: true, &quot;reset&quot;: {&quot;action&quot;: &quot;addClass&quot;, &quot;source&quot;: &quot;.alert1&quot;, &quot;class&quot;: &quot;hidden&quot;}}">
+                             <div class="wb-fieldflow-header">
+                               <div class="wb-fieldflow-label">
+                                 <p>What is your EI Economic region?</p>
+                                  </div>
+                               </div>
+
+                                <ul>
+                                  <li data-wb-fieldflow="{&quot;action&quot;: &quot;removeClass&quot;, &quot;source&quot;: &quot;#answer01&quot;, &quot;class&quot;: &quot;hidden&quot;, &quot;live&quot;: true}">
+                                          Southern Interior British Columbia
+                                </li>
+                  <li data-wb-fieldflow="{&quot;action&quot;: &quot;removeClass&quot;, &quot;source&quot;: &quot;#answer01&quot;, &quot;class&quot;: &quot;hidden&quot;, &quot;live&quot;: true}">
+                  Abbotsford
+                  </li>
+                  <li data-wb-fieldflow="{&quot;action&quot;: &quot;removeClass&quot;, &quot;source&quot;: &quot;#answer01&quot;, &quot;class&quot;: &quot;hidden&quot;, &quot;live&quot;: true}">
+                    Vancouver
+                  </li>
+                  <li data-wb-fieldflow="{&quot;action&quot;: &quot;removeClass&quot;, &quot;source&quot;: &quot;#answer01&quot;, &quot;class&quot;: &quot;hidden&quot;, &quot;live&quot;: true}">
+                    Victoria
+                  </li>
+                  <li data-wb-fieldflow="{&quot;action&quot;: &quot;removeClass&quot;, &quot;source&quot;: &quot;#answer01&quot;, &quot;class&quot;: &quot;hidden&quot;, &quot;live&quot;: true}">
+                    Southern Coastal British Columbia
+                  </li>
+                  <li data-wb-fieldflow="{&quot;action&quot;: &quot;removeClass&quot;, &quot;source&quot;: &quot;#answer01&quot;, &quot;class&quot;: &quot;hidden&quot;, &quot;live&quot;: true}">
+                    Northern British Columbia
+                  </li>
+
+                  </ul>
+                  </li>
+
+                  <li>
+                     Territories
+                     <div class="wb-fieldflow-sub" data-wb-fieldflow="{&quot;renderas&quot;: &quot;radio&quot;, &quot;isoptional&quot;: true, &quot;reset&quot;: {&quot;action&quot;: &quot;addClass&quot;, &quot;source&quot;: &quot;.alert1&quot;, &quot;class&quot;: &quot;hidden&quot;}}">
+                             <div class="wb-fieldflow-header">
+                               <div class="wb-fieldflow-label">
+                                 <p>What is your EI Economic region?</p>
+                                  </div>
+                               </div>
+
+                                <ul>
+                                  <li data-wb-fieldflow="{&quot;action&quot;: &quot;removeClass&quot;, &quot;source&quot;: &quot;#answer01&quot;, &quot;class&quot;: &quot;hidden&quot;, &quot;live&quot;: true}">
+                                          Whitehorse
+                                </li>
+                  <li data-wb-fieldflow="{&quot;action&quot;: &quot;removeClass&quot;, &quot;source&quot;: &quot;#answer01&quot;, &quot;class&quot;: &quot;hidden&quot;, &quot;live&quot;: true}">
+                  Yukon
+                  </li>
+                  <li data-wb-fieldflow="{&quot;action&quot;: &quot;removeClass&quot;, &quot;source&quot;: &quot;#answer01&quot;, &quot;class&quot;: &quot;hidden&quot;, &quot;live&quot;: true}">
+                      Yellowknife
+                  </li>
+                  <li data-wb-fieldflow="{&quot;action&quot;: &quot;removeClass&quot;, &quot;source&quot;: &quot;#answer01&quot;, &quot;class&quot;: &quot;hidden&quot;, &quot;live&quot;: true}">
+                    Northwest Territories
+                  </li>
+                  <li data-wb-fieldflow="{&quot;action&quot;: &quot;removeClass&quot;, &quot;source&quot;: &quot;#answer01&quot;, &quot;class&quot;: &quot;hidden&quot;, &quot;live&quot;: true}">
+                    Iqaluit
+                  </li>
+                  <li data-wb-fieldflow="{&quot;action&quot;: &quot;removeClass&quot;, &quot;source&quot;: &quot;#answer01&quot;, &quot;class&quot;: &quot;hidden&quot;, &quot;live&quot;: true}">
+                    Nunavut
+                  </li>
+
+                  </ul>
+                  </li>
+                  </ul>
+                       </div>
+                    </form>
+                   </div>
+                         <div id="answer01" class="hidden alert1 provisional">
+                           <h3>Name of EI Region</h3>
+
+                           <span data-fill="region"></span>
+
+                           <p>You need 420 hours of insurable earnings to qualify for EI regular benefits in your region. </p>
+
+                        </div>
+                       </div>
+                   </section>
+
+                    </div>
+              </div>
+              </div>
+
+              <h4>Don't know what's your eonomic region?</li>
+              </h4>
+              <p><a rel="external" href="http://srv129.services.gc.ca/eiregions/eng/postalcode_search.aspx">Use your postal code to search for your EI Economic Region</a></li>
+              </p>
+
                </section>
                <h3>Verifying your eligibility</h3>
                <p>To prove your eligibility and to receive payments you may  be entitled to, you're required to complete bi-weekly reports by <a href="/en/services/benefits/ei/employment-insurance-reporting.html#Internet-Reporting-Service">internet</a> or <a href="/en/services/benefits/ei/employment-insurance-reporting.html#Telephone-Reporting-Service">telephone</a>. Failure to do  so can mean a loss of benefits.</p>
