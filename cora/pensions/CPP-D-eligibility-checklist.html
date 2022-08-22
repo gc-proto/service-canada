@@ -265,9 +265,10 @@ Canada Pension Plan disability benefits: Do you qualify</h1>
       </ul>
     </details>
 </section>
+
                      <h2>Determine if you are eligible</h2>
                      <p>Use this checklist to determine if you may be eligible for the Canada Pension Plan disability benefit.</p>
-                     <fieldset class="provisional gc-chckbxrdio">
+                <fieldset class="provisional gc-chckbxrdio">
                   <ul class="list-unstyled lst-spcd-2">
                      <li class="checkbox">
                         <input type="checkbox" id="elig1" class="action-checkbox">
@@ -284,28 +285,38 @@ Canada Pension Plan disability benefits: Do you qualify</h1>
                      <li class="checkbox">
                         <input type="checkbox" id="elig2" class="action-checkbox">
                         <label for="elig2">
-                        have a severe disability that regularly prevents you from doing any type of <a href="https://www.canada.ca/en/services/benefits/publicpensions/cpp/cpp-disability-benefit.html#h2.07-h3.00">substantially gainful work</a>
+                        have a severe disability that regularly prevents you from doing any type of substantially gainful work
                         </label>
+						
+						<p class="mrgn-lft-xl"><a href="https://www.canada.ca/en/services/benefits/publicpensions/cpp/cpp-disability-benefit.html#h2.07-h3.00">Definition of substantially gainful work</a></p>
                      </li>
                      <li class="checkbox">
                         <input type="checkbox" id="elig5" class="action-checkbox">
-                        <label for="elig5" aria-describedby="eligible-situations">have a disability that is <a hef="https://www.canada.ca/en/services/benefits/publicpensions/cpp/cpp-disability-benefit.html#h2.07-h3.01">long-term and of indefinite duration</a>, or is likely to <a href="https://www.canada.ca/en/services/benefits/publicpensions/cpp/cpp-disability-benefit.html#h2.07-h3.01">result in death</a>
-</label>
+                        <label for="elig5" aria-describedby="eligible-situations">have a disability that is long-term and of indefinite duration, or is likely to result in death</label>
+						<p class="mrgn-lft-xl"><a href="https://www.canada.ca/en/services/benefits/publicpensions/cpp/cpp-disability-benefit.html#h2.07-h3.01">Definition of long-term and of indefinite duration</a></p>
+						<p class="mrgn-lft-xl"><a href="https://www.canada.ca/en/services/benefits/publicpensions/cpp/cpp-disability-benefit.html#h2.07-h3.01">Definition of result in death</a></p>
                      </li>
                   </ul>
                </fieldset>
-               <div class="alert alert-warning" id="action-no-msg">
-            <p>You need to meet all of the above to be eligible for the Canada Pension Plan disability benefit.</p>
+			   
+			<!--   <button type="button" id="verifyEligibility" class="btn btn-primary hidden">Verify Eligibility</button> -->
+			   
+			   <div aria-live="polite">
+				   <div class="alert alert-warning" id="action-no-msg">
+						<p>You need to meet all of the above to be eligible for the Canada Pension Plan disability benefit.</p>
 
-        </div>
-        <div class="alert alert-success hidden" id="action-msg1">
-            <h3>You meet the criteria </h3>
-            <div>
-                <p>If you meet these criteria, you may be eligible for the Canada Pension Plan Disability.</p>
-                <p>Apply with a financial organization to find out.</p>
-            </div>
-        </div>
-               </fieldset>
+					</div>
+					<div class="alert alert-success hidden" id="action-msg1">
+						<h3>You meet the criteria </h3>
+						<div>
+							<p>If you meet these criteria, you may be eligible for the Canada Pension Plan Disability.</p>
+							<p>Apply with a financial organization to find out.</p>
+						</div>
+					</div>
+				</div>
+		
+		
+		
             <section>
                <h2 id="h2.02">Circumstances that may affect your eligibility</h2>
                <section>
@@ -548,6 +559,34 @@ Canada Pension Plan disability benefits: Do you qualify</h1>
          <script src="https://www.canada.ca/etc/designs/canada/wet-boew/js/ie8-wet-boew2.min.js"></script>
          <![endif]-->
          <script src="https://www.canada.ca/etc/designs/canada/wet-boew/js/theme.min.js"></script>
+		 <script>
+		 
+		 function verifyCheckboxes(selector, mode="all") {
+			let checked = (mode == "all") ? true: false;
+			$(selector).each(function( index ) {
+				if (mode == "all" && !$( this ).prop('checked')) {
+					checked = false;
+					return false;
+				} else if (mode=="any" && $( this ).prop('checked')) {
+					checked = true;
+					return false;
+				}
+			});
+			
+			return checked;
+		 }
+		 
+		 $(".action-checkbox").change(function() {
+			const eligible = verifyCheckboxes(".action-checkbox");
+			if (eligible) {
+				$("#action-no-msg").addClass("hidden");
+				$("#action-msg1").removeClass("hidden");
+			} else {
+				$("#action-no-msg").removeClass("hidden");
+				$("#action-msg1").addClass("hidden");
+			}
+		 });
+		 //$("#verifyEligibility").removeClass("hidden");
+		 </script>
       </body>
    </html>
-   '
