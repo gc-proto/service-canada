@@ -22,8 +22,24 @@
     <noscript><link rel="stylesheet" href="https://wet-boew.github.io/themes-dist/GCWeb/wet-boew/css/noscript.min.css" /></noscript>
     <link rel="stylesheet" href="https://test.canada.ca/covid-19-guidance/proto/css/alpha-beta-banner.css" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
-    <script src="https://d3js.org/d3.v6.js"></script>
+    <script src="https://d3js.org/d3.v4.js"></script>
 
+
+    <style>
+
+        .bar {
+          fill: steelblue;
+        }
+
+        .bar:hover {
+          fill: brown;
+        }
+
+        .info{
+          display: none;
+        }
+
+</style>
     </head>
 
 
@@ -162,6 +178,28 @@
 
                   <div id="my_dataviz"></div>
             </div>
+
+
+            <div id="covid" class="info">
+
+               <h2>Covid</h2>
+
+
+             </div>
+            <div id="employment" class="info">
+            <h2>Employment</h2>
+
+          </div>
+
+          <div id="tatus" class="info">
+          <h2>Status</h2>
+
+        </div>
+
+        <div id="France" class="info">
+        <h2>France</h2>
+
+      </div>
 
             <!-- CONTENT ENDS HERE -->
 
@@ -402,11 +440,11 @@ var svg = d3.select("#my_dataviz")
           "translate(" + margin.left + "," + margin.top + ")");
 
 // Parse the Data
-d3.csv("https://raw.githubusercontent.com/holtzy/data_to_viz/master/Example_dataset/7_OneCatOneNum_header.csv", function(data) {
+d3.csv("./data_test.csv", function(data) {
 
   // Add X axis
   var x = d3.scaleLinear()
-    .domain([0, 13000])
+    .domain([0, 50])
     .range([ 0, width]);
   svg.append("g")
     .attr("transform", "translate(0," + height + ")")
@@ -418,23 +456,28 @@ d3.csv("https://raw.githubusercontent.com/holtzy/data_to_viz/master/Example_data
   // Y axis
   var y = d3.scaleBand()
     .range([ 0, height ])
-    .domain(data.map(function(d) { return d.Country; }))
+    .domain(data.map(function(d) { return d.word; }))
     .padding(.1);
   svg.append("g")
     .call(d3.axisLeft(y))
 
   //Bars
-  svg.selectAll("myRect")
+  svg.selectAll(".bar")
     .data(data)
     .enter()
     .append("rect")
     .attr("x", x(0) )
-    .attr("y", function(d) { return y(d.Country); })
-    .attr("width", function(d) { return x(d.Value); })
+    .attr("y", function(d) { return y(d.word); })
+    .attr("width", function(d) { return x(d.count); })
     .attr("height", y.bandwidth() )
-    .attr("fill", "#69b3a2")
-
-
+    .attr("fill", "steelblue")
+    .on("click",clickme)
+    .on("mouseover", function(d) {
+  d3.select(this).attr("r", 10).style("fill", "purple");
+})
+    .on("mouseout", function(d) {
+  d3.select(this).attr("r", 5.5).style("fill", "steelblue");
+});
     // .attr("x", function(d) { return x(d.Country); })
     // .attr("y", function(d) { return y(d.Value); })
     // .attr("width", x.bandwidth())
@@ -442,6 +485,22 @@ d3.csv("https://raw.githubusercontent.com/holtzy/data_to_viz/master/Example_data
     // .attr("fill", "#69b3a2")
 
 })
+
+
+function clickme(d){
+    // Select element that should be shown
+    const element = d3.select("#"+d.Country); // Or however you're deriving id
+
+    // Determine whether the element needs to be shown or hidden
+    const show = element.style('display') === 'none';
+
+    // Hide any tooltip that may be shown
+    d3.selectAll('.info').style('display', 'none');
+
+    // Show element, if appropriate
+    if (show) element.style('display', 'block');
+}
+
 
 </script>
 
