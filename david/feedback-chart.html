@@ -191,15 +191,10 @@
 
           </div>
 
-          <div id="tatus" class="info">
+          <div id="status" class="info">
           <h2>Status</h2>
 
         </div>
-
-        <div id="France" class="info">
-        <h2>France</h2>
-
-      </div>
 
             <!-- CONTENT ENDS HERE -->
 
@@ -440,7 +435,7 @@ var svg = d3.select("#my_dataviz")
           "translate(" + margin.left + "," + margin.top + ")");
 
 // Parse the Data
-d3.csv("./data_test.csv", function(data) {
+d3.csv("http://test.canada.ca/service-canada/david/data_test.csv", function(data) {
 
   // Add X axis
   var x = d3.scaleLinear()
@@ -489,7 +484,7 @@ d3.csv("./data_test.csv", function(data) {
 
 function clickme(d){
     // Select element that should be shown
-    const element = d3.select("#"+d.Country); // Or however you're deriving id
+    const element = d3.select("#"+d.word); // Or however you're deriving id
 
     // Determine whether the element needs to be shown or hidden
     const show = element.style('display') === 'none';
