@@ -1626,26 +1626,26 @@ a.btn-lblue:hover, a.btn-lblue:active, a.btn-lblue:focus {
       <h2 id="h2.03">Weekly benefit amount</h2>
       <div class="well">
         <h3>Estimate your weekly benefit</h3>
-        <div class="wb-frmvld fieldflow-lg">
+        <div class="wb-frmvld fieldflow-lg"> <!-- , &quot;prop&quot;:&quot;value&quot; -->
           <form>
             <div class="wb-fieldflow" data-wb-fieldflow="{&quot;noForm&quot;: true, &quot;isoptional&quot;: true, &quot;reset&quot;: {&quot;action&quot;: &quot;addClass&quot;, &quot;source&quot;: &quot;.alert1&quot;, &quot;class&quot;: &quot;hidden&quot;}}" id="province">
               <p>What is your province of residence?</p>
               <ul>
                 <li> Newfoundland and Labrador
-                  <div class="wb-fieldflow-sub" data-wb-fieldflow="{&quot;isoptional&quot;: true, &quot;default&quot;: [{&quot;action&quot;: &quot;removeClass&quot;, &quot;source&quot;: &quot;#answer01&quot;, &quot;class&quot;: &quot;hidden&quot;, &quot;live&quot;: true}, {&quot;action&quot;:&quot;query&quot;,&quot;name&quot;:&quot;selectedRegion&quot;, &quot;live&quot;:true}], &quot;reset&quot;: {&quot;action&quot;: &quot;addClass&quot;, &quot;source&quot;: &quot;.alert1&quot;, &quot;class&quot;: &quot;hidden&quot;}}">
+                  <div class="wb-fieldflow-sub" data-wb-fieldflow="{&quot;isoptional&quot;: true, &quot;action&quot;:&quot;query&quot;,&quot;actionData&quot;:{&quot;name&quot;:&quot;selectedRegion&quot;, &quot;live&quot;:true}, &quot;prop&quot;: &quot;value&quot;, &quot;default&quot;: {&quot;action&quot;: &quot;removeClass&quot;, &quot;source&quot;: &quot;#answer01&quot;, &quot;class&quot;: &quot;hidden&quot;, &quot;live&quot;: true}, &quot;reset&quot;: {&quot;action&quot;: &quot;addClass&quot;, &quot;source&quot;: &quot;.alert1&quot;, &quot;class&quot;: &quot;hidden&quot;}}">
                     <p>What is your EI Economic region?</p>
                     <ul>
-                      <li>St. John's</li>
-                      <li>Rest of Newfoundland and Labrador</li>
+                      <li data-wb-fieldflow="St. John's">St. John's</li>
+                      <li data-wb-fieldflow="Newfoundland/Labrador">Rest of Newfoundland and Labrador</li>
                     </ul>
                   </div>
                 </li>
                 <li> Prince Edward Island
-                  <div class="wb-fieldflow-sub" data-wb-fieldflow="{&quot;isoptional&quot;: true, &quot;default&quot;: [{&quot;action&quot;: &quot;removeClass&quot;, &quot;source&quot;: &quot;#answer01&quot;, &quot;class&quot;: &quot;hidden&quot;, &quot;live&quot;: true}, {&quot;action&quot;:&quot;query&quot;,&quot;name&quot;:&quot;selectedRegion&quot;, &quot;live&quot;:true}], &quot;reset&quot;: {&quot;action&quot;: &quot;addClass&quot;, &quot;source&quot;: &quot;.alert1&quot;, &quot;class&quot;: &quot;hidden&quot;}}">
+                  <div class="wb-fieldflow-sub" data-wb-fieldflow="{&quot;isoptional&quot;: true, &quot;action&quot;:&quot;query&quot;,&quot;actionData&quot;:{&quot;name&quot;:&quot;selectedRegion&quot;, &quot;live&quot;:true}, &quot;prop&quot;: &quot;value&quot;, &quot;default&quot;: {&quot;action&quot;: &quot;removeClass&quot;, &quot;source&quot;: &quot;#answer01&quot;, &quot;class&quot;: &quot;hidden&quot;, &quot;live&quot;: true}, &quot;reset&quot;: {&quot;action&quot;: &quot;addClass&quot;, &quot;source&quot;: &quot;.alert1&quot;, &quot;class&quot;: &quot;hidden&quot;}}">
                     <p>What is your EI Economic region?</p>
                     <ul>
-                      <li>Charlottetown</li>
-                      <li>Rest of Prince Edward Island</li>
+                      <li data-wb-fieldflow="Charlottetown">Charlottetown</li>
+                      <li data-wb-fieldflow="Prince Edward Island">Rest of Prince Edward Island</li>
                     </ul>
                   </div>
                 </li>
@@ -2800,11 +2800,11 @@ a.btn-lblue:hover, a.btn-lblue:active, a.btn-lblue:focus {
              var earnings = earnings || 0
 
 							const region = $("select[name='selectedRegion']").val();
-							const regionRow = $("#regions tr:contains('" + region + "') td");
+							const regionRow = $('#regions tr td:nth-child(3):contains("' + region + '")').parent();
 
-							const unemploymentRate = parseFloat(regionRow.eq(3).text());
-							const hoursToQualify = parseFloat(regionRow.eq(4).text());
-							const bestWeeks = parseFloat(regionRow.eq(7).text());
+							const unemploymentRate = parseFloat(regionRow.children().eq(3).text());
+							const hoursToQualify = parseFloat(regionRow.children().eq(4).text());
+							const bestWeeks = parseFloat(regionRow.children().eq(7).text());
 
 				 			
                var hours = $('#hours').val();
@@ -2843,8 +2843,8 @@ a.btn-lblue:hover, a.btn-lblue:active, a.btn-lblue:focus {
 
 				$( document ).on( "query.action.wb-fieldflow", ".wb-fieldflow", function( event ) {
 						const region = $("select[name='selectedRegion']").val();
-						const regionRow = $("#regions tr:contains('" + region + "') td");
-						const bestWeeks = parseFloat(regionRow.eq(7).text());
+						const regionRow = $('#regions tr td:nth-child(3):contains("' + region + '")').parent();
+						const bestWeeks = parseFloat(regionRow.children().eq(7).text());
 
 						$('span[data-fill="region"]').text(region);
 						$('span[data-fill="bestWeeks"]').text(bestWeeks);
