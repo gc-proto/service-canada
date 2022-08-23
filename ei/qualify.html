@@ -477,8 +477,7 @@
                          <div id="answer01" class="hidden alert1 provisional">
                            <h3><span data-fill="region"></span></h3>
 
-                           <p>You need 420 hours of insurable earnings to qualify for EI regular benefits in your region. </p>
-
+                           <p>You need <span data-fill="hoursToQualify"></span> hours of insurable earnings to qualify for EI regular benefits in your region. </p>
                         </div>
                        </div>
                    </section>
@@ -1413,5 +1412,32 @@
          <script src="https://www.canada.ca/etc/designs/canada/wet-boew/js/ie8-wet-boew2.min.js"></script>
          <![endif]-->
          <script src="https://www.canada.ca/etc/designs/canada/wet-boew/js/theme.min.js"></script>
+
+
+         <script>
+
+                $( document ).on( "query.action.wb-fieldflow", ".wb-fieldflow", function( event ) {
+
+                      const region = $("select[name='selectedRegion']").val();
+                      const regionRow = $('#regions tr td:nth-child(3):contains("' + region + '")').parent();
+
+                      const hoursToQualify = parseFloat(regionRow.children().eq(4).text());
+
+
+
+                        //	Populate Text
+
+                        $('span[data-fill="hoursToQualify"]').text(formatDollars(hoursToQualify));
+                        $('span[data-fill="region"]').text(region);
+
+                 });
+
+
+
+             /*
+             $("#regions").addClass("wb-tables");
+             $( ".wb-tables" ).trigger( "wb-init.wb-tables" );
+             */
+             </script>
       </body>
    </html>
