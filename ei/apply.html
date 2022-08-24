@@ -257,7 +257,7 @@
           </ul>
         </fieldset>
         <div class="clearfix"></div>
-        <div class="alert alert-info" id="action-no-msg" aria-live="polite">
+        <div class="alert alert-warning" id="action-no-msg" aria-live="polite">
           <p>You need to have all of the above to apply for EI</p>
         </div>
         <div class="alert alert-success hidden" id="action-msg1" aria-live="polite">
@@ -290,7 +290,7 @@
         </details>
         <h2 id="h2.02">Apply online</h2>
         <p>To find out if you're eligible to receive
-          <abbr title="Employment Insurance">EI</abbr> regular benefits, you must submit an application online. The online application takes about 1 hour to complete.</p>
+          <abbr title="Employment Insurance">EI</abbr> regular benefits, you must apply online. The online application takes about 1 hour to complete.</p>
         <p>If you don't complete the application all at once, you can come back to it later using the temporary password that you receive when you start.</p>
         <p>Your information is saved for 72 hours (3 days) from the time you start. If you don't submit the application within this time:</p>
         <ul>
@@ -300,7 +300,7 @@
         <p>When you apply for
           <abbr title="Employment Insurance">EI</abbr> benefits, you'll be asked for your email address. If we need more information about your claim and can't reach you by phone, we'll send you a toll-free number in an email, asking you to call us.</p>
         <p>
-          <a class="provisional btn btn-call-to-action" href="https://www.canada.ca/en/services/benefits/privacy-notice.html">Start application</a>
+          <a class="btn btn-call-to-action" href="https://www.canada.ca/en/services/benefits/privacy-notice.html">Apply for EI</a>
         </p>
         <section>
           <h3 id="h3.03">Sign up for direct deposit</h3>
@@ -558,6 +558,20 @@
 <script src="https://www.canada.ca/etc/designs/canada/wet-boew/js/ie8-wet-boew2.min.js"></script>
 <![endif]-->
   <script src="https://www.canada.ca/etc/designs/canada/wet-boew/js/theme.min.js"></script>
+
+  <script>
+ $(".action-checkbox").change(function(){
+ if ($('.action-checkbox:checked').length == $('.action-checkbox').length) {
+ $("#action-msg1").removeClass("hidden").addClass("visible");
+ $("#action-no-msg").addClass("hidden").removeClass("visible");
+ }
+ if ($('.action-checkbox:checked').length !== $('.action-checkbox').length) {
+ $("#action-msg1").addClass("hidden").removeClass("visible");
+ $("#action-no-msg").removeClass("hidden").addClass("visible");
+ }
+ })
+
+</script>
 </body>
 
 </html>
