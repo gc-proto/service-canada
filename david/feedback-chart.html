@@ -506,13 +506,13 @@ d3.csv("http://test.canada.ca/service-canada/david/data_test.csv", function(data
     .attr("y", function(d) { return y(d.word); })
     .attr("width", function(d) { return x(d.count); })
     .attr("height", y.bandwidth() )
-    .attr("fill", "#29335c")
+    .attr("fill", "#669bbc")
     .on("click",clickme)
     .on("mouseover", function(d) {
-  d3.select(this).attr("r", 10).style("fill", "#669bbc");
+  d3.select(this).attr("r", 10).style("fill", "#29335c");
 })
     .on("mouseout", function(d) {
-  d3.select(this).attr("r", 5.5).style("fill", "#29335c");
+  d3.select(this).attr("r", 5.5).style("fill", "#669bbc");
 });
     // .attr("x", function(d) { return x(d.Country); })
     // .attr("y", function(d) { return y(d.Value); })
