@@ -421,9 +421,9 @@
 
 
 // set the dimensions and margins of the graph
-var margin = {top: 20, right: 30, bottom: 40, left: 90},
-    width = 460 - margin.left - margin.right,
-    height = 400 - margin.top - margin.bottom;
+var margin = {top: 20, right: 30, bottom: 40, left: 150},
+    width = 600 - margin.left - margin.right,
+    height = 600 - margin.top - margin.bottom;
 
 // append the svg object to the body of the page
 var svg = d3.select("#my_dataviz")
@@ -445,8 +445,8 @@ d3.csv("http://test.canada.ca/service-canada/david/data_test.csv", function(data
     .attr("transform", "translate(0," + height + ")")
     .call(d3.axisBottom(x))
     .selectAll("text")
-      .attr("transform", "translate(-10,0)rotate(-45)")
-      .style("text-anchor", "end");
+      .style("text-anchor", "end")
+      .style("font", "18px Noto sans");
 
   // Y axis
   var y = d3.scaleBand()
@@ -455,6 +455,7 @@ d3.csv("http://test.canada.ca/service-canada/david/data_test.csv", function(data
     .padding(.1);
   svg.append("g")
     .call(d3.axisLeft(y))
+    .style("font", "18px Noto sans")
 
   //Bars
   svg.selectAll(".bar")
