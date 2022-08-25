@@ -25,21 +25,7 @@
     <script src="https://d3js.org/d3.v4.js"></script>
 
 
-    <style>
 
-        .bar {
-          fill: steelblue;
-        }
-
-        .bar:hover {
-          fill: brown;
-        }
-
-        .info{
-          display: none;
-        }
-
-</style>
     </head>
 
 
@@ -761,7 +747,9 @@ var svg = d3.select("#my_dataviz")
 // Parse the Data
 d3.csv("http://test.canada.ca/service-canada/david/data_test.csv", function(data) {
 
-  // Add X axis
+  // Add X
+
+
   var x = d3.scaleLinear()
     .domain([0, 150])
     .range([ 0, width]);
@@ -782,27 +770,40 @@ d3.csv("http://test.canada.ca/service-canada/david/data_test.csv", function(data
     .style("font", "18px Noto sans")
 
   //Bars
-  svg.selectAll(".bar")
+
+
+
+  let bars = svg.selectAll('.bar')
     .data(data)
     .enter()
-    .append("rect")
-    .attr("x", x(0) )
-    .attr("y", function(d) { return y(d.word); })
-    .attr("width", function(d) { return x(d.count); })
-    .attr("height", y.bandwidth() )
-    .attr("fill", "#669bbc")
-    .on("click",clickme)
-    .on("mouseover", function(d) {
-  d3.select(this).attr("r", 10).style("fill", "#29335c");
-})
-    .on("mouseout", function(d) {
-  d3.select(this).attr("r", 5.5).style("fill", "#669bbc");
-});
-    // .attr("x", function(d) { return x(d.Country); })
-    // .attr("y", function(d) { return y(d.Value); })
-    // .attr("width", x.bandwidth())
-    // .attr("height", function(d) { return height - y(d.Value); })
-    // .attr("fill", "#69b3a2")
+    .append("g");
+
+    bars.append('rect')
+      .attr("x", x(0) )
+      .attr("y", function(d) { return y(d.word); })
+      .attr("width", function(d) { return x(d.count); })
+      .attr("height", y.bandwidth() )
+      .attr("fill", "#669bbc")
+      .on("click", clickme)
+      .on("mouseover", function(d) {
+    d3.select(this).style("cursor", "pointer");
+  })
+      .on("mouseout", function(d) {
+    d3.select(this).style("cursor", "default");
+  });
+
+
+  bars.append("text")
+    .attr("x", function(d) {
+        return x(d.count) - 3;
+    })
+    .attr("text-anchor", "end")
+    .attr("y", function(d) {
+        return y(d.count) + y.rangeBand() / 2;
+    })
+    .text(function(d) {
+        return d.count;
+    });
 
 })
 
