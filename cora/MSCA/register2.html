@@ -295,87 +295,69 @@
       <p>If you do not have an account, you have to choose how you want to register. The way you register will be the same way you sign-in to MSCA.</p>
       <section>
         <section>
-          <div class="well">
 
             <div class="wb-frmvld fieldflow-lg">
                                            <form>
                                                <div class="wb-fieldflow" data-wb-fieldflow="{&quot;noForm&quot;: true, &quot;isoptional&quot;: true, &quot;renderas&quot;: &quot;radio&quot;, &quot;reset&quot;: {&quot;action&quot;: &quot;addClass&quot;, &quot;source&quot;: &quot;.alert1&quot;, &quot;class&quot;: &quot;hidden&quot;}}" id="have-acct">
-                                                   <p>If you are a new user and don't have an MSCA account, choose an option to create one:</p>
+                                                   <p>Select the account type that you want to register with:</p>
                                                    <ul>
-                                                       <li> Register with GCKey <div class="wb-fieldflow-sub" data-wb-fieldflow="{&quot;renderas&quot;: &quot;radio&quot;, &quot;isoptional&quot;: true, &quot;reset&quot;: {&quot;action&quot;: &quot;addClass&quot;, &quot;source&quot;: &quot;.alert1&quot;, &quot;class&quot;: &quot;hidden&quot;}}">
+                                                     <li data-wb-fieldflow="{&quot;action&quot;: &quot;removeClass&quot;, &quot;source&quot;: &quot;#answer1-1&quot;, &quot;class&quot;: &quot;hidden&quot;, &quot;live&quot;: true}">I have a bank account</li>
+                                                       <li>I have a GCKey account <div class="wb-fieldflow-sub" data-wb-fieldflow="{&quot;renderas&quot;: &quot;radio&quot;, &quot;isoptional&quot;: true, &quot;reset&quot;: {&quot;action&quot;: &quot;addClass&quot;, &quot;source&quot;: &quot;.alert1&quot;, &quot;class&quot;: &quot;hidden&quot;}}">
                                                                <div class="wb-fieldflow-header">
-                                                                 <p>GCKey is a unique electronic credential issued by the Government of Canada. It lets you securely access ROE Web and multiple other Government online services.</p>
-                                                                 <p><strong>What is GCKey</strong></p>
-                                                                   <p class="wb-fieldflow-label">Do you have a GCKey already?</p>
+                                                                 <p>A PAC is used to help verify your identity. It's a 4-digit code that needs to be requested from Service Canada and then delivered to you by mail. It can take up 5-10 business days to receive a PAC. </p>
+                                                                 <p><strong>To create an MSCA account using GCKey, you need a Personal Access Code (PAC)</strong></p>
+                                                                   <p class="wb-fieldflow-label">Do you have a personal access code (PAC)?</p>
                                                                </div>
 
                                                                <ul>
-                                                                   <li data-wb-fieldflow="{&quot;action&quot;: &quot;removeClass&quot;, &quot;source&quot;: &quot;#answer1-1&quot;, &quot;class&quot;: &quot;hidden&quot;, &quot;live&quot;: true}">Yes, I need to sign in</li>
-                                                                   <li data-wb-fieldflow="{&quot;action&quot;: &quot;removeClass&quot;, &quot;source&quot;: &quot;#answer1-2&quot;, &quot;class&quot;: &quot;hidden&quot;, &quot;live&quot;: true}">No, I need to create one</li>
+                                                                   <li data-wb-fieldflow="{&quot;action&quot;: &quot;removeClass&quot;, &quot;source&quot;: &quot;#answer1-2&quot;, &quot;class&quot;: &quot;hidden&quot;, &quot;live&quot;: true}">Yes</li>
+                                                                   <li data-wb-fieldflow="{&quot;action&quot;: &quot;removeClass&quot;, &quot;source&quot;: &quot;#answer1-3&quot;, &quot;class&quot;: &quot;hidden&quot;, &quot;live&quot;: true}">No</li>
 
                                                                </ul>
                                                            </div>
                                                        </li>
-                                                     <li data-wb-fieldflow="{&quot;action&quot;: &quot;removeClass&quot;, &quot;source&quot;: &quot;#answer1-3&quot;, &quot;class&quot;: &quot;hidden&quot;, &quot;live&quot;: true}">Register with your bank</li>
+                                                       <li>I have a provincial ID card (only for Alberta and British Columbia) <div class="wb-fieldflow-sub" data-wb-fieldflow="{&quot;renderas&quot;: &quot;radio&quot;, &quot;isoptional&quot;: true, &quot;reset&quot;: {&quot;action&quot;: &quot;addClass&quot;, &quot;source&quot;: &quot;.alert1&quot;, &quot;class&quot;: &quot;hidden&quot;}}">
+                                                           <div class="wb-fieldflow-header">
+                                                             <p>If you live in Alberta or British Columbia, you can access My Service Canada Account (MSCA) by signing in or registering with your provincial digital ID:</p>
+                                                               <p class="wb-fieldflow-label">Which province do you live in?</p>
+                                                           </div>
+
+                                                           <ul>
+                                                               <li data-wb-fieldflow="{&quot;action&quot;: &quot;removeClass&quot;, &quot;source&quot;: &quot;#answer1-4&quot;, &quot;class&quot;: &quot;hidden&quot;, &quot;live&quot;: true}">Alberta</li>
+                                                               <li data-wb-fieldflow="{&quot;action&quot;: &quot;removeClass&quot;, &quot;source&quot;: &quot;#answer1-5&quot;, &quot;class&quot;: &quot;hidden&quot;, &quot;live&quot;: true}">British Columbia</li>
+
+                                                           </ul>
+                                                       </div>
                                                    </ul>
                                                </div>
                                            </form>
                                        </div>
 
                                            <div id="answer1-1" class="hidden alert1 provisional">
-                                             <h3>Sign in to GCKey to access ROE Web</h3>
-                      <p>Once you have successfully signed in to GCKey, you will automatically be redirected to create your ROE Web account.</p>
-             <a type="button" class="btn btn-call-to-action" href="https://www.canada.ca/en/employment-social-development/programs/ei/ei-list/ei-roe/access-roe.html#inline_content_modal">Start with GCKey</a>
+                                             <h3>Create an account using your bank account</h3>
+                      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+             <a type="button" class="btn btn-call-to-action" href="https://www.canada.ca/en/employment-social-development/programs/ei/ei-list/ei-roe/access-roe.html#inline_content_modal">Start with your bank</a>
                                          </div>
                                            <div id="answer1-2" class="hidden alert1 provisional">
-                                             <h3>Create a GCKey to access ROE Web</h3>
-                                             <p>You must sign up for a GCKey before you can register to ROE Web. Select “Start with GCKey” below and follow the sign-up instructions on the Welcome to GCKey page.</p>
-                                             <p>Once you have successfully signed up to GCKey, you will automatically be redirected to create your ROE Web account.</p>
+                                             <h3>Create a GCKey to access MSCA</h3>
+                                             <p>You must sign up for a GCKey before you can register for an MSCA Web. Select “Start with GCKey” below and follow the sign-up instructions on the Welcome to GCKey page.</p>
+                                             <p>Once you have successfully signed up to GCKey, you will automatically be redirected to create your MSCA account.</p>
                  <a type="button" class="btn btn-call-to-action" href="https://www.canada.ca/en/employment-social-development/programs/ei/ei-list/ei-roe/access-roe.html#inline_content_modal">Start with GCKey</a>
                                            </div>
 
                                            <div id="answer1-3" class="hidden alert1 provisional">
-                                               <ol class="lst-stps">
-                                               <li>
-                                               <h3>Verify that your bank is a Sign-in Partner</h3>
-                                               <p>To register to ROE Web with your bank, you must have a Canadian online bank account with one of our Sign-In Partners.</p>
-                                               <p>If your bank is not listed as a Sign-in Partner you must register to ROE Web using GCKey.</p>
-
-                                               <p><strong>Full list of Sign-in Partners:</strong></p>
-                                               <div class="col-md-6">
-                                               <ul>
-                                                     <li>Affinity Credit Union</li>
-                                                     <li>Alberta Treasury Branches</li>
-                                                     <li>BMO  Financial Group</li>
-                                                     <li>CIBC Canadian Imperial Bank of Commerce</li>
-                                                     <li>Coast Capital Savings</li>
-                                                     <li>Conexus Credit Union</li>
-                                                     <li>Desjardins Group (Caisse Alliance, Caisses Populaires, UNI)</li>
-                                                     <li>Libro Credit Union</li>
-                                                     <li>National Bank of Canada</li>
-                                                     <li>RBC Royal Bank</li>
-                                                     <li>Scotiabank</li>
-                                                     <li>Servus Credit Union</li>
-                                                     <li>Simplii Financial</li>
-                                                     <li>Tangerine</li>
-                                                     <li>TD Bank Group</li>
-                                                     <li>Vancity</li>
-                                               </ul>
+                                             <h3>Request a Personal Access Code (PAC)</h3>
+                                             <p>YLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+                                            <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
                                                </div>
-                                               <div class="col-md-6"> <img src="https://www.canada.ca/content/dam/canada/employment-social-development/migration/images/assets/portfolio/docs/en/ei/roe/access_roe/partners-logoEN.png" alt=""> </div>
-                                               <div class="clearfix"></div>
-                                               </li>
-                                               <li>
-                                               <h3>Create your ROE Web  account</h3>
-                                               <p>Once you have successfully signed in with your bank, you will automatically be redirected to  create your ROE Web account&nbsp;&nbsp;</p>
-                                               <a type="button" class="btn btn-call-to-action" href="https://services.securekeyconcierge.com/cbs/saml/login?l=1&amp;lang=eng">Start with your bank</a>
-                                               <div class="alert alert-info">
-                                               <p><strong>Note:</strong> You will temporarily leave the government of Canada website to use your Sign-in Partner. This is a secure site. Your financial or banking information will not be shared with  Employment and Social Development Canada and Service Canada. Your bank or credit  union will not know which government service you are using.</p>
-                                               </div>
-                                               </li>
-                                               </ol>
-                                               </div>
-                                            </div>
+                                               <div id="answer1-4" class="hidden alert1 provisional">
+                                                 <h3>Register with your provincial digital ID</h3>
+                                                  <a type="button" class="btn btn-call-to-action" href="https://www.canada.ca/en/employment-social-development/programs/ei/ei-list/ei-roe/access-roe.html#inline_content_modal">Start with MyAlberta Digital ID</a>
+                                                </div>
+                                                <div id="answer1-5" class="hidden alert1 provisional">
+                                                  <h3>Register with your provincial digital ID</h3>
+                                                   <a type="button" class="btn btn-call-to-action" href="https://www.canada.ca/en/employment-social-development/programs/ei/ei-list/ei-roe/access-roe.html#inline_content_modal">Start with my BC Services Card</a>
+                                                 </div>
                          </section>
                       </section>
                 <section>
