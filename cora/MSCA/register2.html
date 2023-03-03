@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<!--[if lt IE 9]>
+<html class="no-js lt-ie9" dir="ltr" lang="en">
+   <![endif]-->
+   <!--[if gt IE 8]><!-->
+   <html class="no-js" dir="ltr" lang="en">
+      <!--<![endif]-->
+      <head>
+         <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+         <meta charset="utf-8"/>
+         <meta name="robots" content="noindex, nofollow" />
+         <!--CHANGE THE TITLE-->
+         <title>Prototype - MSCA Register fieldflow</title>
+         <meta content="width=device-width, initial-scale=1" name="viewport"/>
+         <meta content=" " name="description"/>
+         <link href="https://wet-boew.github.io/themes-dist/GCWeb/GCWeb/assets/favicon.ico" rel="icon" type="image/x-icon"/>
+         <link href="https://www.canada.ca/etc/designs/canada/wet-boew/css/theme.min.css" rel="stylesheet"/>
+         <noscript>
+            <link href="https://wet-boew.github.io/themes-dist/GCWeb/wet-boew/css/noscript.min.css" rel="stylesheet"/>
+         </noscript>
+         <link href="https://test.canada.ca/service-canada/css/alpha-beta-banner.css" rel="stylesheet"/>
+         <link crossorigin="anonymous" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" rel="stylesheet"/>
+         <link rel="stylesheet" href="https://www.canada.ca/etc/designs/canada/wet-boew/méli-mélo/2022-06-banff.min.css" />
+         <link rel="stylesheet" href="https://cra-arc.gc.ca/wet-boew/css/custom/steps.css">
+         <style>
+            .header-bg {
+            line-height: normal;
+            background: linear-gradient(to right, #ddd 50%, #fff 75%, #fff);
+            }
+            .header-bg .brdr-bttm-fade	 {
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(to right, #26374a 50%, #fff 75%, #fff);
+            }
+            .header-bg h2 {
+            background: linear-gradient(297.5deg, transparent, transparent 25px, white 26px, white 31px, #26374a 32px, #26374a);
+            color: white;
+            display: inline-block;
+            margin: 0px;
+            padding: 5px 30px 5px 15px;
+            min-width: 300px;
+            font-size: 1.3em;
+            }
+            .btn.large-btn {display:flex;flex-direction:row;padding:0;border:2px solid #000; background-color:#fff;width:85%;text-align:center;}
+            .btn.large-btn .icon-btn {flex:none;display:flex;flex-direction:row;align-items:center;}
+            .btn.large-btn .label-btn {flex:auto;display:flex;flex-direction:row;align-items:center;padding:0 5px;}
+            .btn.large-btn .label-btn b {display:block;margin-left:auto;margin-right:auto;}
+            .btn.large-btn .icon-btn img {width:30px;margin:10px 15px;}
+            a.btn-blue:link, a.btn-blue:visited {
+            border:2px solid #003264;
+            color:#222;
+            }
+            a.btn-blue:link .icon-btn, a.btn-blue:visited .icon-btn{
+            background-color:#003264;
+            }
+            a.btn-blue:hover, a.btn-blue:active, a.btn-blue:focus {
+            background: #003264;
+            color: white;
+            }
+            a.btn-red:link, a.btn-red:visited {
+            border:2px solid #990033;
+            color:#222;
+            }
+            a.btn-red:link .icon-btn, a.btn-red:visited .icon-btn{
+            background-color:#990033;
+            }
+            a.btn-red:hover, a.btn-red:active, a.btn-red:focus {
+            background: #990033;
+            color: white;
+            }
+            a.btn-lblue:link, a.btn-lblue:visited {
+            border:2px solid #00749C;
+            color:#222;
+            }
+            a.btn-lblue:link .icon-btn, a.btn-lblue:visited .icon-btn{
+            background: #00749C;
+            }
+            a.btn-lblue:hover, a.btn-lblue:active, a.btn-lblue:focus {
+            background: #00749C;
+            color: white;
+            }
+
+            /*Checkbox/Fieldflow radio input sizing,positioning*/
+            .checkbox-lg > li.checkbox {
+            margin-top: 0px;
+            }
+            .checkbox-lg > li {
+            margin-left: -40px;
+            padding-left: 40px;
+            padding-top: 5px;
+            padding-bottom: 10px;
+            margin-bottom: 5px;
+            padding-right: 15px;
+            }
+            .checkbox-zebra > li:nth-child(2n+1) {
+            background-color: #f5f5f5;
+            padding-top: 10px;
+            padding-bottom: 15px;
+            }
+            .checkbox-lg > li.checkbox input[type=checkbox], .fieldflow-lg .radio input[type=radio] {
+            margin-top: 12px;
+            transform: scale(2);
+            }
+            .checkbox-lg label, .fieldflow-lg, .fieldflow-lg label, .fieldflow-lg div, .fieldflow-lg select, .std-blt {
+            font-size: 20px;
+            line-height: 1.65em;
+            }
+            .std-blt {
+            list-style-type: disc;
+            }
+            .std-blt li label {
+            display: block;
+            padding-left: 0px;
+            }
+            .fieldflow-lg .radio label {
+            margin-left: 40px;
+            }
+            .fieldflow-lg .radio input[type=radio] {
+            margin-left: -40px;
+            }
+            .fieldflow-lg fieldset legend {
+            font-size: 22px;
+            margin-top: 0px;
+            }
+         </style>
+      </head>
+      <body class="" typeof="WebPage" vocab="http://schema.org/">
+         <nav>
+            <ul id="wb-tphp">
+               <li class="wb-slc"><a class="wb-sl" href="#wb-cont">Skip to main content</a></li>
+               <li class="wb-slc visible-sm visible-md visible-lg"><a class="wb-sl" href="#wb-info">Skip to "About government"</a></li>
+            </ul>
+         </nav>
+         <header>
+            <div class="container" id="wb-bnr">
+               <div class="row">
+                  <section class="col-xs-3 col-sm-12 pull-right text-right" id="wb-lng">
+                     <h2 class="wb-inv">Language selection</h2>
+                     <div class="row">
+                        <div class="col-md-12">
+                           <ul class="list-inline mrgn-bttm-0">
+                              <li> <a href="#" lang="fr"> <span class="hidden-xs hidden-sm">Français</span> <abbr class="visible-xs h3 mrgn-tp-sm mrgn-bttm-0 text-uppercase" title="Français">fr</abbr> </a> </li>
+                           </ul>
+                        </div>
+                     </div>
+                  </section>
+                  <div class="brand col-xs-9 col-sm-5 col-md-4" property="publisher" typeof="GovernmentOrganization">
+                     <a href="/en.html" property="url"> <img alt="Government of Canada" property="logo" src="https://www.canada.ca/etc/designs/canada/wet-boew/assets/sig-blk-en.svg"/> </a>
+                     <meta content="Government of Canada" property="name"/>
+                     <meta content="Canada" property="areaServed" typeof="Country"/>
+                     <link href="https://www.canada.ca/etc/designs/canada/wet-boew/assets/wmms-blk.svg" property="logo"/>
+                  </div>
+                  <section class="col-lg-offset-4 col-md-offset-4 col-sm-offset-2 col-xs-12 col-sm-5 col-md-4" id="wb-srch">
+                     <h2>Search</h2>
+                     <form action="/en/sr/srb.html" method="get" name="cse-search-box" role="search">
+                        <div class="form-group wb-srch-qry">
+                           <label class="wb-inv" for="wb-srch-q">Search Canada.ca</label>
+                           <input name="cdn" type="hidden" value="canada"/>
+                           <input name="st" type="hidden" value="s"/>
+                           <input name="num" type="hidden" value="10"/>
+                           <input name="langs" type="hidden" value="en"/>
+                           <input name="st1rt" type="hidden" value="1"/>
+                           <input name="s5bm3ts21rch" type="hidden" value="x"/>
+                           <input class="wb-srch-q form-control" id="wb-srch-q" list="wb-srch-q-ac" maxlength="170" name="q" placeholder="Search Canada.ca" size="34" type="search" value=""/>
+                           <input name="_charset_" type="hidden" value="UTF-8"/>
+                           <datalist id="wb-srch-q-ac"></datalist>
+                        </div>
+                        <div class="form-group submit">
+                           <button class="btn btn-primary btn-small" id="wb-srch-sub" name="wb-srch-sub" type="submit"><span class="glyphicon-search glyphicon"></span><span class="wb-inv">Search</span></button>
+                        </div>
+                     </form>
+                  </section>
+               </div>
+            </div>
+            <nav class="gcweb-v2 gcweb-menu" typeof="SiteNavigationElement">
+               <div class="container">
+                  <h2 class="wb-inv">Menu</h2>
+                  <button aria-expanded="false" aria-haspopup="true" type="button"><span class="wb-inv">Main </span>Menu <span class="expicon glyphicon glyphicon-chevron-down"></span></button>
+                  <ul aria-orientation="vertical" role="menu" data-ajax-replace="https://www.canada.ca/content/dam/canada/sitemenu/sitemenu-v2-en.html">
+                     <!--   -->
+                     <li role="presentation"><a href="https://www.canada.ca/en/services/jobs.html" role="menuitem" tabindex="-1">Jobs and the workplace</a></li>
+                     <li role="presentation"><a href="https://www.canada.ca/en/services/immigration-citizenship.html" role="menuitem" tabindex="-1">Immigration
+                        and citizenship</a>
+                     </li>
+                     <li role="presentation"><a href="https://travel.gc.ca/" role="menuitem" tabindex="-1">Travel
+                        and
+                        tourism</a>
+                     </li>
+                     <li role="presentation"><a href="https://www.canada.ca/en/services/business.html" role="menuitem" tabindex="-1">Business and industry</a></li>
+                     <li role="presentation"><a href="https://www.canada.ca/en/services/benefits.html" role="menuitem" tabindex="-1">Benefits</a></li>
+                     <li role="presentation"><a href="https://www.canada.ca/en/services/health.html" role="menuitem" tabindex="-1">Health</a></li>
+                     <li role="presentation"><a href="https://www.canada.ca/en/services/taxes.html" role="menuitem" tabindex="-1">Taxes</a></li>
+                     <li role="presentation"><a href="https://www.canada.ca/en/services/environment.html" role="menuitem" tabindex="-1">Environment and natural
+                        resources</a>
+                     </li>
+                     <li role="presentation"><a href="https://www.canada.ca/en/services/defence.html" role="menuitem" tabindex="-1">National security and
+                        defence</a>
+                     </li>
+                     <li role="presentation"><a href="https://www.canada.ca/en/services/culture.html" role="menuitem" tabindex="-1">Culture, history and sport</a></li>
+                     <li role="presentation"><a href="https://www.canada.ca/en/services/policing.html" role="menuitem" tabindex="-1">Policing, justice and
+                        emergencies</a>
+                     </li>
+                     <li role="presentation"><a href="https://www.canada.ca/en/services/transport.html" role="menuitem" tabindex="-1">Transport and
+                        infrastructure</a>
+                     </li>
+                     <li role="presentation"><a href="http://international.gc.ca/world-monde/index.aspx?lang=eng" role="menuitem" tabindex="-1">Canada and the
+                        world </a>
+                     </li>
+                     <li role="presentation"><a href="https://www.canada.ca/en/services/finance.html" role="menuitem" tabindex="-1">Money and finances</a></li>
+                     <li role="presentation"><a href="https://www.canada.ca/en/services/science.html" role="menuitem" tabindex="-1">Science and innovation</a></li>
+                  </ul>
+               </div>
+            </nav>
+            <nav id="wb-bc" property="breadcrumb">
+               <h2 class="wb-inv">You are here:</h2>
+               <div class="container">
+                 <ol class="breadcrumb">
+                 <li><a href="/en.html">Canada.ca</a></li>
+                 <li><a href="/en/employment-social-development.html">Employment and Social Development Canada</a></li>
+                 </ol>
+               </div>
+            </nav>
+         </header>
+         <!--CONTENT STARTS HERE-->
+         <main property="mainContentOfPage" resource="#wb-main" typeof="WebPageElement">
+           <div class="mwsgeneric-base-html parbase section">
+
+
+
+      <div class="container">
+    <h1 property="name" id="wb-cont" class="gc-thickline">My Service Canada Account</h1>
+  <p>My Service Canada Account (<abbr>MSCA</abbr>) is a secure online portal. It allows you to view and update your information for Employment Insurance (<abbr>EI</abbr>), Canada Pension Plan (<abbr>CPP</abbr>), Canada Pension Plan disability and Old Age Security (<abbr>OAS</abbr>).</p>
+
+  <!--
+  <div class="provisional alert alert-danger">
+      <h2 class="h3">Systems maintenance</h2>
+  <ul>
+   <li>MSCA will be unavailable from 4 am to 7 am on Saturday, February 11, 2023 (EST)</li>
+  <li>Access to MSCA with your bank will be unavailable from 2 am to 6 am on Sunday, February 12, 2023 (EST)</li>
+  </ul>
+  </div> </li>
+  -->
+
+    <div class="alert alert-info">
+      <h2 class="h3">Latest notices</h2>
+      <ul>
+        <li>Updating your EI &amp; CPP/OAS direct deposit information and mailing address is currently unavailable. Telephone number update is unavailable for EI users only. To make a change:
+          <ul>
+            <li>complete the&nbsp;<a href="https://eservices.canada.ca/en/service/">eServiceCanada form</a>; or</li>
+            <li>contact the&nbsp;<a href="/en/employment-social-development/services/my-account.html#contact">call centre</a>&nbsp;responsible for the benefits you have received</li>
+          </ul></li>
+        <li><a href="/en/employment-social-development/services/my-account/multi-factor-authentication.html">Multi-factor authentication</a> helps protect your identity and personal information when you access MSCA</li>
+          <li class="ie-show" style="display: none;">Internet Explorer (IE) is no longer supported. To avoid access issues, please use a <a href="#avoid">recommended Web browser</a></li>
+        <!--<li>June 2021 – Registration to <a href="/content/canadasite/en/employment-social-development/services/my-account/multi-factor-authentication.html">multi-factor authentication</a> is now <strong>mandatory</strong> when you sign in to MSCA with a GCKey or your bank (Sign-in Partner). This new step will help protect your identity and personal information</li>-->
+        <!--<li>June 2021 – You can now update your direct deposit information, mailing address and telephone number for <strong>EI</strong> in MSCA</li>-->
+      </ul>
+    </div>
+    <details>
+      <summary>Keep your personal information safe</summary>
+      <h2 class="h3">Safety tips</h2>
+      <ul>
+        <li>Be aware of your surroundings when you enter passwords and security codes in public</li>
+        <li>Don't give out or share passwords or security codes online or over the phone, even with family</li>
+        <li>Log off or sign out of accounts and websites when you are finished; don't just close your browser</li>
+      </ul>
+    </details>
+    <div class="mrgn-tp-lg header-bg">
+      <h2>Sign in</h2>
+      <div class="brdr-bttm-fade"></div>
+    </div>
+    <div class="panel">
+      <div class="panel-body">
+        <p>If you already have an access code or a provincial digital ID, choose an option to access <abbr>MSCA</abbr>:</p><ul class="list-unstyled row mrgn-bttm-0 wb-eqht wb-init wb-eqht-inited" id="wb-auto-4">
+          <li class="col-md-4" style="vertical-align: top; min-height: 55px;"> <a href="https://srv136.services.gc.ca/ecas-seca/rascl/Initialize.aspx?Lang=eng&amp;Idp=https://clegc-gckey.gc.ca&amp;AppCode=MSCA_SC" class="btn btn-blue large-btn" data-gc-analytics-customclick="ESDC|EDSC:MSCA Sign in:Sign in with GCKey Click">
+            <div class="icon-btn"><img src="https://www.canada.ca/content/dam/esdc-edsc/images/services/msca-mdsc/key-white.png" alt=""></div>
+            <div class="label-btn"><b>Sign in  with GCKey</b></div>
+            </a> </li>
+          <li class="col-md-4" style="vertical-align: top; min-height: 55px;"> <a href="https://srv136.services.gc.ca/ecas-seca/rascl/Initialize.aspx?Lang=eng&amp;Idp=https://services.securekeyconcierge.com/cbs&amp;AppCode=MSCA_SC" class="btn btn-red large-btn" data-gc-analytics-customclick="ESDC|EDSC:MSCA Sign in:Sign in with your bank Click">
+            <div class="icon-btn"><img src="https://www.canada.ca/content/dam/esdc-edsc/images/services/msca-mdsc/bank-white.png" alt=""></div>
+            <div class="label-btn"><b>Sign in  with your bank</b></div>
+            </a> </li>
+          <li class="col-md-4" style="vertical-align: top; min-height: 55px;"> <a href="/en/employment-social-development/services/my-account/province.html" class="btn btn-lblue large-btn" data-gc-analytics-customclick="ESDC|EDSC:MSCA Sign in:Sign in with your province Click">
+            <div class="icon-btn"><img src="https://www.canada.ca/content/dam/esdc-edsc/images/services/msca-mdsc/Province-white.png" alt=""></div>
+            <div class="label-btn"><b>Sign in  with your province</b></div>
+            </a> </li>
+        </ul>
+
+      </div>
+    </div>
+    <div class="header-bg">
+       <h2>Create an account</h2>
+       <div class="brdr-bttm-fade"></div>
+    </div>
+    <section>
+      <p>If you do not have an account, you have to choose how you want to register. The way you register will be the same way you sign-in to MSCA.</p>
+      <section>
+        <section>
+          <div class="well">
+
+            <div class="wb-frmvld fieldflow-lg">
+                                           <form>
+                                               <div class="wb-fieldflow" data-wb-fieldflow="{&quot;noForm&quot;: true, &quot;isoptional&quot;: true, &quot;renderas&quot;: &quot;radio&quot;, &quot;reset&quot;: {&quot;action&quot;: &quot;addClass&quot;, &quot;source&quot;: &quot;.alert1&quot;, &quot;class&quot;: &quot;hidden&quot;}}" id="have-acct">
+                                                   <p>If you are a new user and don't have an MSCA account, choose an option to create one:</p>
+                                                   <ul>
+                                                       <li> Register with GCKey <div class="wb-fieldflow-sub" data-wb-fieldflow="{&quot;renderas&quot;: &quot;radio&quot;, &quot;isoptional&quot;: true, &quot;reset&quot;: {&quot;action&quot;: &quot;addClass&quot;, &quot;source&quot;: &quot;.alert1&quot;, &quot;class&quot;: &quot;hidden&quot;}}">
+                                                               <div class="wb-fieldflow-header">
+                                                                 <p>GCKey is a unique electronic credential issued by the Government of Canada. It lets you securely access ROE Web and multiple other Government online services.</p>
+                                                                 <p><strong>What is GCKey</strong></p>
+                                                                   <p class="wb-fieldflow-label">Do you have a GCKey already?</p>
+                                                               </div>
+
+                                                               <ul>
+                                                                   <li data-wb-fieldflow="{&quot;action&quot;: &quot;removeClass&quot;, &quot;source&quot;: &quot;#answer1-1&quot;, &quot;class&quot;: &quot;hidden&quot;, &quot;live&quot;: true}">Yes, I need to sign in</li>
+                                                                   <li data-wb-fieldflow="{&quot;action&quot;: &quot;removeClass&quot;, &quot;source&quot;: &quot;#answer1-2&quot;, &quot;class&quot;: &quot;hidden&quot;, &quot;live&quot;: true}">No, I need to create one</li>
+
+                                                               </ul>
+                                                           </div>
+                                                       </li>
+                                                     <li data-wb-fieldflow="{&quot;action&quot;: &quot;removeClass&quot;, &quot;source&quot;: &quot;#answer1-3&quot;, &quot;class&quot;: &quot;hidden&quot;, &quot;live&quot;: true}">Register with your bank</li>
+                                                   </ul>
+                                               </div>
+                                           </form>
+                                       </div>
+
+                                           <div id="answer1-1" class="hidden alert1 provisional">
+                                             <h3>Sign in to GCKey to access ROE Web</h3>
+                      <p>Once you have successfully signed in to GCKey, you will automatically be redirected to create your ROE Web account.</p>
+             <a type="button" class="btn btn-call-to-action" href="https://www.canada.ca/en/employment-social-development/programs/ei/ei-list/ei-roe/access-roe.html#inline_content_modal">Start with GCKey</a>
+                                         </div>
+                                           <div id="answer1-2" class="hidden alert1 provisional">
+                                             <h3>Create a GCKey to access ROE Web</h3>
+                                             <p>You must sign up for a GCKey before you can register to ROE Web. Select “Start with GCKey” below and follow the sign-up instructions on the Welcome to GCKey page.</p>
+                                             <p>Once you have successfully signed up to GCKey, you will automatically be redirected to create your ROE Web account.</p>
+                 <a type="button" class="btn btn-call-to-action" href="https://www.canada.ca/en/employment-social-development/programs/ei/ei-list/ei-roe/access-roe.html#inline_content_modal">Start with GCKey</a>
+                                           </div>
+
+                                           <div id="answer1-3" class="hidden alert1 provisional">
+                                               <ol class="lst-stps">
+                                               <li>
+                                               <h3>Verify that your bank is a Sign-in Partner</h3>
+                                               <p>To register to ROE Web with your bank, you must have a Canadian online bank account with one of our Sign-In Partners.</p>
+                                               <p>If your bank is not listed as a Sign-in Partner you must register to ROE Web using GCKey.</p>
+
+                                               <p><strong>Full list of Sign-in Partners:</strong></p>
+                                               <div class="col-md-6">
+                                               <ul>
+                                                     <li>Affinity Credit Union</li>
+                                                     <li>Alberta Treasury Branches</li>
+                                                     <li>BMO  Financial Group</li>
+                                                     <li>CIBC Canadian Imperial Bank of Commerce</li>
+                                                     <li>Coast Capital Savings</li>
+                                                     <li>Conexus Credit Union</li>
+                                                     <li>Desjardins Group (Caisse Alliance, Caisses Populaires, UNI)</li>
+                                                     <li>Libro Credit Union</li>
+                                                     <li>National Bank of Canada</li>
+                                                     <li>RBC Royal Bank</li>
+                                                     <li>Scotiabank</li>
+                                                     <li>Servus Credit Union</li>
+                                                     <li>Simplii Financial</li>
+                                                     <li>Tangerine</li>
+                                                     <li>TD Bank Group</li>
+                                                     <li>Vancity</li>
+                                               </ul>
+                                               </div>
+                                               <div class="col-md-6"> <img src="https://www.canada.ca/content/dam/canada/employment-social-development/migration/images/assets/portfolio/docs/en/ei/roe/access_roe/partners-logoEN.png" alt=""> </div>
+                                               <div class="clearfix"></div>
+                                               </li>
+                                               <li>
+                                               <h3>Create your ROE Web  account</h3>
+                                               <p>Once you have successfully signed in with your bank, you will automatically be redirected to  create your ROE Web account&nbsp;&nbsp;</p>
+                                               <a type="button" class="btn btn-call-to-action" href="https://services.securekeyconcierge.com/cbs/saml/login?l=1&amp;lang=eng">Start with your bank</a>
+                                               <div class="alert alert-info">
+                                               <p><strong>Note:</strong> You will temporarily leave the government of Canada website to use your Sign-in Partner. This is a secure site. Your financial or banking information will not be shared with  Employment and Social Development Canada and Service Canada. Your bank or credit  union will not know which government service you are using.</p>
+                                               </div>
+                                               </li>
+                                               </ol>
+                                               </div>
+                                            </div>
+                         </section>
+                      </section>
+                <section>
+                  <h2>Guidance on how to use <abbr>MSCA</abbr></h2>
+                  <ul>
+                    <li><a href="/en/employment-social-development/services/my-account/ei.html">Access Employment Insurance services</a></li>
+                    <li><a href="/en/employment-social-development/services/my-account/cpp-oas.html">Access pension benefits and services </a></li>
+                    <li><a href="/en/employment-social-development/services/my-account/tax.html">Access Tax information</a></li>
+                  </ul>
+                      <details>
+                        <summary>Avoid technical problems in MSCA</summary>
+                        <ul>
+                          <li>Don't bookmark secure&nbsp;MSCA&nbsp;pages (which means the pages you see after you sign in)</li>
+                          <li>Use one of the following  Web browser:
+                            <ul>
+                              <li>Google Chrome (version 84 or newer)</li>
+                              <li>Safari (version 13.1.2 or newer)</li>
+                              <li>Microsoft Edge (version 85 or newer)</li>
+                              <li>Mozilla Firefox (version 68 or newer)</li>
+                            </ul>
+                          </li>
+                          <li>For Apple users, use one of the following operating system:
+                            <ul>
+                              <li>iOS (version 13 or newer)</li>
+                              <li>MacOS (version 10.15 or newer)</li>
+                            </ul>
+                          </li>
+                          <li>Enable cookies and JavaScript in your browser</li>
+                        </ul>
+                </details>
+                </section>
+                <section class="col-md-12 brdr-tp">
+                    <h2>Contact information</h2>
+                    <p>Contact the following programs with any questions you may have about your benefits:</p>
+                    <dl class="dl-horizontal brdr-0">
+                      <dt>Employment Insurance</dt>
+                      <dd>
+                     <div class="list-group" role="list">
+                    <a role="list-item" class="list-group-item" <a="" href="template-4howtoapply-en.html#print application"><span class="text-muted">Contact EI for individuals</span></a>
+                    <a role="list-item" class="list-group-item" <a="" href="template-4howtoapply-en.html#fundingdecision"><span class="text-muted">Learn more about Employment Insurance benefits</span></a></div></dd>
+
+                        <dt>Social Insurance Number</dt>
+                        <dd>
+                          <div class="list-group" role="list">
+                         <a role="list-item" class="list-group-item" <a="" href="template-4howtoapply-en.html#print application"><span class="text-muted">Contact the SIN program</span></a>
+                         <a role="list-item" class="list-group-item" <a="" href="template-4howtoapply-en.html#fundingdecision"><span class="text-muted">Learn more about the SIN program</span></a></div>
+                          <dt>Canada Pension Plan</dt>
+                          <dd>
+                            <div class="list-group" role="list">
+                           <a role="list-item" class="list-group-item" <a="" href="template-4howtoapply-en.html#print application"><span class="text-muted">Contact the CPP program</span></a>
+                           <a role="list-item" class="list-group-item" <a="" href="template-4howtoapply-en.html#fundingdecision"><span class="text-muted">Learn more about CPP benefits</span></a></div>
+                            <dt>Old Age Security</dt>
+                            <dd>
+                              <div class="list-group" role="list">
+                             <a role="list-item" class="list-group-item" <a="" href="template-4howtoapply-en.html#print application"><span class="text-muted">Contact the OAS program</span></a>
+                             <a role="list-item" class="list-group-item" <a="" href="template-4howtoapply-en.html#fundingdecision"><span class="text-muted">Learn more about OAS benefits</span></a></div>
+                        </dl>
+                      </section>
+
+                        </section>
+            <!-- CONTENT ENDS HERE -->
+            <div class="col-sm-7 col-lg-6">
+                    <section class="gc-pg-hlpfl provisional">
+                        <div class="well mrgn-bttm-0">
+                            <form id="gc-pg-hlpfl-frm" action="https://apps.canada.ca/x-notify/eml/send" method="post" autocomplete="off">
+                                <input type="hidden" name="pageTitle" value="Managing your business">
+                                <input type="hidden" name="submissionPage" value="covid-19-guidance/proto/business/maintaining-your-business.html">
+                                <input type="hidden" name="tid" value="tbs-wasthishelpfulen">
+                                <input type="hidden" name="auke" value="NTQxNzE1OTA3NTgwMDYyOTQ=">
+                                <div class="gc-pg-hlpfl-btn">
+                                    <div class="row row-no-gutters">
+                                        <div class="col-xs-12 col-sm-7 mrgn-tp-sm">
+                                            <h2 class="mrgn-tp-sm h5">Did you find what you were looking for?</h2>
+                                        </div>
+                                        <div class="col-xs-8 col-sm-5 text-right">
+                                            <button data-wb5-click="postback@#gc-pg-hlpfl-frm@" type="submit" name="helpful" value="Yes" class="btn btn-primary" data-wb-doaction="[
+														{&quot;action&quot;:&quot;removeClass&quot;,&quot;source&quot;:&quot;.gc-pg-hlpfl-thnk&quot;,&quot;class&quot;:&quot;hide&quot;},
+														{&quot;action&quot;:&quot;addClass&quot;,&quot;source&quot;:&quot;#gc-pg-hlpfl-frm&quot;,&quot;class&quot;:&quot;hide&quot;}
+													]" data-gc-analytics-wtph="">Yes</button>
+                                            <button type="button" class="btn btn-primary mrgn-lft-sm nojs-hide" data-wb-doaction="[
+														{&quot;action&quot;:&quot;ajax&quot;,&quot;url&quot;:&quot;/content/dam/canada/mws-swg/nohelpful.html&quot;,&quot;container&quot;:&quot;.gc-pg-hlpfl-yes&quot;},
+														{&quot;action&quot;:&quot;removeClass&quot;,&quot;source&quot;:&quot;.gc-pg-hlpfl-no&quot;,&quot;class&quot;:&quot;nojs-show&quot;},
+														{&quot;action&quot;:&quot;addClass&quot;,&quot;source&quot;:&quot;.gc-pg-hlpfl-btn&quot;,&quot;class&quot;:&quot;hide&quot;}
+													]" data-gc-analytics-wtph-no="">No</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p class="h3 hidden nojs-show">If not, tell us why:</p>
+                                <div class="gc-pg-hlpfl-no nojs-show">
+                                    <fieldset>
+                                        <legend class="h4 mrgn-tp-0 mrgn-bttm-md">What was wrong?</legend>
+                                        <div class="radio">
+                                            <label for="problem1">
+												<input name="problem" id="problem1" type="radio" value="The answer I need is missing" data-gc-analytics-wtph-value="The answer I need is missing-La réponse dont j’ai besoin n’est pas là" data-gc-analytics-collect="notPrivate">
+												The answer I need is missing
+											</label>
+                                        </div>
+                                        <div class="radio">
+                                            <label for="problem2">
+												<input name="problem" id="problem2" type="radio" value="The information isn’t clear" data-gc-analytics-wtph-value="The information isn’t clear-L'information n'est pas claire" data-gc-analytics-collect="notPrivate">
+												The information isn’t clear
+											</label>
+                                        </div>
+                                        <div class="radio">
+                                            <label for="problem3">
+												<input name="problem" id="problem3" type="radio" value="I’m not in the right place" data-gc-analytics-wtph-value="I’m not in the right place-Je ne suis pas au bon endroit" data-gc-analytics-collect="notPrivate">
+												I’m not in the right place
+											</label>
+                                        </div>
+                                        <div class="radio">
+                                            <label for="problem4">
+												<input name="problem" id="problem4" type="radio" value="Something is broken or incorrect" data-gc-analytics-wtph-value="Something is broken or incorrect-Quelque chose est brisé ou incorrect" data-gc-analytics-collect="notPrivate">
+												Something is broken or incorrect
+											</label>
+                                        </div>
+                                        <div class="radio">
+                                            <label for="problem5">
+												<input name="problem" id="problem5" type="radio" value="Other reason" data-gc-analytics-wtph-value="Other reason-Autre raison" data-gc-analytics-collect="notPrivate">
+												Other reason
+											</label>
+                                        </div>
+                                    </fieldset>
+                                    <label for="problem6" class="mrgn-bttm-0">Please provide more details</label>
+                                    <p class="small">
+                                        <strong>(Don’t include any personal information)</strong>
+                                        <br>
+                                        <span class="small">Maximum 300 characters</span>
+                                    </p>
+                                    <textarea id="problem6" name="details" class="full-width" maxlength="300"></textarea>
+                                    <button data-wb5-click="postback@#gc-pg-hlpfl-frm@" type="submit" name="helpful" value="No" class="btn btn-primary mrgn-tp-md mrgn-bttm-sm" data-wb-doaction="[
+												{&quot;action&quot;:&quot;removeClass&quot;,&quot;source&quot;:&quot;.gc-pg-hlpfl-thnk&quot;,&quot;class&quot;:&quot;hide&quot;},
+												{&quot;action&quot;:&quot;addClass&quot;,&quot;source&quot;:&quot;#gc-pg-hlpfl-frm&quot;,&quot;class&quot;:&quot;hide&quot;}
+											]" data-gc-analytics-wtph-submit="">Submit</button>
+                                </div>
+                                <div class="gc-pg-hlpfl-yes">
+                                    <input type="hidden" name="helpful" value="Yes">
+                                </div>
+                            </form>
+                            <div class="gc-pg-hlpfl-thnk hide">
+                                <p class="h6 mrgn-tp-sm mrgn-bttm-sm"><span class="far fa-check-circle text-success mrgn-rght-sm" aria-hidden="true"></span> Thank you for your feedback</p>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            <div class="clearfix"></div>
+
+               <dl id="wb-dtmd">
+                  <dt>Date modified:</dt>
+                  <dd>
+                     <time property="dateModified">2022-01-01</time>
+                  </dd>
+               </dl>
+            </div>
+         </main>
+         <div class="par iparys_inherited">
+            <div class="global-footer">
+               <footer id="wb-info">
+                  <div class="landscape">
+                     <nav class="container wb-navcurr">
+                        <h2 class="wb-inv">About government</h2>
+                        <ul class="list-unstyled colcount-sm-2 colcount-md-3">
+                           <li><a href="http://www.phac-aspc.gc.ca/contac-eng.php">Contact us</a></li>
+                           <li><a href="https://www.canada.ca/en/government/dept.html">Departments and agencies</a></li>
+                           <li><a href="https://www.canada.ca/en/government/publicservice.html">Public service and
+                              military</a>
+                           </li>
+                           <li><a href="https://www.canada.ca/en/news.html">News</a></li>
+                           <li><a href="https://www.canada.ca/en/government/system/laws.html">Treaties, laws and
+                              regulations</a>
+                           </li>
+                           <li><a href="https://www.canada.ca/en/transparency/reporting.html">Government-wide
+                              reporting</a>
+                           </li>
+                           <li><a href="http://pm.gc.ca/en">Prime Minister</a></li>
+                           <li><a href="https://www.canada.ca/en/government/system.html">About government</a></li>
+                           <li><a href="http://open.canada.ca/en">Open government</a></li>
+                        </ul>
+                     </nav>
+                  </div>
+                  <div class="brand">
+                     <div class="container">
+                        <div class="row">
+                           <nav class="col-md-10 ftr-urlt-lnk">
+                              <h2 class="wb-inv">About this site</h2>
+                              <ul>
+                                 <li><a href="https://www.canada.ca/en/social.html">Social media</a></li>
+                                 <li><a href="https://www.canada.ca/en/mobile.html">Mobile applications</a></li>
+                                 <li><a href="https://www.canada.ca/en/government/about.html">About Canada.ca</a></li>
+                                 <li><a href="https://www.canada.ca/en/transparency/terms.html">Terms and
+                                    conditions</a>
+                                 </li>
+                                 <li><a href="https://www.canada.ca/en/transparency/privacy.html">Privacy</a></li>
+                              </ul>
+                           </nav>
+                           <div class="col-xs-6 visible-sm visible-xs tofpg"> <a href="#wb-cont">Top of page <span class="glyphicon glyphicon-chevron-up"></span></a> </div>
+                           <div class="col-xs-6 col-md-2 text-right"> <img alt="Symbol of the Government of Canada" src="https://www.canada.ca/etc/designs/canada/wet-boew/assets/wmms-blk.svg"/> </div>
+                        </div>
+                     </div>
+                  </div>
+               </footer>
+            </div>
+         </div>
+         <!--
+            <script type="text/javascript">
+                           _satellite.pageBottom();
+                        </script>
+            -->
+         <script crossorigin="anonymous" integrity="sha384-rY/jv8mMhqDabXSo+UCggqKtdmBfd3qC2/KvyTDNQ6PcUJXaxK1tMepoQda4g5vB" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+         <script src="https://wet-boew.github.io/themes-dist/GCWeb/wet-boew/js/wet-boew.min.js"></script>
+         <script src="https://www.canada.ca/etc/designs/canada/wet-boew/js/theme.min.js"></script>
+         <script src="https://test.canada.ca/service-canada/js/alpha-banner.js"></script>
+      </body>
+   </html>
