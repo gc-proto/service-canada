@@ -301,17 +301,32 @@
                                                <div class="wb-fieldflow" data-wb-fieldflow="{&quot;noForm&quot;: true, &quot;isoptional&quot;: true, &quot;renderas&quot;: &quot;radio&quot;, &quot;reset&quot;: {&quot;action&quot;: &quot;addClass&quot;, &quot;source&quot;: &quot;.alert1&quot;, &quot;class&quot;: &quot;hidden&quot;}}" id="have-acct">
                                                    <p>How do you want to register?</p>
                                                    <ul>
-                                                     <li data-wb-fieldflow="{&quot;action&quot;: &quot;removeClass&quot;, &quot;source&quot;: &quot;#answer1-1&quot;, &quot;class&quot;: &quot;hidden&quot;, &quot;live&quot;: true}">Using my bank account (only available with certain banks) <span class="label label-info">Recommended</span></li>
+                                                     <li>Using my bank account (only available with certain banks) <span class="label label-info">Recommended</span> <div class="wb-fieldflow-sub" data-wb-fieldflow="{&quot;renderas&quot;: &quot;radio&quot;, &quot;isoptional&quot;: true, &quot;reset&quot;: {&quot;action&quot;: &quot;addClass&quot;, &quot;source&quot;: &quot;.alert1&quot;, &quot;class&quot;: &quot;hidden&quot;}}">
+                                                             <div class="wb-fieldflow-header">
+                                                               <p>Depending on which bank you use, you may have to verify your identity using a Personal Access Code (PAC).</p>
+                                                               <p><strong>To create an MSCA account using GCKey, you need a Personal Access Code (PAC)</strong></p>
+                                                                 <p class="wb-fieldflow-label">What bank do you use?</p>
+                                                             </div>
+
+                                                             <ul>
+                                                                 <li data-wb-fieldflow="{&quot;action&quot;: &quot;removeClass&quot;, &quot;source&quot;: &quot;#answer1-1&quot;, &quot;class&quot;: &quot;hidden&quot;, &quot;live&quot;: true}"> BMO, CIBC, Desjardins, RBC, Scotiabank, or TD
+                                                                 </li>
+                                                                 <li data-wb-fieldflow="{&quot;action&quot;: &quot;removeClass&quot;, &quot;source&quot;: &quot;#answer1-2&quot;, &quot;class&quot;: &quot;hidden&quot;, &quot;live&quot;: true}"> Affinity, ATB, Caisse Alliance, Coast Capital, Conexus, Libro, National Bank, Servus, Simplii, Tangerine, UNI, or Vancity
+                                                                 </li>
+                                                                 <li data-wb-fieldflow="{&quot;action&quot;: &quot;removeClass&quot;, &quot;source&quot;: &quot;#answer1-7&quot;, &quot;class&quot;: &quot;hidden&quot;, &quot;live&quot;: true}">None of the above</li>
+                                                             </ul>
+                                                         </div>
+                                                     </li>
                                                        <li>Using a GCKey account <div class="wb-fieldflow-sub" data-wb-fieldflow="{&quot;renderas&quot;: &quot;radio&quot;, &quot;isoptional&quot;: true, &quot;reset&quot;: {&quot;action&quot;: &quot;addClass&quot;, &quot;source&quot;: &quot;.alert1&quot;, &quot;class&quot;: &quot;hidden&quot;}}">
                                                                <div class="wb-fieldflow-header">
-                                                                 <p>A PAC is used to help verify your identity. It's a 4-digit code that needs to be requested from Service Canada and then delivered to you by mail. It can take up 5-10 business days to receive a PAC. </p>
+                                                                 <p>A PAC is used to help verify your identity. It's a 7-digit code that needs to be requested from Service Canada and then delivered to you by mail. It can take up 5-10 business days to receive a PAC. </p>
                                                                  <p><strong>To create an MSCA account using GCKey, you need a Personal Access Code (PAC)</strong></p>
                                                                    <p class="wb-fieldflow-label">Do you have a personal access code (PAC)?</p>
                                                                </div>
 
                                                                <ul>
-                                                                   <li data-wb-fieldflow="{&quot;action&quot;: &quot;removeClass&quot;, &quot;source&quot;: &quot;#answer1-2&quot;, &quot;class&quot;: &quot;hidden&quot;, &quot;live&quot;: true}">Yes</li>
-                                                                   <li data-wb-fieldflow="{&quot;action&quot;: &quot;removeClass&quot;, &quot;source&quot;: &quot;#answer1-3&quot;, &quot;class&quot;: &quot;hidden&quot;, &quot;live&quot;: true}">No</li>
+                                                                   <li data-wb-fieldflow="{&quot;action&quot;: &quot;removeClass&quot;, &quot;source&quot;: &quot;#answer1-3&quot;, &quot;class&quot;: &quot;hidden&quot;, &quot;live&quot;: true}">Yes</li>
+                                                                   <li data-wb-fieldflow="{&quot;action&quot;: &quot;removeClass&quot;, &quot;source&quot;: &quot;#answer1-4&quot;, &quot;class&quot;: &quot;hidden&quot;, &quot;live&quot;: true}">No</li>
 
                                                                </ul>
                                                            </div>
@@ -323,8 +338,8 @@
                                                            </div>
 
                                                            <ul>
-                                                               <li data-wb-fieldflow="{&quot;action&quot;: &quot;removeClass&quot;, &quot;source&quot;: &quot;#answer1-4&quot;, &quot;class&quot;: &quot;hidden&quot;, &quot;live&quot;: true}">Alberta</li>
-                                                               <li data-wb-fieldflow="{&quot;action&quot;: &quot;removeClass&quot;, &quot;source&quot;: &quot;#answer1-5&quot;, &quot;class&quot;: &quot;hidden&quot;, &quot;live&quot;: true}">British Columbia</li>
+                                                               <li data-wb-fieldflow="{&quot;action&quot;: &quot;removeClass&quot;, &quot;source&quot;: &quot;#answer1-5&quot;, &quot;class&quot;: &quot;hidden&quot;, &quot;live&quot;: true}">Alberta</li>
+                                                               <li data-wb-fieldflow="{&quot;action&quot;: &quot;removeClass&quot;, &quot;source&quot;: &quot;#answer1-6&quot;, &quot;class&quot;: &quot;hidden&quot;, &quot;live&quot;: true}">British Columbia</li>
 
                                                            </ul>
                                                        </div>
@@ -334,45 +349,38 @@
                                        </div>
 
                                            <div id="answer1-1" class="hidden alert1 provisional">
-                                             <h3>Determine if your bank is a verified Sign-in Partner</h3>
-                                              <p>Using a Sign-in Partner to access MSCA allows you to use the same sign-in information you use for your online banking.</p>
-                                              <p>There are only certain banks that you can create an MSCA account with.</p>
-                                              <details>
-                                                <summary>Check if your bank is a Sign-in partner</summary>
-                                                <div class="row">
-                                                  <div class="col-md-8">
-                                                    <ul>
-                                                      <li>Affinity Credit Union</li>
-                                                      <li>Alberta Treasury Branches</li>
-                                                      <li>BMO Financial Group</li>
-                                                      <li>CIBC Canadian Imperial Bank of Commerce</li>
-                                                      <li>Coast Capital Savings</li>
-                                                      <li>Conexus Credit Union</li>
-                                                      <li>Desjardins Group (Caisse Alliance, Caisses Populaires, UNI)</li>
-                                                      <li>Libro Credit Union</li>
-                                                      <li>National Bank of Canada</li>
-                                                      <li>RBC Royal Bank</li>
-                                                      <li>Scotiabank</li>
-                                                      <li>Servus Credit Union</li>
-                                                      <li>Simplii Financial</li>
-                                                      <li>Tangerine</li>
-                                                      <li>TD Bank Group</li>
-                                                      <li>Vancity</li>
-                                                    </ul>
-                                                  </div>
-                                                  <div class="col-md-4"><img src="https://www.canada.ca/content/dam/canada/employment-social-development/migration/images/assets/portfolio/docs/en/ei/roe/access_roe/partners-logoEN.png" class="img-responsive" alt="Sign in partners"></div>
-                                                </div>
-                                              </details>
+                                             <section class="alert alert-success">
+                                             <h3>Your bank verifies your identity for you</h3>
+                                              <p>Start by selecting the "Start with your bank" button to sign-in to your bank. Once you have successfully signed in with your bank, you will automatically be redirected to create your MSCA account</p>
                                               <a href="https://srv136.services.gc.ca/ecas-seca/rascl/Initialize.aspx?Lang=eng&amp;Idp=https://services.securekeyconcierge.com/cbs&amp;AppCode=MSCA_SC" class="btn btn-call-to-action" data-gc-analytics-customclick="ESDC|EDSC:MSCA Registration:Start creating your MSCA Profile with your bank">Register with your bank</a>
                                             </section>
-                                           <div id="answer1-2" class="hidden alert1 provisional">
-                                             <h3>Create a GCKey to access MSCA</h3>
+                                            </div>
+                                            <div id="answer1-2" class="hidden alert1 provisional">
+                                              <section class="alert alert-warning">
+                                              <h3>You will need to verify your identity with a Personal Access Code</h3>
+                                              <p>You can create an MSCA account with your bank but you will need a personal access code (PAC) to verify your identity.</p>
+                                              <p>A PAC is used to help verify your identity. It's a 7-digit code that needs to be requested from Service Canada and then delivered to you by mail. It can take up 5-10 business days to receive a PAC. </p>
+                                              <p>You need to request a PAC before you can create an MSCA account. </p>
+                                             <p>There are two ways you can request a PAC:</p>
+                                                 <details>
+                                                   <summary>By phone</summary>
+                                                 </details>
+                                                 <details>
+                                                   <summary>In-person at a Service Canada Centre</summary>
+                                                 </details>
+                                               </section>
+                                             </div>
+                                           <div id="answer1-3" class="hidden alert1 provisional">
+                                             <section class="alert alert-success">
+                                             <h3>Use your GCKey to access MSCA</h3>
                                              <p>You must sign up for a GCKey before you can register for an MSCA Web. Select “Start with GCKey” below and follow the sign-up instructions on the Welcome to GCKey page.</p>
                                              <p>Once you have successfully signed up to GCKey, you will automatically be redirected to create your MSCA account.</p>
-                 <a type="button" class="btn btn-call-to-action" href="https://www.canada.ca/en/employment-social-development/programs/ei/ei-list/ei-roe/access-roe.html#inline_content_modal">Start with GCKey</a>
+                                             <a type="button" class="btn btn-call-to-action" href="https://www.canada.ca/en/employment-social-development/programs/ei/ei-list/ei-roe/access-roe.html#inline_content_modal">Start with GCKey</a>
+                                           </section>
                                            </div>
 
-                                           <div id="answer1-3" class="hidden alert1 provisional">
+                                           <div id="answer1-4" class="hidden alert1 provisional">
+                                             <section class="alert alert-warning">
                                              <h3>Request a Personal Access Code (PAC)</h3>
                                              <p>You need to request a PAC before you can create an MSCA account.  </p>
                                             <p>There are two ways you can request a PAC:</p>
@@ -382,15 +390,26 @@
                                             <details>
                                               <summary>In-person at a Service Canada Centre</summary>
                                             </details>
+                                          </section>
                                                </div>
-                                               <div id="answer1-4" class="hidden alert1 provisional">
+                                               <div id="answer1-5" class="hidden alert1 provisional">
+                                                 <section class="alert alert-success">
                                                  <h3>Register with your provincial digital ID</h3>
                                                   <a type="button" class="btn btn-call-to-action" href="https://www.canada.ca/en/employment-social-development/programs/ei/ei-list/ei-roe/access-roe.html#inline_content_modal">Start with MyAlberta Digital ID</a>
+                                                </section>
                                                 </div>
-                                                <div id="answer1-5" class="hidden alert1 provisional">
+                                                <div id="answer1-6" class="hidden alert1 provisional">
+                                                  <section class="alert alert-success">
                                                   <h3>Register with your provincial digital ID</h3>
                                                    <a type="button" class="btn btn-call-to-action" href="https://www.canada.ca/en/employment-social-development/programs/ei/ei-list/ei-roe/access-roe.html#inline_content_modal">Start with my BC Services Card</a>
+                                                 </section>
                                                  </div>
+                                                 <div id="answer1-7" class="hidden alert1 provisional">
+                                                   <section class="alert alert-danger">
+                                                   <h3>You must pick a different registration method</h3>
+                                                    <p>If you do not bank with one of the listed Sign-in Partners, you must select a different registration method above. </p>
+                                                  </section>
+                                                  </div>
                          </section>
                        </div>
                       </section>
