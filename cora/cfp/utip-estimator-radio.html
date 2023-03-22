@@ -200,31 +200,33 @@
       </ul>
          <div class="wb-frmvld wb-init wb-frmvld-inited">
           <form action="#" id="estimator" onsubmit="return false" novalidate="">
+
                 <div class="form-group">
-                  <legend for="income"><strong>What is your project budget?</strong></legend>
-                  <input class="form-control" type="number" name="income" id="income">
+                  <legend for="income"><strong>What is your project budget (in dollars)?</strong></legend>
+                  <input class="form-control input-lg" type="number" name="income" id="income">
                 </div>
               <div class="form-group">
                 <fieldset class="provisional gc-chckbxrdio">
                 <legend for ="contribution">Choose your cash contribution amount:</legend>
                 <ul class="list-unstyled lst-spcd-2">
                   <li class="radio">
-                    <input type="radio" name="radioid" id="id1">
+                    <input type="radio" name="radioid" id="id1" value="50">
                     <label for="id1">50% (applies to most projects)</label>
                   </li>
                   <li class="radio">
-                    <input type="radio" name="radioid" id="id2">
-                    <label for="id2">30% (only available to applicants who can demonstrate project challenges in their application)</label>
+                    <input type="radio" name="radioid" id="id2" value="30">
+                    <label for="id2"> 30% (only available to applicants who can demonstrate project challenges in their application)</label>
                   </li>
                 </ul>
                 </fieldset>
             </div>
+            </ol>
             <input type="submit" class="btn btn-lg btn-primary " value="Estimate cash contribution needed">
           </form>
           <div aria-relevant="all" aria-live="polite" class="arialive wb-inv"></div>
         </div>
-        <div class="mrgn-tp-lg" id="results" style="display: block;">
-          <p>With a project budget of <strong>$<span data-fill="income">X</span></strong> and ESDC's grant contributions of <strong><span data-fill="contribution">50</span>%</strong>, you would get:</p>
+        <div class="hidden mrgn-tp-lg" id="results">
+          <p>With a project budget of <strong>$<span data-fill="total"> </span></strong> and ESDC's grant contributions of <strong><span data-fill="percentage">50</span>%</strong>, you would get:</p>
           <ul class="list-group">
             <li class="list-group-item"><strong>ESDC contribution (maximum of $5 million dollars):</strong><br>
               &nbsp;&nbsp;&nbsp;$<span data-fill="grant">1/2 of X</span></li>
@@ -544,6 +546,28 @@
                _satellite.pageBottom();
             </script>
             <script crossorigin="anonymous" integrity="sha384-rY/jv8mMhqDabXSo+UCggqKtdmBfd3qC2/KvyTDNQ6PcUJXaxK1tMepoQda4g5vB" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+              <script>
+                  const lang = "en-US";
+                  $("#estimator").submit(function() {
+                                 const maxContribution = 5000000;
+
+                                 const contributionratio = ($("input[name='radioid']:checked").attr("value") == "50") ? 0.5: 0.3;
+                                 const contributionratioText = ($("input[name='radioid']:checked").attr("value") == "50") ? 50: 30;
+
+                  const projectBudget = (!isNaN($("#income").val())) ? parseFloat($("#income").val()): 0;
+
+                                 const esdcContribution = Math.min(projectBudget * contributionratio, maxContribution);
+                                 const ownContribution = projectBudget-esdcContribution;
+
+                                 $('span[data-fill="grant"]').html(esdcContribution.toLocaleString(lang));
+                                 $('span[data-fill="bond"]').html(ownContribution.toLocaleString(lang));
+                                 $('span[data-fill="total"]').html(projectBudget.toLocaleString(lang));
+
+                  $('span[data-fill="percentage"]').html(contributionratioText);
+                  $(“#results”).removeClass("hidden");
+                                 event.preventDefault();
+                  });
+                  </script>
             <script src="https://wet-boew.github.io/themes-dist/GCWeb/wet-boew/js/wet-boew.min.js"></script>
         		<script src="https://www.canada.ca/etc/designs/canada/wet-boew/js/theme.min.js"></script>
         		<script src="https://test.canada.ca/service-canada/js/alpha-banner.js"></script>
