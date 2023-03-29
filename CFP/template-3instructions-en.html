@@ -235,7 +235,9 @@
 		                </section>
 		                <section>
 		                    <h3 id="h2.02-h3.02">Part 1 – Organization</h3>
+							<section id="sectiona">
 		                        <h4>A - Organization identification (Questions 1 to 22 in the PDF version of the application form)</h4>
+								<button type="button" class="wb-toggle btn btn-default" data-toggle='{"selector": "details:not(details *)", "parent": "#sectiona", "print": "on"}'>Expand or collapse all</button>
 		                        <details>
 		                            <summary><strong>Legal name (Question 1)</strong></summary>
 		                            <p>What is your organization's legal name? The legal name is usually:</p>
@@ -463,9 +465,10 @@
 		                                <li>Not Applicable</li>
 		                            </ul>
 		                        </details>
-
-		                        <section>
+							</section>
+		                        <section id="sectionb">
 		                            <h4>B - Organization contact (Questions 23 to 46 in the PDF version of the application form)</h4>
+									<button type="button" class="wb-toggle btn btn-default" data-toggle='{"selector": "details:not(details *)", "parent": "#sectionb", "print": "on"}'>Expand or collapse all</button>
 		                            <details>
 		                                <summary><strong>Primary contact information (Questions 23 to 34)</strong></summary>
 		                                <p>
@@ -527,9 +530,10 @@
 		                                </ul>
 		                            </details>
 		                        </section>
-		                        <section>
+		                        <section id="sectionc">
 		                            <h4>C. Organizational capacity (Questions 47 to 51 in the PDF version of the application)</h4>
 		                            <p>The Department uses the information provided in this section to help assess the organization’s capacity to manage a project.</p>
+									<button type="button" class="wb-toggle btn btn-default" data-toggle='{"selector": "details:not(details *)", "parent": "#sectionc", "print": "on"}'>Expand or collapse all</button>
 		                            <details>
 		                                <summary><strong>How many employees does your organization currently have? (Question 47)</strong></summary>
 		                                <p>Indicate the total number of people employed in your organization or business. The number of employees must be a whole number.</p>
@@ -596,10 +600,12 @@
 		                                </p>
 		                            </details>
 		                        </section>
+								</section>
 		                        <section>
 		                            <h3 id="h2.02-h3.03">Part 2 – Project</h3>
-		                            <section>
+		                            <section id="section2a">
 		                                <h4>A - Project identification (Questions 52 to 54 in the PDF version of the application form)</h4>
+										<button type="button" class="wb-toggle btn btn-default" data-toggle='{"selector": "details:not(details *)", "parent": "#section2a", "print": "on"}'>Expand or collapse all</button>
 		                                <details>
 		                                    <summary><strong>Project title (Question 52)</strong></summary>
 		                                    <p>Give a short title that describes your project.</p>
@@ -620,7 +626,7 @@
 		                                    </p>
 		                                </details>
 		                            </section>
-		                            <section>
+		                            <section id="section2b">
 		                                <h4>B - Project description (Questions 55 to 65 in the PDF version of the application form)</h4>
 		                                <p>The Department uses the information you provide in this section as part of the assessment in determining whether or not your proposed project is eligible for funding.</p>
 		                                <p>
@@ -629,6 +635,7 @@
 		                                        here.]
 		                                    </span>
 		                                </p>
+										<button type="button" class="wb-toggle btn btn-default" data-toggle='{"selector": "details:not(details *)", "parent": "#section2b", "print": "on"}'>Expand or collapse all</button>
 		                                <details>
 		                                    <summary><strong>Project objectives (must clearly link to the program objectives) (Question 55)</strong></summary>
 		                                    <p>
@@ -849,7 +856,7 @@
 		                        </section>
 		                        <section>
 		                            <h3 id="h2.02-h3.04">Part 3 – Funding</h3>
-		                            <section>
+		                            <section id="section3a">
 		                                <h4>A - Anticipated sources of funding (Questions 66 to 70 in the PDF version of the application form)</h4>
 		                                <p>
 		                                    The Department’s funding programs generally encourage and/or require applicants to seek cash and/or in-kind contributions for their proposed project from other sources of funding. Each program has a
@@ -858,6 +865,7 @@
 		                                </p>
 		                                <p>The Department uses the information provided in this section to verify that your funding request conforms to any stacking limit or requirement for funding from other sources.</p>
 		                                <p>“Other sources of funding” includes any source of funding (including from your organization) other than the program to which you are applying for funding.</p>
+										<button type="button" class="wb-toggle btn btn-default" data-toggle='{"selector": "details:not(details *)", "parent": "#section3a", "print": "on"}'>Expand or collapse all</button>
 		                                <details>
 		                                    <summary><strong>Source name (Question 66)</strong></summary>
 		                                    <p>If you are receiving contributions from other sources, tell us the names of all the organizations that will contribute funds and/or in-kind contributions to this project.</p>
@@ -902,7 +910,7 @@
 		                                    <p>Tell us if the cash contributions are confirmed. In-kind contribution is not applicable for this funding process.</p>
 		                                </details>
 		                            </section>
-		                            <section>
+		                            <section id="section3b">
 		                                <h4>B - Budget (Questions 71 to 74 in the PDF version of the application form)</h4>
 		                                <p>
 		                                    This Question is mandatory. Applicants must provide an estimate of the project’s costs. ESDC uses the information provided in this section to assess the overall cost of the proposed project, as well as
@@ -911,6 +919,7 @@
 		                                <p>
 		                                    <span class="text-muted">[Use the <a href="#">Budget Detail Template (BDT)</a> to provide the information. This must be included as part of the application.]</span>
 		                                </p>
+										<button type="button" class="wb-toggle btn btn-default" data-toggle='{"selector": "details:not(details *)", "parent": "#section3b", "print": "on"}'>Expand or collapse all</button>
 		                                <details>
 		                                    <summary><strong>Cost category (Question 71)</strong></summary>
 		                                    <p>Applicants shall not request the payment of any charge or fee from participants for their participation in the project.</p>
@@ -932,8 +941,9 @@
 		                                    <p>"Other" means a cash or in-kind contribution from other sources other than us.</p>
 		                                </details>
 		                            </section>
-		                            <section>
+		                            <section id="section3c">
 		                                <h4>C - Budget details (Questions 75 to 77 in the PDF version of the application form)</h4>
+										<button type="button" class="wb-toggle btn btn-default" data-toggle='{"selector": "details:not(details *)", "parent": "#section3c", "print": "on"}'>Expand or collapse all</button>
 		                                <details>
 		                                    <summary><strong>Associated businesses or individuals (Question 75)</strong></summary>
 		                                    <p>Check all statements that apply to your planned spending of the funding from us.</p>
