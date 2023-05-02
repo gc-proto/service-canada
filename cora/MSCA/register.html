@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<!--[if lt IE 9]>
+<html class="no-js lt-ie9" dir="ltr" lang="en">
+   <![endif]-->
+   <!--[if gt IE 8]><!-->
+   <html class="no-js" dir="ltr" lang="en">
+      <!--<![endif]-->
+      <head>
+         <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+         <meta charset="utf-8"/>
+         <meta name="robots" content="noindex, nofollow" />
+         <!--CHANGE THE TITLE-->
+         <title>Prototype - MSCA Register fieldflow</title>
+         <meta content="width=device-width, initial-scale=1" name="viewport"/>
+         <meta content=" " name="description"/>
+         <link href="https://wet-boew.github.io/themes-dist/GCWeb/GCWeb/assets/favicon.ico" rel="icon" type="image/x-icon"/>
+         <link href="https://www.canada.ca/etc/designs/canada/wet-boew/css/theme.min.css" rel="stylesheet"/>
+         <noscript>
+            <link href="https://wet-boew.github.io/themes-dist/GCWeb/wet-boew/css/noscript.min.css" rel="stylesheet"/>
+         </noscript>
+         <link href="https://test.canada.ca/service-canada/css/alpha-beta-banner.css" rel="stylesheet"/>
+         <link crossorigin="anonymous" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" rel="stylesheet"/>
+         <link rel="stylesheet" href="https://www.canada.ca/etc/designs/canada/wet-boew/méli-mélo/2022-06-banff.min.css" />
+         <link rel="stylesheet" href="https://cra-arc.gc.ca/wet-boew/css/custom/steps.css">
+         <style>
+            .header-bg {
+            line-height: normal;
+            background: linear-gradient(to right, #ddd 50%, #fff 75%, #fff);
+            }
+            .header-bg .brdr-bttm-fade	 {
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(to right, #26374a 50%, #fff 75%, #fff);
+            }
+            .header-bg h2 {
+            background: linear-gradient(297.5deg, transparent, transparent 25px, white 26px, white 31px, #26374a 32px, #26374a);
+            color: white;
+            display: inline-block;
+            margin: 0px;
+            padding: 5px 30px 5px 15px;
+            min-width: 300px;
+            font-size: 1.3em;
+            }
+            .btn.large-btn {display:flex;flex-direction:row;padding:0;border:2px solid #000; background-color:#fff;width:85%;text-align:center;}
+            .btn.large-btn .icon-btn {flex:none;display:flex;flex-direction:row;align-items:center;}
+            .btn.large-btn .label-btn {flex:auto;display:flex;flex-direction:row;align-items:center;padding:0 5px;}
+            .btn.large-btn .label-btn b {display:block;margin-left:auto;margin-right:auto;}
+            .btn.large-btn .icon-btn img {width:30px;margin:10px 15px;}
+            a.btn-blue:link, a.btn-blue:visited {
+            border:2px solid #003264;
+            color:#222;
+            }
+            a.btn-blue:link .icon-btn, a.btn-blue:visited .icon-btn{
+            background-color:#003264;
+            }
+            a.btn-blue:hover, a.btn-blue:active, a.btn-blue:focus {
+            background: #003264;
+            color: white;
+            }
+            a.btn-red:link, a.btn-red:visited {
+            border:2px solid #990033;
+            color:#222;
+            }
+            a.btn-red:link .icon-btn, a.btn-red:visited .icon-btn{
+            background-color:#990033;
+            }
+            a.btn-red:hover, a.btn-red:active, a.btn-red:focus {
+            background: #990033;
+            color: white;
+            }
+            a.btn-lblue:link, a.btn-lblue:visited {
+            border:2px solid #00749C;
+            color:#222;
+            }
+            a.btn-lblue:link .icon-btn, a.btn-lblue:visited .icon-btn{
+            background: #00749C;
+            }
+            a.btn-lblue:hover, a.btn-lblue:active, a.btn-lblue:focus {
+            background: #00749C;
+            color: white;
+            }
+
+            /*Checkbox/Fieldflow radio input sizing,positioning*/
+            .checkbox-lg > li.checkbox {
+            margin-top: 0px;
+            }
+            .checkbox-lg > li {
+            margin-left: -40px;
+            padding-left: 40px;
+            padding-top: 5px;
+            padding-bottom: 10px;
+            margin-bottom: 5px;
+            padding-right: 15px;
+            }
+            .checkbox-zebra > li:nth-child(2n+1) {
+            background-color: #f5f5f5;
+            padding-top: 10px;
+            padding-bottom: 15px;
+            }
+            .checkbox-lg > li.checkbox input[type=checkbox], .fieldflow-lg .radio input[type=radio] {
+            margin-top: 12px;
+            transform: scale(2);
+            }
+            .checkbox-lg label, .fieldflow-lg, .fieldflow-lg label, .fieldflow-lg div, .fieldflow-lg select, .std-blt {
+            font-size: 20px;
+            line-height: 1.65em;
+            }
+            .std-blt {
+            list-style-type: disc;
+            }
+            .std-blt li label {
+            display: block;
+            padding-left: 0px;
+            }
+            .fieldflow-lg .radio label {
+            margin-left: 40px;
+            }
+            .fieldflow-lg .radio input[type=radio] {
+            margin-left: -40px;
+            }
+            .fieldflow-lg fieldset legend {
+            font-size: 22px;
+            margin-top: 0px;
+            }
+         </style>
+      </head>
+      <body class="" typeof="WebPage" vocab="http://schema.org/">
+         <nav>
+            <ul id="wb-tphp">
+               <li class="wb-slc"><a class="wb-sl" href="#wb-cont">Skip to main content</a></li>
+               <li class="wb-slc visible-sm visible-md visible-lg"><a class="wb-sl" href="#wb-info">Skip to "About government"</a></li>
+            </ul>
+         </nav>
+         <header>
+            <div class="container" id="wb-bnr">
+               <div class="row">
+                  <section class="col-xs-3 col-sm-12 pull-right text-right" id="wb-lng">
+                     <h2 class="wb-inv">Language selection</h2>
+                     <div class="row">
+                        <div class="col-md-12">
+                           <ul class="list-inline mrgn-bttm-0">
+                              <li> <a href="#" lang="fr"> <span class="hidden-xs hidden-sm">Français</span> <abbr class="visible-xs h3 mrgn-tp-sm mrgn-bttm-0 text-uppercase" title="Français">fr</abbr> </a> </li>
+                           </ul>
+                        </div>
+                     </div>
+                  </section>
+                  <div class="brand col-xs-9 col-sm-5 col-md-4" property="publisher" typeof="GovernmentOrganization">
+                     <a href="/en.html" property="url"> <img alt="Government of Canada" property="logo" src="https://www.canada.ca/etc/designs/canada/wet-boew/assets/sig-blk-en.svg"/> </a>
+                     <meta content="Government of Canada" property="name"/>
+                     <meta content="Canada" property="areaServed" typeof="Country"/>
+                     <link href="https://www.canada.ca/etc/designs/canada/wet-boew/assets/wmms-blk.svg" property="logo"/>
+                  </div>
+                  <section class="col-lg-offset-4 col-md-offset-4 col-sm-offset-2 col-xs-12 col-sm-5 col-md-4" id="wb-srch">
+                     <h2>Search</h2>
+                     <form action="/en/sr/srb.html" method="get" name="cse-search-box" role="search">
+                        <div class="form-group wb-srch-qry">
+                           <label class="wb-inv" for="wb-srch-q">Search Canada.ca</label>
+                           <input name="cdn" type="hidden" value="canada"/>
+                           <input name="st" type="hidden" value="s"/>
+                           <input name="num" type="hidden" value="10"/>
+                           <input name="langs" type="hidden" value="en"/>
+                           <input name="st1rt" type="hidden" value="1"/>
+                           <input name="s5bm3ts21rch" type="hidden" value="x"/>
+                           <input class="wb-srch-q form-control" id="wb-srch-q" list="wb-srch-q-ac" maxlength="170" name="q" placeholder="Search Canada.ca" size="34" type="search" value=""/>
+                           <input name="_charset_" type="hidden" value="UTF-8"/>
+                           <datalist id="wb-srch-q-ac"></datalist>
+                        </div>
+                        <div class="form-group submit">
+                           <button class="btn btn-primary btn-small" id="wb-srch-sub" name="wb-srch-sub" type="submit"><span class="glyphicon-search glyphicon"></span><span class="wb-inv">Search</span></button>
+                        </div>
+                     </form>
+                  </section>
+               </div>
+            </div>
+            <nav class="gcweb-v2 gcweb-menu" typeof="SiteNavigationElement">
+               <div class="container">
+                  <h2 class="wb-inv">Menu</h2>
+                  <button aria-expanded="false" aria-haspopup="true" type="button"><span class="wb-inv">Main </span>Menu <span class="expicon glyphicon glyphicon-chevron-down"></span></button>
+                  <ul aria-orientation="vertical" role="menu" data-ajax-replace="https://www.canada.ca/content/dam/canada/sitemenu/sitemenu-v2-en.html">
+                     <!--   -->
+                     <li role="presentation"><a href="https://www.canada.ca/en/services/jobs.html" role="menuitem" tabindex="-1">Jobs and the workplace</a></li>
+                     <li role="presentation"><a href="https://www.canada.ca/en/services/immigration-citizenship.html" role="menuitem" tabindex="-1">Immigration
+                        and citizenship</a>
+                     </li>
+                     <li role="presentation"><a href="https://travel.gc.ca/" role="menuitem" tabindex="-1">Travel
+                        and
+                        tourism</a>
+                     </li>
+                     <li role="presentation"><a href="https://www.canada.ca/en/services/business.html" role="menuitem" tabindex="-1">Business and industry</a></li>
+                     <li role="presentation"><a href="https://www.canada.ca/en/services/benefits.html" role="menuitem" tabindex="-1">Benefits</a></li>
+                     <li role="presentation"><a href="https://www.canada.ca/en/services/health.html" role="menuitem" tabindex="-1">Health</a></li>
+                     <li role="presentation"><a href="https://www.canada.ca/en/services/taxes.html" role="menuitem" tabindex="-1">Taxes</a></li>
+                     <li role="presentation"><a href="https://www.canada.ca/en/services/environment.html" role="menuitem" tabindex="-1">Environment and natural
+                        resources</a>
+                     </li>
+                     <li role="presentation"><a href="https://www.canada.ca/en/services/defence.html" role="menuitem" tabindex="-1">National security and
+                        defence</a>
+                     </li>
+                     <li role="presentation"><a href="https://www.canada.ca/en/services/culture.html" role="menuitem" tabindex="-1">Culture, history and sport</a></li>
+                     <li role="presentation"><a href="https://www.canada.ca/en/services/policing.html" role="menuitem" tabindex="-1">Policing, justice and
+                        emergencies</a>
+                     </li>
+                     <li role="presentation"><a href="https://www.canada.ca/en/services/transport.html" role="menuitem" tabindex="-1">Transport and
+                        infrastructure</a>
+                     </li>
+                     <li role="presentation"><a href="http://international.gc.ca/world-monde/index.aspx?lang=eng" role="menuitem" tabindex="-1">Canada and the
+                        world </a>
+                     </li>
+                     <li role="presentation"><a href="https://www.canada.ca/en/services/finance.html" role="menuitem" tabindex="-1">Money and finances</a></li>
+                     <li role="presentation"><a href="https://www.canada.ca/en/services/science.html" role="menuitem" tabindex="-1">Science and innovation</a></li>
+                  </ul>
+               </div>
+            </nav>
+            <nav id="wb-bc" property="breadcrumb">
+               <h2 class="wb-inv">You are here:</h2>
+               <div class="container">
+                 <ol class="breadcrumb">
+                 <li><a href="/en.html">Canada.ca</a></li>
+                 <li><a href="/en/employment-social-development.html">Employment and Social Development Canada</a></li>
+                 </ol>
+               </div>
+            </nav>
+         </header>
+         <!--CONTENT STARTS HERE-->
+         <main property="mainContentOfPage" resource="#wb-main" typeof="WebPageElement">
+           <div class="mwsgeneric-base-html parbase section">
+
+
+
+      <div class="container">
+    <h1 property="name" id="wb-cont" class="gc-thickline">My Service Canada Account</h1>
+  <p>My Service Canada Account (<abbr>MSCA</abbr>) is a secure online portal. It allows you to view and update your information for Employment Insurance (<abbr>EI</abbr>), Canada Pension Plan (<abbr>CPP</abbr>), Canada Pension Plan disability and Old Age Security (<abbr>OAS</abbr>).</p>
+
+  <!--
+  <div class="provisional alert alert-danger">
+      <h2 class="h3">Systems maintenance</h2>
+  <ul>
+   <li>MSCA will be unavailable from 4 am to 7 am on Saturday, February 11, 2023 (EST)</li>
+  <li>Access to MSCA with your bank will be unavailable from 2 am to 6 am on Sunday, February 12, 2023 (EST)</li>
+  </ul>
+  </div> </li>
+  -->
+
+    <div class="alert alert-info">
+      <h2 class="h3">Latest notices</h2>
+      <ul>
+        <li>Updating your EI &amp; CPP/OAS direct deposit information and mailing address is currently unavailable. Telephone number update is unavailable for EI users only. To make a change:
+          <ul>
+            <li>complete the&nbsp;<a href="https://eservices.canada.ca/en/service/">eServiceCanada form</a>; or</li>
+            <li>contact the&nbsp;<a href="/en/employment-social-development/services/my-account.html#contact">call centre</a>&nbsp;responsible for the benefits you have received</li>
+          </ul></li>
+        <li><a href="/en/employment-social-development/services/my-account/multi-factor-authentication.html">Multi-factor authentication</a> helps protect your identity and personal information when you access MSCA</li>
+          <li class="ie-show" style="display: none;">Internet Explorer (IE) is no longer supported. To avoid access issues, please use a <a href="#avoid">recommended Web browser</a></li>
+        <!--<li>June 2021 – Registration to <a href="/content/canadasite/en/employment-social-development/services/my-account/multi-factor-authentication.html">multi-factor authentication</a> is now <strong>mandatory</strong> when you sign in to MSCA with a GCKey or your bank (Sign-in Partner). This new step will help protect your identity and personal information</li>-->
+        <!--<li>June 2021 – You can now update your direct deposit information, mailing address and telephone number for <strong>EI</strong> in MSCA</li>-->
+      </ul>
+    </div>
+    <details>
+      <summary>Keep your personal information safe</summary>
+      <h2 class="h3">Safety tips</h2>
+      <ul>
+        <li>Be aware of your surroundings when you enter passwords and security codes in public</li>
+        <li>Don't give out or share passwords or security codes online or over the phone, even with family</li>
+        <li>Log off or sign out of accounts and websites when you are finished; don't just close your browser</li>
+      </ul>
+    </details>
+    <div class="mrgn-tp-lg header-bg">
+      <h2>Sign in</h2>
+      <div class="brdr-bttm-fade"></div>
+    </div>
+    <div class="panel">
+      <div class="panel-body">
+        <p>If you already have an access code or a provincial digital ID, choose an option to access <abbr>MSCA</abbr>:</p><ul class="list-unstyled row mrgn-bttm-0 wb-eqht wb-init wb-eqht-inited" id="wb-auto-4">
+          <li class="col-md-4" style="vertical-align: top; min-height: 55px;"> <a href="https://srv136.services.gc.ca/ecas-seca/rascl/Initialize.aspx?Lang=eng&amp;Idp=https://clegc-gckey.gc.ca&amp;AppCode=MSCA_SC" class="btn btn-blue large-btn" data-gc-analytics-customclick="ESDC|EDSC:MSCA Sign in:Sign in with GCKey Click">
+            <div class="icon-btn"><img src="https://www.canada.ca/content/dam/esdc-edsc/images/services/msca-mdsc/key-white.png" alt=""></div>
+            <div class="label-btn"><b>Sign in  with GCKey</b></div>
+            </a> </li>
+          <li class="col-md-4" style="vertical-align: top; min-height: 55px;"> <a href="https://srv136.services.gc.ca/ecas-seca/rascl/Initialize.aspx?Lang=eng&amp;Idp=https://services.securekeyconcierge.com/cbs&amp;AppCode=MSCA_SC" class="btn btn-red large-btn" data-gc-analytics-customclick="ESDC|EDSC:MSCA Sign in:Sign in with your bank Click">
+            <div class="icon-btn"><img src="https://www.canada.ca/content/dam/esdc-edsc/images/services/msca-mdsc/bank-white.png" alt=""></div>
+            <div class="label-btn"><b>Sign in  with your bank</b></div>
+            </a> </li>
+          <li class="col-md-4" style="vertical-align: top; min-height: 55px;"> <a href="/en/employment-social-development/services/my-account/province.html" class="btn btn-lblue large-btn" data-gc-analytics-customclick="ESDC|EDSC:MSCA Sign in:Sign in with your province Click">
+            <div class="icon-btn"><img src="https://www.canada.ca/content/dam/esdc-edsc/images/services/msca-mdsc/Province-white.png" alt=""></div>
+            <div class="label-btn"><b>Sign in  with your province</b></div>
+            </a> </li>
+        </ul>
+
+      </div>
+    </div>
+    <div class="header-bg">
+       <h2>Register</h2>
+       <div class="brdr-bttm-fade"></div>
+    </div>
+    <section>
+      <p>If you do not have an account, you have to choose how you want to register. The way you register will be the same way you sign-in to MSCA.</p>
+      <section>
+        <div class="wb-frmvld fieldflow-lg">
+                                         <form>
+                                             <div class="wb-fieldflow" data-wb-fieldflow="{&quot;noForm&quot;: true, &quot;isoptional&quot;: true, &quot;renderas&quot;: &quot;radio&quot;, &quot;reset&quot;: {&quot;action&quot;: &quot;addClass&quot;, &quot;source&quot;: &quot;.alert1&quot;, &quot;class&quot;: &quot;hidden&quot;}}" id="have-acct">
+                                                 <p>Choose a registration method</p>
+                                                 <ul>
+                                                   <li data-wb-fieldflow="{&quot;action&quot;: &quot;removeClass&quot;, &quot;source&quot;: &quot;#answer1-1&quot;, &quot;class&quot;: &quot;hidden&quot;, &quot;live&quot;: true}">Register with GCKey</li>
+                                                   <li data-wb-fieldflow="{&quot;action&quot;: &quot;removeClass&quot;, &quot;source&quot;: &quot;#answer1-2&quot;, &quot;class&quot;: &quot;hidden&quot;, &quot;live&quot;: true}">Register with your bank</li>
+                                                    <li data-wb-fieldflow="{&quot;action&quot;: &quot;removeClass&quot;, &quot;source&quot;: &quot;#answer1-3&quot;, &quot;class&quot;: &quot;hidden&quot;, &quot;live&quot;: true}">Register with your province (Alberta and British Columbia only)</li>
+                                                 </ul>
+                                             </div>
+                                         </form>
+                                     </div>
+                                         <div id="answer1-1" class="hidden alert1 provisional">
+                                           <div class="well brdr-rds-0">
+                                           <ol class="lst-stps">
+                                                  <li>
+                                                    <strong>Create a GCKey</strong>
+                                                    <p>A GCKey is a unique electronic credential issued by the Government of Canada for use with <a href="https://clegc-gckey.gc.ca/j/eng/ES-01?ReqID=S211822A89A8FEA6CC28C9599821A70E73F71E581A">online Government services</a>.
+                                                    <details>
+                                                      <summary>If you already have a GCKey</summary>
+                                                      <p class="mrgn-lft-lg">If you have an existing GCKey, you can <a href="https://srv136.services.gc.ca/ecas-seca/rascl/Initialize.aspx?Lang=eng&amp;Idp=https://clegc-gckey.gc.ca&amp;AppCode=MSCA_SC">sign in with GCKey</a> by entering your username and password. You will then be redirected to create your My Service Canada Account.</p>
+                                                    </details>
+                                                    <details>
+                                                      <summary>If you need to create a GCKey</summary>
+                                                      <p class="mrgn-lft-lg">If you haven’t already created a GCKey username and password, select the “Sign up”  button on the <a href="https://srv136.services.gc.ca/ecas-seca/rascl/Initialize.aspx?Lang=eng&amp;Idp=https://clegc-gckey.gc.ca&amp;AppCode=MSCA_SC">Welcome to GCKey</a> page and follow the instructions.</p>
+                                                    </details>
+                                                  </li>
+                                                <li>
+                                                   <strong>Verify your identity</strong>
+                                          <p>Once you have signed in with GCKey, you will be presented with 2 options to help verify your identity: </p>
+                                              <details>
+                                                <summary>Use <em>Interac</em>® verification service <span class="label label-info">Recommended</span></summary>
+                                              <p>The <em>Interac</em>® verification service option will allow you to register for MSCA in a quicker and safer way. To help verify your identity using this option, you must use your online banking information. You must consent that your financial institution will share basic personal information with Employment and Social Development Canada (ESDC).</p>
+                                              <details class="mrgn-tp-md mrgn-bttm-md">
+                                                <summary>Check if your bank is a Sign-in partner</summary>
+                                                <ul>
+                                                  <li>BMO</li>
+                                                  <li>CIBC</li>
+                                                  <li>Desjardins</li>
+                                                  <li>RBC</li>
+                                                  <li>Scotiabank</li>
+                                                  <li>TD</li>
+                                                </ul>
+                                              </details>
+                                              <p>This real-time identity verification will help you access MSCA features right away. For more information, please refer to our <a href="/en/employment-social-development/services/my-account/interac-verification-service.html">Help verify your identity using <em>Interac</em>® verification service</a> page.</p>
+                                            </details>
+                                            <details>
+                                              <summary>Use a personal access code (PAC)</summary>
+                                              <p>PACs are used to help verify your identity. You need it to register for MSCA with GCKey. To verify your identity using this option, <strong>you must ensure you have received your PAC</strong> before registering for MSCA. You will need to enter your PAC when creating your MSCA profile. </p>
+                                              <p>If you don’t already have a PAC, you can request and receive it: </p>
+                                              <details open="">
+                                                <summary>By mail</summary>
+                                                <p>You can request a PAC online and receive it by mail <strong>within 5 to 10 business days</strong>.</p>
+                                                <p>You will need:</p>
+                                                <ul>
+                                                  <li>your Social Insurance Number (SIN)</li>
+                                                  <li>your parent's family name at birth</li>
+                                                  <li>your postal code if you are a Canadian resident or your country of residence if you are a foreign resident</li>
+                                                </ul>
+                                                <p>Have your JavaScript enabled.</p>
+                                                <p><a href="/en/employment-social-development/services/my-account/request-pac.html" class="btn btn-primary">Request a PAC</a></p>
+                                              </details>
+                                              <details class="mrgn-tp-md mrgn-bttm-md">
+                                                <summary>In person at a Service Canada Office</summary>
+                                                <p>Due to COVID-19, you need to submit a Service Canada's online <a rel="external" href="https://eservices.canada.ca/en/service/">service request form</a>. A Service Canada agent will contact you within 2 business days.</p>
+                                                <p>You will need:</p>
+                                                <ul>
+                                                  <li>your Social Insurance Number (SIN)</li>
+                                                  <li>your parent's family name at birth</li>
+                                                  <li>your postal code if you are a Canadian resident or your country of residence if you are a foreign resident</li>
+                                                  <li>a valid (not expired) acceptable proof of identity, such as:
+                                                    <ul>
+                                                      <li>Canadian passport</li>
+                                                      <li>certification of Canadian citizenship</li>
+                                                      <li>certification of Indian status</li>
+                                                      <li>certificate of registration of birth abroad</li>
+                                                      <li>driver's license (provincial or territorial)</li>
+                                                      <li>health card</li>
+                                                      <li>permanent resident card</li>
+                                                      <li>provincial identification card</li>
+                                                    </ul>
+                                                  </li>
+                                                </ul>
+                                                <p><a href="http://www.servicecanada.gc.ca/tbsc-fsco/sc-hme.jsp?lang=eng" class="btn btn-primary">Find a Service Canada Office</a></p>
+                                              </details>
+                                              <details>
+                                                <summary>By phone</summary>
+                                                <div class="alert alert-info">
+                                                  <p><strong>Note:</strong> This service is only available for returning clients of the Canada Pension Plan. Employment Insurance beneficiaries cannot get a PAC by phone.</p>
+                                                </div>
+                                                <p>The Service Canada agent will let you know when you could receive your access code. The time frame will vary by case.</p>
+                                                <p>Call Service Canada at 1-800-277-9914 Monday to Friday between 8:30 am and 4:30 pm local time. You can also call this number to check the status of your PAC request or disable your PAC.</p>
+                                                <p>You will need:</p>
+                                                <ul>
+                                                  <li>your Social Insurance Number (SIN)</li>
+                                                  <li>answers to various security questions to verify your identity</li>
+                                                </ul>
+                                              </details>
+                                        </details>
+                                      </li>
+                                      <li>
+                                          <strong>Sign in to GCKey to access MSCA</strong>
+                                          <p>Once you have signed in with GCKey and have verified your identity, you will be directed to create your MSCA profile.</p>
+                                 <a type="button" class="btn btn-call-to-action" href="https://www.canada.ca/en/employment-social-development/programs/ei/ei-list/ei-roe/access-roe.html#inline_content_modal">Start with GCKey</a>
+
+                               </li>
+                             </ol>
+                           </div>
+                    </div>
+
+                                         <div id="answer1-2" class="hidden alert1 provisional">
+                                           <div class="well brdr-rds-0">
+                                           <ol class="lst-stps">
+                   <li>
+                     <section>
+                       <strong>Determine if your bank is a verified Sign-in Partner</strong>
+                       <p>Using a Sign-in Partner to access MSCA allows you to use the same sign-in information you use for your online banking.</p>
+                       <details>
+                         <summary>Check if your bank is a Sign-in partner</summary>
+                         <div class="row">
+                           <div class="col-md-8">
+                             <ul>
+                               <li>Affinity Credit Union</li>
+                               <li>Alberta Treasury Branches</li>
+                               <li>BMO Financial Group</li>
+                               <li>CIBC Canadian Imperial Bank of Commerce</li>
+                               <li>Coast Capital Savings</li>
+                               <li>Conexus Credit Union</li>
+                               <li>Desjardins Group (Caisse Alliance, Caisses Populaires, UNI)</li>
+                               <li>Libro Credit Union</li>
+                               <li>National Bank of Canada</li>
+                               <li>RBC Royal Bank</li>
+                               <li>Scotiabank</li>
+                               <li>Servus Credit Union</li>
+                               <li>Simplii Financial</li>
+                               <li>Tangerine</li>
+                               <li>TD Bank Group</li>
+                               <li>Vancity</li>
+                             </ul>
+                           </div>
+                           <div class="col-md-4"><img src="https://www.canada.ca/content/dam/canada/employment-social-development/migration/images/assets/portfolio/docs/en/ei/roe/access_roe/partners-logoEN.png" class="img-responsive" alt="Sign in partners"></div>
+                         </div>
+                       </details>
+                     </section>
+                   </li>
+                   <li>
+                     <strong>Verify your identity</strong>
+                     <p>Once you have signed in with your banking information (Sign-in Partner), you will be presented with 2 options to help verify your identity: </p>
+                                 <ol class="lst-stps-sub">
+                                   <details>
+                                     <summary><strong>Use <em>Interac</em>® verification service <span class="label label-info">Recommended</span></strong></summary>
+                                     <p>The <em>Interac</em>® verification service option will allow you to register for MSCA in a quicker and safer way. To help verify your identity using this option, you must use your online banking information. You must consent that your financial institution will share basic personal information with Employment and Social Development Canada (ESDC). </p>
+                                     <details class="mrgn-tp-md mrgn-bttm-md">
+                                       <summary>View the full list of participating financial institutions</summary>
+                                       <ul>
+                                         <li>BMO</li>
+                                         <li>CIBC</li>
+                                         <li>Desjardins</li>
+                                         <li>RBC</li>
+                                         <li>Scotiabank</li>
+                                         <li>TD</li>
+                                       </ul>
+                                     </details>
+                                     <p>This real-time identity verification will help you access MSCA features right away. For more information, please refer to our <a href="/en/employment-social-development/services/my-account/interac-verification-service.html">Help verify your identity using <em>Interac</em>® verification service</a> page.</p>
+                                     <div class="alert alert-info">
+                                       <p><strong>Note:</strong> Do not be alarmed. You will enter your online banking credential twice. You will enter it at the start as a credential to begin your MSCA registration. This is anonymous, there is no information shared with ESDC. You will then enter it a second time to help verify your identity. This time, your financial institution will share basic personal information with ESDC for verification purpose.</p>
+                                     </div>
+                                   </details>
+                                   </li>
+                                   <details>
+                                     <summary><strong>Use a personal access code (PAC)</strong></summary>
+                                     <p>PACs are used to help verify your  identity. You need it to register for MSCA with your bank. To verify your  identity using this option, you must ensure you have received your PAC before registering  for MSCA. You will need to enter your PAC when creating your MSCA profile. </p>
+                                     <p><a href="/en/employment-social-development/services/my-account/find-pac.html">You may already have a PAC</a>. If you don’t, you  can request and receive it:</p>
+                                     <details>
+                                       <summary>By mail</summary>
+                                       <p>You can request a PAC online and receive it by mail <strong>within 5 to 10 business days</strong>.</p>
+                                       <p>You will need:</p>
+                                       <ul>
+                                         <li>your Social Insurance Number (SIN)</li>
+                                         <li>your parent's family name at birth</li>
+                                         <li>your postal code if you are a Canadian resident or your country of residence if you are a foreign resident</li>
+                                       </ul>
+                                       <p>Have your JavaScript enabled.</p>
+                                       <p><a href="/en/employment-social-development/services/my-account/request-pac.html" class="btn btn-primary">Request a PAC</a></p>
+                                     </details>
+                                     <details class="mrgn-tp-md mrgn-bttm-md">
+                                       <summary>In person at a Service Canada Office</summary>
+                                       <p>Due to COVID-19, you need to submit a Service Canada's online <a rel="external" href="https://eservices.canada.ca/en/service/">service request form</a>. A Service Canada agent will contact you within 2 business days.</p>
+                                       <p>You will need:</p>
+                                       <ul>
+                                         <li>your Social Insurance Number (SIN)</li>
+                                         <li>your parent's family name at birth</li>
+                                         <li>your postal code if you are a Canadian resident or your country of residence if you are a foreign resident</li>
+                                         <li>a valid (not expired) acceptable proof of identity, such as:
+                                           <ul>
+                                             <li>Canadian passport</li>
+                                             <li>certification of Canadian citizenship</li>
+                                             <li>certification of Indian status</li>
+                                             <li>certificate of registration of birth abroad</li>
+                                             <li>driver's license (provincial or territorial)</li>
+                                             <li>health card</li>
+                                             <li>permanent resident card</li>
+                                             <li>provincial identification card</li>
+                                           </ul>
+                                         </li>
+                                       </ul>
+                                       <p><a href="http://www.servicecanada.gc.ca/tbsc-fsco/sc-hme.jsp?lang=eng" class="btn btn-primary">Find a Service Canada Office</a></p>
+                                     </details>
+                                     <details>
+                                       <summary>By phone</summary>
+                                       <div class="alert alert-info">
+                                         <p><strong>Note:</strong> This service is only available for returning clients of the Canada Pension Plan. Employment Insurance beneficiaries cannot receive a PAC by phone.</p>
+                                       </div>
+                                       <p>The Service Canada agent will let you know when you could receive your access code. The time frame will vary by case.</p>
+                                       <p>Call Service Canada at 1-800-277-9914 Monday to Friday between 8:30 am and 4:30 pm local time. You can also call this number to check the status of your PAC request or disable your PAC.</p>
+                                       <p>You will need:</p>
+                                       <ul>
+                                         <li>your Social Insurance Number (SIN)</li>
+                                         <li>answers to various security questions to verify your identity</li>
+                                       </ul>
+                                     </details>
+                                   </details>
+                                 </ol>
+                               </li>
+                               <li>
+                                 <section>
+                                   <strong>Create your MSCA profile</strong>
+                                   <p>Once you have signed in with your bank and have verified your identity, you will be directed to create your MSCA profile. </p>
+                                 </section>
+                               </li>
+                              </ol>
+                              <p class="mrgn-tp-lg"><a href="https://srv136.services.gc.ca/ecas-seca/rascl/Initialize.aspx?Lang=eng&amp;Idp=https://services.securekeyconcierge.com/cbs&amp;AppCode=MSCA_SC" class="btn btn-call-to-action" data-gc-analytics-customclick="ESDC|EDSC:MSCA Registration:Start creating your MSCA Profile with your bank">Register with your bank</a></p>
+                                             </div>
+                                           </div>
+                                             <div id="answer1-3" class="hidden alert1 provisional">
+                                               <div class="well brdr-rds-0">
+                                               <strong>Register with your provincial digital ID</strong>
+                                               <p>If you live in Alberta or British Columbia, you can access My Service Canada Account (MSCA) by signing in or registering with your provincial digital ID:</p>
+                                               <ul class="list-unstyled row text-center">
+                                                 	<li class="col-sm-5 col-md-4 col-sm-offset-1">
+                                                 		<a class="center-block" href="https://srv136.services.gc.ca/ecas-seca/rascl/Initialize.aspx?Lang=eng&amp;Idp=MADI202309&amp;AppCode=MSCA_SC" aria-describedby="notice" data-gc-analytics-customclick="ESDC|EDSC:MSCA Sign in/Register with your province:MyAlbertaDigital ID Click">
+                                                     <div class="panel panel-default mrgn-bttm-0">
+                                                 			<img class="center-block img-responsive" src="https://www.canada.ca/content/dam/esdc-edsc/images/services/msca-mdsc/madi.jpg" alt="">
+                                                 			</div>
+                                                     <div class="btn btn-lg h3 mrgn-tp-0 mrgn-bttm-md"><strong>MyAlberta Digital ID</strong></div>
+                                                     </a>
+                                                 	</li>
+                                                 	<li class="col-sm-5 col-md-4 col-md-offset-2"> <a class="center-block" href="https://srv136.services.gc.ca/ecas-seca/rascl/Initialize.aspx?Lang=eng&amp;Idp=BCSC&amp;AppCode=MSCA_SC" aria-describedby="notice" data-gc-analytics-customclick="ESDC|EDSC:MSCA Sign in/Register with your province:BC Services Card Click">
+                                                     <div class="panel panel-default mrgn-bttm-0">
+                                                 			<img class="center-block img-responsive" src="https://www.canada.ca/content/dam/esdc-edsc/images/services/msca-mdsc/bc-card.jpg" alt=""> </div>
+                                                     <div class="btn btn-lg h3 mrgn-tp-0 mrgn-bttm-md"><strong>BC Services Card</strong></div>
+                                                     </a> </li>
+                                                    </ul>
+                                                 </div>
+                                              </div>
+                   </section>
+                <section>
+                  <h2>Guidance on how to use <abbr>MSCA</abbr></h2>
+                  <ul>
+                    <li><a href="/en/employment-social-development/services/my-account/ei.html">Access Employment Insurance services</a></li>
+                    <li><a href="/en/employment-social-development/services/my-account/cpp-oas.html">Access pension benefits and services </a></li>
+                    <li><a href="/en/employment-social-development/services/my-account/tax.html">Access Tax information</a></li>
+                  </ul>
+                </section>
+                <section>
+                  <h2 id="avoid">Avoid technical problems in MSCA</h2>
+                  <ul>
+                    <li>Don't bookmark secure&nbsp;MSCA&nbsp;pages (which means the pages you see after you sign in)</li>
+                    <li>Use one of the following  Web browser:
+                      <ul>
+                        <li>Google Chrome (version 84 or newer)</li>
+                        <li>Safari (version 13.1.2 or newer)</li>
+                        <li>Microsoft Edge (version 85 or newer)</li>
+                        <li>Mozilla Firefox (version 68 or newer)</li>
+                      </ul>
+                    </li>
+                    <li>For Apple users, use one of the following operating system:
+                      <ul>
+                        <li>iOS (version 13 or newer)</li>
+                        <li>MacOS (version 10.15 or newer)</li>
+                      </ul>
+                    </li>
+                    <li>Enable cookies and JavaScript in your browser</li>
+                  </ul>
+                </section>
+                <section>
+                  <h2 id="contact">Contact information</h2>
+                  <p>Contact the following programs with any questions you may have:</p>
+                  <ul>
+                    <li><a href="/en/employment-social-development/corporate/contact/sin.html">Social Insurance Number</a></li>
+                    <li><a href="/en/employment-social-development/corporate/contact/ei-individual.html">Employment Insurance</a></li>
+                    <li><a href="/en/employment-social-development/corporate/contact/cpp.html">Canada Pension Plan</a></li>
+                    <li><a href="/en/employment-social-development/corporate/contact/oas.html">Old Age Security</a></li>
+                  </ul>
+                </section>
+                        </section>
+            <!-- CONTENT ENDS HERE -->
+            <div class="clearfix"></div>
+            <div class="pagedetails">
+               <div class="row">
+                  <div class="col-sm-6 col-md-5 col-lg-4">
+                     <details class="brdr-0">
+                        <summary class="btn btn-default text-center">Report a problem on this page</summary>
+                        <div class="well row">
+                           <div class="gc-rprt-prblm">
+                              <div class="gc-rprt-prblm-frm gc-rprt-prblm-tggl">
+                                 <form action="#">
+                                    <fieldset>
+                                       <legend><span class="field-name">Please select all that apply: </span></legend>
+                                       <div class="checkbox">
+                                          <label for="problem1">
+                                          <input data-reveal="#broken" id="problem1" name="problem" type="checkbox" value="Something is broken"/>
+                                          Something is broken</label>
+                                       </div>
+                                       <div class="form-group hide" id="broken">
+                                          <label for="problem1-detail">Provide more details (optional):</label>
+                                          <input class="form-control full-width" id="problem1-detail" type="text"/>
+                                       </div>
+                                       <div class="checkbox">
+                                          <label for="problem2">
+                                          <input data-reveal="#spelling" id="problem2" name="problem" type="checkbox" value="It has spelling or grammar mistakes"/>
+                                          It has spelling or grammar mistakes</label>
+                                       </div>
+                                       <div class="form-group hide" id="spelling">
+                                          <label for="problem2-detail">Provide more details (optional):</label>
+                                          <input class="form-control full-width" id="problem2-detail" type="text"/>
+                                       </div>
+                                       <div class="checkbox">
+                                          <label for="problem3">
+                                          <input data-reveal="#wrong" id="problem3" name="problem" type="checkbox" value="The information is wrong"/>
+                                          The information is wrong</label>
+                                       </div>
+                                       <div class="form-group hide" id="wrong">
+                                          <label for="problem3-detail">Provide more details (optional):</label>
+                                          <input class="form-control full-width" id="problem3-detail" type="text"/>
+                                       </div>
+                                       <div class="checkbox">
+                                          <label for="problem4">
+                                          <input data-reveal="#outdated" id="problem4" name="problem" type="checkbox" value="The information is outdated"/>
+                                          The information is outdated</label>
+                                       </div>
+                                       <div class="form-group hide" id="outdated">
+                                          <label for="problem4-detail">Provide more details (optional):</label>
+                                          <input class="form-control full-width" id="problem4-detail" type="text"/>
+                                       </div>
+                                       <div class="checkbox">
+                                          <label for="problem5">
+                                          <input data-reveal="#find" id="problem5" name="problem" type="checkbox" value="I can’t find what I’m looking for"/>
+                                          I can’t find what I’m looking for</label>
+                                       </div>
+                                       <div class="form-group hide" id="find">
+                                          <label for="problem5-detail">Describe what you’re looking for (optional):</label>
+                                          <input class="form-control full-width" id="problem5-detail" type="text"/>
+                                       </div>
+                                       <div class="checkbox">
+                                          <label for="problem6">
+                                          <input data-reveal="#confusing" id="problem6" name="problem" type="checkbox" value="Other"/>
+                                          Other</label>
+                                       </div>
+                                       <div class="form-group hide" id="confusing">
+                                          <label for="problem6-detail">Provide more details (optional):</label>
+                                          <input class="form-control full-width" id="problem6-detail" type="text"/>
+                                       </div>
+                                    </fieldset>
+                                    <button class="btn btn-primary wb-toggle" data-toggle='{"stateOff": "hide", "stateOn": "show", "selector": ".gc-rprt-prblm-tggl"}' type="submit">Soumettre</button>
+                                 </form>
+                              </div>
+                              <div class="gc-rprt-prblm-thnk gc-rprt-prblm-tggl hide">
+                                 <h3>Merci de votre aide!</h3>
+                                 <p>Vous ne recevrez pas de réponse. Pour toute question, s’il vous plaît <a href="https://www.canada.ca/fr/contact.html">contactez-nous</a>.</p>
+                              </div>
+                           </div>
+                        </div>
+                     </details>
+                  </div>
+               </div>
+               <dl id="wb-dtmd">
+                  <dt>Date modified:</dt>
+                  <dd>
+                     <time property="dateModified">2022-01-01</time>
+                  </dd>
+               </dl>
+            </div>
+         </main>
+         <div class="par iparys_inherited">
+            <div class="global-footer">
+               <footer id="wb-info">
+                  <div class="landscape">
+                     <nav class="container wb-navcurr">
+                        <h2 class="wb-inv">About government</h2>
+                        <ul class="list-unstyled colcount-sm-2 colcount-md-3">
+                           <li><a href="http://www.phac-aspc.gc.ca/contac-eng.php">Contact us</a></li>
+                           <li><a href="https://www.canada.ca/en/government/dept.html">Departments and agencies</a></li>
+                           <li><a href="https://www.canada.ca/en/government/publicservice.html">Public service and
+                              military</a>
+                           </li>
+                           <li><a href="https://www.canada.ca/en/news.html">News</a></li>
+                           <li><a href="https://www.canada.ca/en/government/system/laws.html">Treaties, laws and
+                              regulations</a>
+                           </li>
+                           <li><a href="https://www.canada.ca/en/transparency/reporting.html">Government-wide
+                              reporting</a>
+                           </li>
+                           <li><a href="http://pm.gc.ca/en">Prime Minister</a></li>
+                           <li><a href="https://www.canada.ca/en/government/system.html">About government</a></li>
+                           <li><a href="http://open.canada.ca/en">Open government</a></li>
+                        </ul>
+                     </nav>
+                  </div>
+                  <div class="brand">
+                     <div class="container">
+                        <div class="row">
+                           <nav class="col-md-10 ftr-urlt-lnk">
+                              <h2 class="wb-inv">About this site</h2>
+                              <ul>
+                                 <li><a href="https://www.canada.ca/en/social.html">Social media</a></li>
+                                 <li><a href="https://www.canada.ca/en/mobile.html">Mobile applications</a></li>
+                                 <li><a href="https://www.canada.ca/en/government/about.html">About Canada.ca</a></li>
+                                 <li><a href="https://www.canada.ca/en/transparency/terms.html">Terms and
+                                    conditions</a>
+                                 </li>
+                                 <li><a href="https://www.canada.ca/en/transparency/privacy.html">Privacy</a></li>
+                              </ul>
+                           </nav>
+                           <div class="col-xs-6 visible-sm visible-xs tofpg"> <a href="#wb-cont">Top of page <span class="glyphicon glyphicon-chevron-up"></span></a> </div>
+                           <div class="col-xs-6 col-md-2 text-right"> <img alt="Symbol of the Government of Canada" src="https://www.canada.ca/etc/designs/canada/wet-boew/assets/wmms-blk.svg"/> </div>
+                        </div>
+                     </div>
+                  </div>
+               </footer>
+            </div>
+         </div>
+         <!--
+            <script type="text/javascript">
+                           _satellite.pageBottom();
+                        </script>
+            -->
+         <script crossorigin="anonymous" integrity="sha384-rY/jv8mMhqDabXSo+UCggqKtdmBfd3qC2/KvyTDNQ6PcUJXaxK1tMepoQda4g5vB" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+         <script src="https://wet-boew.github.io/themes-dist/GCWeb/wet-boew/js/wet-boew.min.js"></script>
+         <script src="https://www.canada.ca/etc/designs/canada/wet-boew/js/theme.min.js"></script>
+         <script src="https://test.canada.ca/service-canada/js/alpha-banner.js"></script>
+      </body>
+   </html>

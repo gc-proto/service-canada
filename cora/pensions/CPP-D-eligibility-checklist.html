@@ -8,16 +8,17 @@
       <head>
          <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
          <meta charset="utf-8"/>
+         <meta name="robots" content="noindex, nofollow" />
          <!--CHANGE THE TITLE-->
          <title>Proto - CPP-D Eligibility</title>
          <meta content="width=device-width, initial-scale=1" name="viewport"/>
          <meta content=" " name="description"/>
          <link href="https://wet-boew.github.io/themes-dist/GCWeb/GCWeb/assets/favicon.ico" rel="icon" type="image/x-icon"/>
-         <link href="https://wet-boew.github.io/themes-dist/GCWeb/GCWeb/css/theme.min.css" rel="stylesheet"/>
+         <link href="https://www.canada.ca/etc/designs/canada/wet-boew/css/theme.min.css" rel="stylesheet"/>
          <noscript>
             <link href="https://wet-boew.github.io/themes-dist/GCWeb/wet-boew/css/noscript.min.css" rel="stylesheet"/>
          </noscript>
-         <link href="https://test.canada.ca/covid-19-guidance/proto/css/alpha-beta-banner.css" rel="stylesheet"/>
+         <link href="https://test.canada.ca/service-canada/css/alpha-beta-banner.css" rel="stylesheet"/>
          <link crossorigin="anonymous" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" rel="stylesheet"/>
          <link rel="stylesheet" href="https://www.canada.ca/etc/designs/canada/wet-boew/méli-mélo/2022-06-banff.min.css" />
          <link rel="stylesheet" href="https://cra-arc.gc.ca/wet-boew/css/custom/steps.css">
@@ -287,7 +288,7 @@ Canada Pension Plan disability benefits: Do you qualify</h1>
                         <label for="elig2">
                         have a severe disability that regularly prevents you from doing any type of substantially gainful work
                         </label>
-						
+
 						<p class="mrgn-lft-xl"><a href="https://www.canada.ca/en/services/benefits/publicpensions/cpp/cpp-disability-benefit.html#h2.07-h3.00">Definition of substantially gainful work</a></p>
                      </li>
                      <li class="checkbox">
@@ -298,9 +299,9 @@ Canada Pension Plan disability benefits: Do you qualify</h1>
                      </li>
                   </ul>
                </fieldset>
-			   
+
 			<!--   <button type="button" id="verifyEligibility" class="btn btn-primary hidden">Verify Eligibility</button> -->
-			   
+
 			   <div aria-live="polite">
 				   <div class="alert alert-warning" id="action-no-msg">
 						<p>You need to meet all of the above to be eligible for the Canada Pension Plan disability benefit.</p>
@@ -314,9 +315,9 @@ Canada Pension Plan disability benefits: Do you qualify</h1>
 						</div>
 					</div>
 				</div>
-		
-		
-		
+
+
+
             <section>
                <h2 id="h2.02">Circumstances that may affect your eligibility</h2>
                <section>
@@ -547,20 +548,20 @@ Canada Pension Plan disability benefits: Do you qualify</h1>
          <script type="text/javascript">
             _satellite.pageBottom();
          </script>
-         <script src="https://test.canada.ca/covid-19-guidance/proto/js/alpha-banner.js"></script>
+         <script src="https://wet-boew.github.io/themes-dist/GCWeb/wet-boew/js/wet-boew.min.js"></script>
+         <script src="https://www.canada.ca/etc/designs/canada/wet-boew/js/theme.min.js"></script>
+         <script src="https://test.canada.ca/service-canada/js/alpha-banner.js"></script>
          <script type="text/javascript" src="https://www.canada.ca/etc/clientlibs/granite/jquery.min.js"></script>
          <script type="text/javascript" src="https://www.canada.ca/etc/clientlibs/granite/utils.min.js"></script>
          <script type="text/javascript" src="https://www.canada.ca/etc/designs/canada/clientlib-publish.min.js"></script>
          <!--[if gte IE 9 | !IE ]><!-->
          <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-         <script src="https://www.canada.ca/etc/designs/canada/wet-boew/js/wet-boew.min.js"></script>
          <!--<![endif]-->
          <!--[if lt IE 9]>
          <script src="https://www.canada.ca/etc/designs/canada/wet-boew/js/ie8-wet-boew2.min.js"></script>
          <![endif]-->
-         <script src="https://www.canada.ca/etc/designs/canada/wet-boew/js/theme.min.js"></script>
 		 <script>
-		 
+
 		 function verifyCheckboxes(selector, mode="all") {
 			let checked = (mode == "all") ? true: false;
 			$(selector).each(function( index ) {
@@ -572,10 +573,10 @@ Canada Pension Plan disability benefits: Do you qualify</h1>
 					return false;
 				}
 			});
-			
+
 			return checked;
 		 }
-		 
+
 		 $(".action-checkbox").change(function() {
 			const eligible = verifyCheckboxes(".action-checkbox");
 			if (eligible) {
