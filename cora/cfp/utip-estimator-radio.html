@@ -189,54 +189,89 @@
        	<p>Eligible organizations may submit more than one application under this stream.</p>
        </section>
        <section>
-         <h3>Determine how much contributions you need to be eligible</h3>
-         <p>To be eligible, you must have a cash contribution equal to or more than 50% of the cost of new, up-to-date equipment and materials. This must come from sources other than ESDC. In-kind contributions are not eligible under this funding process.</p>
-         <p>Cash amount needed is based on the cost amount of new, up-to-date equipment and materials.</p>
-      <p>We will accept contributions equal to or more than 30%, in cases involving:</p>
+         <h3>Determine the minimum cash contribution required to meet eligibility criteria</h3>
+         <section class="alert alert-info">
+           <p>This tool only provides an estimate.</p>
+         </section>
+         <p>To be eligible, your project must have a cash contribution equal to or more than 50% of the <strong>cost of new, up-to-date equipment and/or materials (including GST/HST). </strong></p>
+         <ul>
+           <li>This must come from sources other than ESDC.</li>
+           <li>Only <strong>cash</strong> contributions are eligible under this funding process. In-kind contributions are not applicable. </li>
+         </ul>
+         <p>A 30% cash contribution is acceptable if you can demonstrate that your project faces any of these challenges:</p>
       <ul>
         <li><a href="#">remote locations</a></li>
         <li><a href="#">lack of infrastructure</a>, and/or</li>
         <li><a href="#">limited partnership opportunities</a></li>
       </ul>
-      <h4>Estimate the cash contributions you may need for your project</h4>
+      <h4>Estimate the minimum cash contribution you would need to provide for your project</h4>
          <div class="wb-frmvld wb-init wb-frmvld-inited">
           <form action="#" id="estimator" onsubmit="return false" novalidate="">
 
                 <div class="form-group">
-                  <p for="income"><strong>What is your project budget (in dollars)?</strong></p>
+                  <p for="income"><strong>What is the total cost of new, up-to-date equipment and/or materials, including tax (in CAD dollars)?</strong></p>
                   <input class="form-control input-lg" type="number" name="income" id="income">
                 </div>
-              <div class="form-group">
-                <fieldset class="provisional gc-chckbxrdio">
-                <p for ="contribution"><strong>Choose your cash contribution amount:</strong></p>
-                <ul class="list-unstyled lst-spcd-2">
-                  <li class="radio">
-                    <input type="radio" name="radioid" id="id1" value="50">
-                    <label for="id1">50% (applies to most projects)</label>
-                  </li>
-                  <li class="radio">
-                    <input type="radio" name="radioid" id="id2" value="30">
-                    <label for="id2"> 30% (only available to applicants who can demonstrate project challenges in their application)</label>
-                  </li>
-                </ul>
-                </fieldset>
-            </div>
-            </ol>
+                <div class="form-group">
+                  <fieldset class="provisional gc-chckbxrdio">
+                    <p for ="contribution"><strong>Choose your minimum cash contributions amount:</strong></p>
+                  <ul class="list-unstyled lst-spcd-2">
+                    <li class="radio">
+                      <input type="radio" name="radioid" id="id1" value="50">
+                      <label for="id1">50% (applies to most projects)</label>
+                    </li>
+                    <li class="radio">
+                      <input type="radio" name="radioid" id="id2" value="30">
+                      <label for="id2"> 30% (only available to applicants who can demonstrate project challenges in their application)</label>
+                    </li>
+                  </ul>
+                  </fieldset>
+              </div>
             <input type="submit" class="btn btn-lg btn-primary " value="Estimate cash contribution needed">
           </form>
           <div aria-relevant="all" aria-live="polite" class="arialive wb-inv"></div>
         </div>
-               <div class="hidden mrgn-tp-lg" id="results">
-          <p>With a project budget of <strong>$<span data-fill="total"> </span></strong> and ESDC's contributions of <strong><span data-fill="percentage">50</span>%</strong>, you would get:</p>
+        <div class="hidden mrgn-tp-lg" id="results">
+          <p>With an equipment and/or materials total cost of <strong>$<span data-fill="total"> </span></strong> and and a minimum cash contribution of <strong><span data-fill="percentage">50</span>%</strong>, you would need to provide:</p>
           <ul class="list-group">
-            <li class="list-group-item"><strong>ESDC funding amount</strong> (up to $5 million dollars)<br>
-              &nbsp;&nbsp;&nbsp;$<span data-fill="grant"></span></li>
-             <li class="list-group-item"><strong>Project contribution</strong> (from other sources than ESDC)<br>
-              + $<span data-fill="bond"></span></li>
-            <li class="list-group-item"><strong>Total of project cost</strong><br>
-              = $<span data-fill="total"></span> </li>
+            <li class="list-group-item">A minimum of<strong> $<span data-fill="bond"></span></strong> in cash contributions</li>
           </ul>
         </div>
+      </section>
+      <section>
+        <details class="mrgn-tp-lg">
+          <summary>See example calculations</summary>
+          <details>
+            <summary>Example 1</summary>
+            <p>You are purchasing a crane for $450,000, including tax.<p>
+            <p>Your costs to support reporting are $2,500 (cannot exceed $3,900).</p>
+            <p>Your total project cost is the cost of the equipment and/or materials plus the cost of reporting: </p>
+            <p>$450,000 + $2,500 = $452,500</p>
+            <p>You are providing a 50% cash contribution.</p>
+            <p>You would need to provide a minimum of $225,000 in cash contributions.</p>
+            <p>$450,000 x 0.5 (50%) = $225,000</p>
+            <p>You would apply to ESDC for a maximum of $227,500 </p>
+            <p>$225,000 + $2,500 = $227,500 </p>
+          </details>
+          <details>
+            <summary>Example 2</summary>
+            <p>You are purchasing the following equipment (all prices include tax): </p>
+            <ul>
+              <li>An excavator for $345,500</li>
+              <li>A dozer for $525,000</li>
+              <li>A haul truck for 	$822,550</li>
+              <li>A backhoe for 	$123,598</li>
+            </ul>
+            <p>The total of your equipment purchase is $1,816,648.</p>
+            <p>Your costs to support reporting are $3,900 (cannot exceed $3,900)</p>
+            <p>Your total project cost is the cost of the equipment and/or materials plus the cost of reporting:</P>
+            <p>$1,816,648 + $3,900 = $1,820,548 </p>
+            <p>You are providing a 50% cash contribution. You would need to provide a minimum of $908,324 in cash contributions. </p>
+            <p>$1,816,648 X 0.50 (50%) = $908,324 </p>
+            <p>You would apply to ESDC for a maximum of $912,224 </p>
+            <p>$908,324 + $3,900 = $912,224</p>
+          </details>
+        </details>
       </section>
        <section>
        	<h2 id="h2.03">Eligible expenditures</h2>
