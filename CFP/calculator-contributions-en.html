@@ -188,13 +188,49 @@
               <li>
                <details>
                 <summary><h3>Cash contributions for eligibility</h3></summary>
+                <h4>Sample calculator</h4>
                 <p>Here is an existing example of a calculator that provides the cash contributions an applicant must provide to be eligible for contribution funding.</p>
+                <div class="well">
+                  <h4>Estimate the minimum cash contribution you would need to provide for your project</h4>
+                     <div class="wb-frmvld wb-init wb-frmvld-inited">
+                      <form action="#" id="estimator" onsubmit="return false" novalidate="">
+
+                            <div class="form-group">
+                              <p for="income"><strong>What is the total cost of new, up-to-date equipment and materials, including tax (in CAD dollars)?</strong></p>
+                              <input class="form-control input-lg" type="number" name="income" id="income">
+                            </div>
+                            <div class="form-group">
+                              <fieldset class="provisional gc-chckbxrdio">
+                                <p for ="contribution"><strong>Choose your minimum cash contributions amount:</strong></p>
+                              <ul class="list-unstyled lst-spcd-2">
+                                <li class="radio">
+                                  <input type="radio" name="radioid" id="id1" value="50">
+                                  <label for="id1">50% (applies to most projects)</label>
+                                </li>
+                                <li class="radio">
+                                  <input type="radio" name="radioid" id="id2" value="30">
+                                  <label for="id2"> 30% (only available to applicants who can demonstrate <a href="http://test.canada.ca/service-canada/cora/cfp/utip-estimator-radio.html#h4">project challenges</a></label>
+                                </li>
+                              </ul>
+                              </fieldset>
+                          </div>
+                        <input type="submit" class="btn btn-lg btn-primary " value="Estimate cash contribution needed">
+                      </form>
+                      <div aria-relevant="all" aria-live="polite" class="arialive wb-inv"></div>
+                    </div>
+                    <div class="hidden mrgn-tp-lg" id="results">
+                      <p>With an equipment and materials total cost of <strong>$<span data-fill="total"> </span></strong> and and a minimum cash contribution of <strong><span data-fill="percentage">50</span>%</strong>, you would need to provide:</p>
+                      <ul class="list-group">
+                        <li class="list-group-item">A minimum of<strong> $<span data-fill="bond"></span></strong> in cash contributions</li>
+                      </ul>
+                    </div>
+                </div>
                 <h4>Pages the calculator is used on</h4>
                 <ul>
                     <li><a href="http://test.canada.ca/service-canada/cora/cfp/utip-estimator-radio.html">Determine how much contributions you need to be eligible</a></li>
                 </ul>
                 <br>
-
+                <h4>Calculation</h4>
                 <table class="table" id="table1">
                  <caption class="text-left">Inputs</caption>
                  <thead>
@@ -498,6 +534,35 @@
 <![endif]-->
 
     <script src="https://www.canada.ca/etc/designs/canada/wet-boew/js/theme.min.js"></script>
+    <script type="text/javascript">
+       _satellite.pageBottom();
+    </script>
+    <script crossorigin="anonymous" integrity="sha384-rY/jv8mMhqDabXSo+UCggqKtdmBfd3qC2/KvyTDNQ6PcUJXaxK1tMepoQda4g5vB" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+      <script>
+          const lang = "en-US";
+          $("#estimator").submit(function() {
+                         const maxContribution = 5000000;
+
+                         const contributionratio = ($("input[name='radioid']:checked").attr("value") == "50") ? 0.5: 0.7;
+                         const contributionratioText = ($("input[name='radioid']:checked").attr("value") == "50") ? 50: 30;
+
+          const projectBudget = (!isNaN($("#income").val())) ? parseFloat($("#income").val()): 0;
+
+                         const esdcContribution = Math.min(projectBudget * contributionratio, maxContribution);
+                         const ownContribution = projectBudget-esdcContribution;
+
+                         $('span[data-fill="grant"]').html(esdcContribution.toLocaleString(lang));
+                         $('span[data-fill="bond"]').html(ownContribution.toLocaleString(lang));
+                         $('span[data-fill="total"]').html(projectBudget.toLocaleString(lang));
+
+          $('span[data-fill="percentage"]').html(contributionratioText);
+          $("#results").removeClass("hidden");
+                         event.preventDefault();
+          });
+          </script>
+    <script src="https://wet-boew.github.io/themes-dist/GCWeb/wet-boew/js/wet-boew.min.js"></script>
+    <script src="https://www.canada.ca/etc/designs/canada/wet-boew/js/theme.min.js"></script>
+    <script src="https://test.canada.ca/service-canada/js/alpha-banner.js"></script>
 </body>
 
 </html>
