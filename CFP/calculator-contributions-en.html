@@ -205,8 +205,8 @@
 			<h3>Calculator widget</h3>
 			<div class="well">
 				<h4>Estimate the minimum cash contribution you would need to provide for your project</h4>
-				<div class="wb-frmvld wb-init wb-frmvld-inited">
-					<form action="#" id="estimator" onsubmit="return false" novalidate="">
+				<div class="wb-frmvld">
+					<form action="#" id="estimator" onsubmit="return false">
 						<div class="form-group">
 							<label for="income">What is the total cost of new, up-to-date equipment and materials, including tax (in CAD dollars)?</label>
 							<input class="form-control input-lg" type="number" name="income" id="income">
@@ -228,7 +228,6 @@
 						</div>
                         <input type="submit" class="btn btn-lg btn-primary " value="Estimate cash contribution needed">
 					</form>
-					<div aria-relevant="all" aria-live="polite" class="arialive wb-inv"></div>
 				</div>
 				<div class="hidden mrgn-tp-lg" id="results">
 					<p>With an equipment and materials total cost of <strong>$<span data-fill="total"> </span></strong> and and a minimum cash contribution of <strong><span data-fill="percentage">50</span>%</strong>, you would need to provide:</p>
