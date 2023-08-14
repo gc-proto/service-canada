@@ -211,14 +211,14 @@
 				<div class="wb-frmvld">
 					<form action="#" id="estimator" onsubmit="return false">
 						<div class="form-group">
-							<label for="income">What is the total cost of new, up-to-date equipment and materials, including tax (in CAD dollars)?</label>
-							<input class="form-control input-lg" type="number" name="income" id="income">
+							<label for="income" class="required">What is the total cost of new, up-to-date equipment and materials, including tax (in CAD dollars)? <strong class="required" aria-hidden="true">(required)</strong></label>
+							<input class="form-control input-lg" type="number" name="income" id="income" required>
 						</div>
 						<fieldset class="gc-chckbxrdio form-group">
-							<legend style="font-size: 16px; line-height: 23px; margin-bottom: 1.5px;">Choose your minimum cash contributions amount:</legend>
+							<legend class="required" style="font-size: 16px; line-height: 23px; margin-bottom: 1.5px;">Choose your minimum cash contributions amount: <strong class="required">(required)</strong></legend>
 							<ul class="list-unstyled lst-spcd-2">
 								<li class="radio">
-									<input type="radio" name="radioid" id="id1" value="50">
+									<input type="radio" name="radioid" id="id1" value="50" data-rule-required="true">
 									<label for="id1">50% (applies to most projects)</label>
 								</li>
 								<li class="radio">
