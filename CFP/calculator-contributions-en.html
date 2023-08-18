@@ -434,7 +434,7 @@
 	<script>
 		const lang = "en-US";
 
-		$("#estimator").submit(function() {
+		$("#estimator").submit(function( event ) {
 			event.preventDefault();
 
 			if ( ! $(this).valid() ) {
