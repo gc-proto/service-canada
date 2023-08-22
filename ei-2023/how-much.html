@@ -1600,7 +1600,7 @@
             var earnings = earnings || 0
 
             const region = $("select[name='selectedRegion']").val();
-            const regionRow = $('#' + regions + ' tr td:nth-child(3):contains("' + region + '")').parent();
+            const regionRow = $('#' + regionTableId + ' tr td:nth-child(3):contains("' + region + '")').parent();
 
             const unemploymentRate = parseFloat(regionRow.children().eq(3).text());
             const hoursToQualify = parseFloat(regionRow.children().eq(4).text());
