@@ -569,11 +569,11 @@
                     </ul>
                     <ul class="fa-ul lst-spcd mrgn-bttm-lg mrgn-lft-lg">
                         <li><span class="mrgn-tp-0 text-muted h5"><span data-fill="earnings"></span></span></li>
-                        <li><span class="fas fa-divide fa-li"><span class="wb-inv">divided by</span></span> <span class="text-muted h5"> <span data-fill="bestWeeks"></span> weeks</span></li>
-                        <li><span class="fas fa-times fa-li"><span class="wb-inv">times by</span></span> <span class="text-muted h5"> 55 %</span></li>
+                        <li><span class="fas fa-divide fa-li"><span class="wb-inv">divided by </span></span> <span class="text-muted h5"> <span data-fill="bestWeeks"></span> weeks</span></li>
+                        <li><span class="fas fa-times fa-li"><span class="wb-inv">multiplied by </span></span> <span class="text-muted h5"> 55 %</span></li>
                         <li>
                             <hr class="brdr-bttm mrgn-tp-0 mrgn-bttm-md">
-                            <span class="fas fa-equals fa-li"><span class="wb-inv">equals</span></span> <span class="mrgn-tp-0 text-muted h5"> $ <span data-fill="ei_amount"></span></span>
+                            <span class="fas fa-equals fa-li"><span class="wb-inv">equals </span></span> <span class="mrgn-tp-0 text-muted h5">$<span data-fill="ei_amount"></span> <span data-fill="ei_maximum"></span></span>
                         </li>
                     </ul>
                 </div>
@@ -1593,11 +1593,13 @@
         const maximumEIAmount = 650;
 
         $("#estimator").submit(function(event) {
-            const weeksTableId = "tbl-002";
+            const weeksTableId = "tbl1";
 			const regionTableId = "regions";
-
+			
             var earnings = $('#earnings').val();
-            var earnings = earnings || 0
+            var earnings = earnings || 0;
+			
+			var maximumText = "";
 
             const region = $("select[name='selectedRegion']").val();
             const regionRow = $('#' + regionTableId + ' tr td:nth-child(3):contains("' + region + '")').parent();
@@ -1618,7 +1620,8 @@
             var ei_amount = (earnings / bestWeeks * 0.55);
 
             if (ei_amount > maximumEIAmount) {
-                var ei_amount = maximumEIAmount;
+                ei_amount = maximumEIAmount;
+				maximumText = "Maximum";
             }
 
 
@@ -1628,6 +1631,7 @@
             $('span[data-fill="hours"]').text(formatDollars(hours));
             $('span[data-fill="ei_amount"]').text(formatDollars(ei_amount));
             $('span[data-fill="numberWeeks"]').text(numberWeeks);
+			$('span[data-fill="ei_maximum"]').text(maximumText);
 
             if (hours >= hoursToQualify) {
                 $('#qualify').show();
