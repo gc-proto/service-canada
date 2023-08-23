@@ -1665,7 +1665,7 @@
             if (indexToReturn == "row") {
                 selector = "#" + tableId + " tr:first-child th";
             } else {
-                selector = "#" + tableId + " tr :first-child";
+                selector = "#" + tableId + " tr *:first-child";
             }
 
             const cellNumber = $(selector).length;
