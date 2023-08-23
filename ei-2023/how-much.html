@@ -2239,6 +2239,7 @@
 
 
     <script>
+		const lang = wb.lang;
         const maximumEIAmount = 650;
 
         $("#estimator").submit(function(event) {
@@ -2308,6 +2309,14 @@
             return parseFloat(num).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, "$&,").replace(/\.00/g, '')
         }
 
+		var toNumber = function(num) {
+			if (lang == "en") {
+				return parseFloat(num.replace(",", ""));
+			} else {
+				return parseFloat(num.replace(/\s+/, "").replace(",", "."));
+			}
+		}
+
         var getAmountFromRange = function(tableId, search, indexToReturn = "row") {
             let cellIndex = 0;
             let selector;
@@ -2322,8 +2331,8 @@
                 if (index != 0) {
                     const numbers = $(this).text().match(/([\d.,]+)/g);
 
-                    lowerbound = parseFloat(numbers[0]);
-                    upperbound = parseFloat(numbers[1]) || 0;
+                    lowerbound = toNumber(numbers[0]);
+                    upperbound = toNumber(numbers[1]) || 0;
 
                     if ((search <= lowerbound && index == 1) || (search >= lowerbound && search <= upperbound) || (search >= lowerbound && index == cellNumber - 1)) {
                         cellIndex = index;
