@@ -2310,6 +2310,7 @@
         }
 
 		var toNumber = function(num) {
+			if (num == undefined || num == null) return 0;
 			if (lang == "en") {
 				return parseFloat(num.replace(",", ""));
 			} else {
