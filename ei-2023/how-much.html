@@ -354,18 +354,18 @@
             <h2>On this page</h2>
             <ul>
                 <li><a href="#h2.01">Estimate your weekly payment</a></li>
-                <li><a href="#h2.03">How we calculate your weekly benefit amount</a></li>
+                <li><a href="#h2.03">How we calculate your weekly payment amount</a></li>
                 <li><a href="#h2.04">If your net family income is $25,921 or less</a></li>
                 <li><a href="#h2.05">Taxes are deducted from EI payments</a></li>
             </ul>
             <section>
-                <h2 id="h2.01">Estimate your weekly benefit</h2>
+                <h2 id="h2.01">Estimate your weekly payment</h2>
+                <section class="alert alert-info">
                 <p>We can’t tell you exactly how much you’ll receive before we process your application. </p>
-
-
+                </section>
+                <p>Answer a few questions to get an<strong> estimate </strong> of your weekly EI benefit amount and an estimate of how long you may receive EI.</p>
                 <div class="well">
-                    <h3>Benefits estimator</h2>
-                        <p>Answer a few questions to estimate <strong>how much you could receive and for how many weeks:</strong></p>
+                    <h3>EI benefit estimator</h2>
                         <section>
                             <div class="wb-frmvld fieldflow-lg">
                                 <form>
@@ -686,10 +686,10 @@
             </details>
             <details>
                 <summary><strong>Number of weeks of EI regular benefits payable by regional rate of unemployment</strong></summary>
-                
+
 				<div class="table-responsive">
 							<table class="provisional gc-table table table-borders text-right" id="tbl1">
-                
+
                         <thead>
                             <tr>
                                 <th id="tbl-015"> Number of hours of insurable employment </th>
@@ -1588,10 +1588,10 @@
         $("#estimator").submit(function(event) {
             const weeksTableId = "tbl1";
 			const regionTableId = "regions";
-			
+
             var earnings = $('#earnings').val();
             var earnings = earnings || 0;
-			
+
 			var maximumText = "";
 
             const region = $("select[name='selectedRegion']").val();
@@ -1614,7 +1614,7 @@
 
             if (ei_amount > maximumEIAmount) {
                 ei_amount = maximumEIAmount;
-				maximumText = "Maximum";
+				maximumText = "(2023 maximum benefit amount)";
             }
 
 
