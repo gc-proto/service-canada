@@ -24,7 +24,19 @@
   </noscript>
   <link href="https://test.canada.ca/service-canada/css/alpha-beta-banner.css" rel="stylesheet"/>
   <link crossorigin="anonymous" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" rel="stylesheet"/>
-  </head>
+  <style>
+   .container {
+       display: flex;
+       justify-content: space-between;
+   }
+   .left-align {
+       text-align: left;
+   }
+   .right-align {
+       text-align: right;
+   }
+   </style>
+</head>
 <body class="cnt-wdth-lmtd" typeof="WebPage" vocab="http://schema.org/">
      <nav>
         <ul id="wb-tphp">
@@ -157,10 +169,14 @@
 
 
           <h1 class="gc-thickline" id="wb-cont" property="name">Letter 1</h1>
-  
+
+          <div class="container">
+            <p class="left-align">This text is aligned to the left.</p>
+            <p class="right-align">This text is aligned to the right.</p>
+        </div>
 
           <p>DRAFT for testing purposes only</p>
-          {text-align: right;} <p>PROTECTED B </p>
+          <p class="right-align">PROTECTED B</p>
 
           <p>Service Canada 
           PO Box 5100 STN D 
@@ -168,7 +184,7 @@
             
           
           
-          PROTECTED B 
+ 
            
           June 26, 2025 
            
